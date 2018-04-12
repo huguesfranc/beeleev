@@ -215,7 +215,7 @@ ActiveRecord::Schema.define(version: 20180319182240) do
     t.text     "body"
     t.string   "illustration"
     t.boolean  "published",          default: false
-    t.date     "publication_date",   default: '2014-12-22'
+    t.date     "publication_date",   default: '2018-04-09'
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "detailed_body"
@@ -295,9 +295,8 @@ ActiveRecord::Schema.define(version: 20180319182240) do
     t.text     "application_reject_reason"
     t.string   "business_sectors",                 default: [],                 array: true
     t.string   "investment_levels",                default: [],                 array: true
-    t.integer  "activate_user_reminder_count",     default: 0
-    t.datetime "activated_at"
     t.string   "stripe_customer_id"
+    t.datetime "activated_at"
     t.boolean  "can_post",                         default: true
     t.string   "company_description",              default: ""
     t.string   "facebook_username",                default: ""
@@ -305,6 +304,7 @@ ActiveRecord::Schema.define(version: 20180319182240) do
     t.string   "company_twitter_account"
     t.string   "company_facebook_account"
     t.string   "company_linkedin_account"
+    t.integer  "activate_user_reminder_count",     default: 0
   end
 
   add_index "users", ["expertises"], name: "index_users_on_expertises", using: :gin

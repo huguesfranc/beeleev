@@ -33,6 +33,10 @@ Using [bundler](https://github.com/bundler/bundler):
 bundle
 ```
 
+### Set environment variables
+
+Contact the developer: [contact@juliendargelos.com](mailto:contact@juliendargelos.com) (sensitive data).
+
 ### Initialize the database
 
 ```shell

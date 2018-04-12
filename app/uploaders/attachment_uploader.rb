@@ -12,7 +12,7 @@ class AttachmentUploader < BeeleevUploader
   def default_url
   end
 
-  # WARNING : this must only be used with Cloudinary in prod
+  # WARNING : this must only be used with Cloudinary in production.
   def public_id
     Cloudinary::PreloadedFile.split_format(original_filename).first +
       '_' +

@@ -18,6 +18,8 @@ public/uploads/*
 .powenv
 latest.dump
 design
-# vendor/money/exchange_rates.xml
-vendor/money/*
+vendor/money/exchange_rates.xml
 README_original.md
+# Ignore application configuration
+/config/application.yml
+/config/cloudinary.yml

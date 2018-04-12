@@ -1,11 +1,7 @@
 class SetDefaultForArrayAttributes < ActiveRecord::Migration
   def change
-    [
-      :spoken_languages,
-      :expertises,
-      :international_activity_countries
-    ].each do |attribute|
-      change_column_default :users, attribute, []
-    end
+    change_column_default :users, :spoken_languages, []
+    change_column_default :users, :expertises, []
+    change_column_default :users, :international_activity_countries, []
   end
 end
