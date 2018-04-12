@@ -1,7 +1,7 @@
 <div id="profile_18_core" class="margin-top-62">
 	<div class="container">
 	  <div class="row">
-	    
+
 	    <div class="col-xs-12 col-sm-3">
 				<div class="left-wrapper">
 					<div class="profile-avatar">
@@ -13,7 +13,7 @@
 							<%= image_tag @user.avatar_url, class: "img-responsive" %>
 						<% end %>
 					</div>
-					
+
 					<% if current_user == @user || current_user.decorate.network.include?(@user) %>
 					<!-- only for  me of my network -->
 					<div class="some-icons">
@@ -28,7 +28,7 @@
 								<i class="fa fa-2x fa-twitter-square twitter-color" aria-hidden="true"></i>
 							<% end %>
 						<% end %>
-						
+
 						<% if @user.provider_public_profile_url.present? %>
 							<%= link_to @user.provider_public_profile_url, target: "_blank" do %>
 								<i class="fa fa-2x fa-linkedin-square linkedin-color" aria-hidden="true"></i>
@@ -54,8 +54,8 @@
 	    			<%= "- " + @user.nationalite %>
 	    			<% end %>
 	    		</div>
-					
-	    		<% if current_user == @user || current_user.decorate.network.include?(@user) %>
+
+	    		<% if current_user == @user || current_user.connected_user_ids.include?(@user.id) %>
 	    		<!-- only for  me of my network -->
 	    		<% unless @user.cellphone.nil? %>
 		    		<div class="item">
@@ -94,9 +94,9 @@
 		    				</div>
 	  				<% end %>
   				</div>
-  				
+
 	    </div>
-	    
+
 	    <% if @user == current_user %>
 		    <div class="col-xs-12 col-sm-3">
 		    	<div class="right-wrapper">
@@ -111,7 +111,7 @@
 		    															data: { toggle: 'modal', target: '#ajaxModal' },
 		    															class: "support-button-orange" %>
 		    	</div>
-		    </div>    		
+		    </div>
     	<% else %>
 	    <% end %>
 
