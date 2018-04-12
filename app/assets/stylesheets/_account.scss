@@ -1,0 +1,94 @@
+#account{
+	min-height: 80vh;
+	.recharge {
+		font-family: 'Lato', sans-serif;
+		color: $orange;
+	}
+	.credit-box-wrapper{
+		flex-direction: column;
+	}
+	.credit-box-credit-wrapper{
+		flex-direction: column;
+		background-color: $bleu-fonce;
+		color: white;
+		min-height: 30vh;
+		width: 80%;
+		border-radius: 4px;
+		margin: 2vh 0;
+		.number{
+			font-size: 2em;
+		}
+	}
+	.delete-profile{
+  	&:hover, &:active, &:focus{
+	  	text-decoration: none;
+	  }
+	  h4{
+			font-family: 'Lato', sans-serif;
+			color: $orange;
+			font-weight: 400;
+		  font-size: 1em;
+	  	margin-bottom: 2em;
+		  &:hover{
+		  		color: red;
+		  }
+	  }
+	}
+	.t-headers{
+		font-size: 1.2em;
+		color: $gray;
+		background-color: #fdfdfd;
+	}
+	.t-row{
+		display: flex;           display: -webkit-flex;
+	  flex-direction: row;     -webkit-flex-direction: row;
+	  flex-grow: 0;            -webkit-flex-grow: 0;
+	  flex-wrap: wrap;         -webkit-flex-wrap: wrap;
+	  width: 100%;
+	  padding: 5px 15px;
+		border-top: 1px solid #dddddd;
+	}
+	.t-item{
+		flex-grow: 1;            -webkit-flex-grow: 1;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;
+	}
+	.t-item-descr{
+		flex-grow: 4;            -webkit-flex-grow: 4;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;
+		width: 50px;
+	}
+	.t-item-descr-no-wrap{
+		flex-grow: 4;            -webkit-flex-grow: 4;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;
+	}
+	.t-item-actions{
+		flex-grow: 0;            -webkit-flex-grow: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.t-item-date{
+		flex-grow: 0;            -webkit-flex-grow: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;	
+		min-width: 140px;
+	}
+}	
+@media(max-width:767px){
+	#account{
+		.t-item-date{
+			min-width: 100px;
+		}
+	}
+}

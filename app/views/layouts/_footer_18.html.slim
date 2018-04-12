@@ -1,0 +1,24 @@
+.footer
+  .footer-left
+    = cl_image_tag "white-logo", height: 30, id: "white-logo-footer", class: "hidden-xs" 
+
+  .footer-right
+    ul.list-inline
+      - unless user_signed_in?
+        li
+          / a href=new_user_registration_path data-toggle="modal" data-target="#ajaxSmallModal" Apply
+          a href=new_user_registration_path Apply
+      - else
+        li
+          a href=members_path
+            | To Community
+      li
+        = link_to 'Blog', 'http://blog.beeleev.com/', target: '_blank'
+      li
+        a href="mailto:team@beeleev.com" Contact us
+      li
+        a href=faq_path FAQ
+      li
+        a href=legal_path Legal notice
+      li
+        a href=gtc_path GTC

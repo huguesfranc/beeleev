@@ -1,0 +1,48 @@
+#shop{
+	min-height: 80vh;
+  font-family: 'Lato', sans-serif;
+	
+	.container{
+		padding: 0;
+	}
+	.shop-top-wrapper{
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		height: 100%;
+		.content{
+			color: #9B9B9B;
+			font-size: 1.5em;
+			font-weight: 400;
+			font-family: 'Lato', sans-serif;
+		}
+		.btn-shop{
+			margin: 3em 0;
+	    padding: 1em 2em;
+		}
+	}
+	.testimonial-wrapper{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		background-size: cover !important;
+		height: 300px;
+		padding: 10px;
+	}
+	.testimonial-author{
+	  font-size: 1.1em;
+	}
+	.testimonial-quote{
+		font-weight: 400;
+		font-style: italic;
+		font-size: 1em;
+		line-height: 2;
+	}
+	.height-wrapper{
+		min-height: 300px;
+	}
+	.panel-footer{
+		padding: 10px 0;
+	}
+}

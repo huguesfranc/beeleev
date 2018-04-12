@@ -1,0 +1,33 @@
+//------------original partners.scss commented-------------
+#partners_18{
+  
+  p{
+    font-size: 0.7em;
+    margin: 0;
+    color: #9B9B9B;
+    text-align: center;
+  }
+  .partners-bullets-wrapper{
+    color: #9B9B9B;
+    font-size: 2em;
+  }
+  .partners-bullets{
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .btn-orange18-orange{
+    margin: 1em 0;
+  }
+}
+@media(max-width:767px) {
+  #partners_18{
+      h1{
+     font-size: 2em;
+    }
+  }
+  .partners-bullets{
+    flex-direction: column;
+  }
+}

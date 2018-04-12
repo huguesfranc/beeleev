@@ -1,0 +1,59 @@
+#kpis{
+	background-color: $bg-grey;
+	min-height: 50vh;
+	margin-top: 25px;
+	.kpis-wrapper{
+		margin: 2em 0;
+	}
+	.kpis-number{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+		color: $orange;
+	  font-size: 3em;
+	}
+	.kpis-text{
+	  padding-bottom: 0.5em;
+		font-family: 'Lato', sans-serif;
+		font-weight: 400;
+		color: white;
+		text-shadow: $gray 1px 1px 10px;
+	  font-size: 2em;
+	}
+}
+//--- white triangle > sloped bottom
+#kpis{
+		position: relative;
+}
+
+#kpis::after {
+  position:absolute;
+  content: " ";
+  display:block;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  border-style: solid;
+  border-width: 13vw 0 0 98.9vw;
+  border-color: transparent transparent transparent rgba(255,255,255,1);
+}
+
+//--------------- media queries ------------------
+@media(max-width:767px) {
+	#kpis{
+		.kpis-number{
+	  	font-size: 3em;
+		}
+		.kpis-text{
+	  	font-size: 2em;
+		}
+	}
+	#kpis::after {
+	  // border-width: 7vh 0 0 100vw;
+	}
+}
+@media(max-width:958px) {
+	#kpis::after {
+	  border-width: 10vh 0 0 96vw;
+	}
+}

@@ -1,0 +1,99 @@
+@import "variables";
+@import "common";
+@import "website/variables";
+
+@import "black-tie/black-tie";
+@import 'products';
+// @import 'font-awesome';
+@import 'fonts';
+
+//----------dropdown menu------------
+
+@import "bootstrap";
+@import "select2/select2";
+@import "select2-bootstrap-css/compass/stylesheets/select2-bootstrap";
+@import "bxslider-4/jquery.bxslider";
+
+@import 'website/homepage';
+@import 'buttons';
+
+.anchorTarget {
+  &::before {
+    content:"";
+    display:block;
+    height:73px; /* fixed header height*/
+    margin:-73px 0 0; /* negative fixed header height */
+  }
+}
+
+
+// a {
+//   font-family: "fira-sans",sans-serif;
+//   color: #555;
+//   &:hover {
+//     text-decoration: none;
+//     color: $orange;
+//   }
+// }
+
+.blue-underlined-link {
+  color: $bleu;
+  text-decoration: underline;
+}
+
+// CMS
+
+.cms {
+
+  &.text-justify p {
+    text-align: justify;
+  }
+
+  margin-top: 40px;
+
+  font-family: "fira-sans",sans-serif;
+
+  a {
+    color: $bleu;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    text-align: left;
+  }
+
+}
+//----------HM18 TODO put at the right place------------
+@import 'website18/index18';
+@import "menu18";
+
+// homepage beeleev :
+@import "menu";
+@import "visuels";
+@import "testimonies";
+@import "beeleevers";
+@import "maps_beeleevers";
+@import "benefits";
+@import "apply";
+@import "blocs";
+@import "footer";
+@import "footer_18";
+
+// autres pages de Beeleev :
+@import "partners";
+@import "partners_18";
+@import "team";
+@import "team_18";
+@import "news";
+@import "news18";
+@import "components";
+@import "errors";
+@import "direct-request_modal";
+@import "mc_embed_form";
+
+
+
+

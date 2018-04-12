@@ -1,0 +1,79 @@
+#selling-points{
+	min-height: 91vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	 
+	.selling-points-wrapper{
+		// padding: 1.8em 0 2em;
+		// padding: 0.7em 0;
+	}
+	h2{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+	  font-size: 2.5em;
+	  font-style: normal;
+		color: $orange;
+	  // padding: 1em 0;
+	  // margin: 0.5em 0 0.5em;
+	  margin: 2vh 0;
+	  text-align: center;
+	}
+	h3{
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+  	font-size: 1.4em;
+	  font-style: normal;
+		color: $orange;
+	  margin: 0.3em 0 0;
+	}
+	i {
+		display: inline-block;
+		border-radius: 100px;
+		box-shadow: 0px 0px 2px #888;
+		padding: 0.6em;
+	}
+	img {
+			display: inline-block;
+			border-radius: 150px;
+			box-shadow: 0px 0px 4px #888;
+			padding: 1em;
+			width: 120px;
+	}
+	p {
+		margin-bottom: 0;
+		font-size: 1em;
+	}
+	.btn-orange18-orange{
+		// margin: 1em 0 1.6em;
+	  margin: 2vh 0;
+	}
+	.placeholder_selling_points{
+		height: 40px;
+	}
+}
+@media(max-width:767px) {
+	#selling-points{
+		// padding: 0 1em;
+		h2{
+	  	font-size: 2em;
+		}
+		h3{
+	  	font-size: 1.7em;
+		}
+		img{
+		}
+	}
+	.selling-point{
+		padding: 0.5em 0;
+		margin: 1em 0;
+	}
+}
+@media(min-width:1439px) {
+#selling-points{
+		h2{
+			z-index: 1;
+		}
+	}
+}

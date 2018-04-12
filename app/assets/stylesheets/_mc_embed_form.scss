@@ -1,0 +1,90 @@
+#mc_embed_signup{
+	//---additional classes for orange triangle > sloped top See below
+	background: $orange;
+	clear:left;
+	font:14px Helvetica,Arial,sans-serif;
+	.bullets-wrapper{
+    color: white;
+	  font-family: 'Lato', sans-serif;
+	  font-size: 1.3em;
+	  font-style: italic;
+	}
+	h2{
+	  font-family: 'Lato', sans-serif;
+	  font-weight: 400;
+	  font-size: 2.5em;
+	  font-style: italic;
+	  color: #333333;
+	  padding: 2em 0 1em !important;
+	  // text-align: center;
+	  margin: 15px 0 15px 30vh !important;
+	}
+	.outer-wrapper{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.inner-wrapper{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.btn-orange18-white{
+		margin: 0;
+		padding: 0.38em 0.8em;
+	}
+}
+
+#mc_embed_signup .mc-field-group input{
+	padding: 12px 0 !important;
+	margin: 0 1em 2em 3em !important;
+	width: 300px !important;
+}
+#mc_embed_signup form{
+	padding: 1.2em 0 0 !important;
+}
+@media (max-width: $screen-xs-max) {
+	#mc_embed_signup{
+		h2{
+			font-size: 1.3em !important;
+			margin:60px 0 15px !important;
+		}
+		.btn-orange18-white{
+			padding: 0.71em 0.8em;
+		}
+		.outer-wrapper{
+			flex-direction: column;
+			align-items: center;
+		}
+		.bullets-wrapper{
+		  font-size: 1.2em;
+		}
+	}
+	#mc_embed_signup .mc-field-group input{
+		margin: 0 1em 2em 0 !important;
+		width: 220px !important;
+	}
+}
+
+//--- orange triangle > sloped top
+#mc_embed_signup{
+		position: relative;
+		padding: 50px 10px 10px;
+}
+
+#mc_embed_signup::before {
+  position:absolute;
+  content: " ";
+  display:block;
+  left:0;
+  top:0;
+  width:100%;
+  border-style: solid;
+  border-width: 0 98.9vw 150px 0;
+  border-color: transparent white transparent transparent;
+}
+@media(max-width:958px) {
+	#mc_embed_signup::before {
+		border-width: 0 96vw 150px 0;
+	}
+}

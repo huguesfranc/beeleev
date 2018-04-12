@@ -1,0 +1,78 @@
+<br><hr class="hr-75pc margin-top-62">
+<br><br>
+<div id="profile_18_company">
+	<div class="container">
+	  <div class="row">
+	    
+	    <div class="col-xs-12 col-sm-3">
+				<div class="left-wrapper">
+					<div class="profile-avatar">
+						<% if @user.company_logo? %>
+							<%= cl_image_tag @user.company_logo, transformation: [
+								  {width: 400, height: 400, crop: :fit},
+								  {width: 200, crop: :scale}] %>
+						<% else %>
+							<%= image_tag @user.company_logo_url, class: "img-responsive" %>
+						<% end %>
+					</div>
+					
+					<div class="some-icons">
+						<% if @user.company_facebook_account.present? %>
+							<%= link_to "https://www.facebook.com/#{@user.company_facebook_account}", target: "_blank" do %>
+								<i class="fa fa-2x fa-facebook-square facebook-color" aria-hidden="true"></i>
+							<% end %>
+						<% end %>
+
+						<% if @user.company_twitter_account.present? %>
+							<%= link_to "https://www.twitter.com/#{@user.company_twitter_account}", target: "_blank" do %>
+								<i class="fa fa-2x fa-twitter-square twitter-color" aria-hidden="true"></i>
+							<% end %>
+						<% end %>
+						
+						<% if @user.company_linkedin_account.present? %>
+							<%= link_to @user.company_linkedin_account, target: "_blank" do %>
+								<i class="fa fa-2x fa-linkedin-square linkedin-color" aria-hidden="true"></i>
+							<% end %>
+						<% end %>
+
+					</div>
+				</div>
+	    </div>
+
+	    <div class="col-xs-12 col-sm-6">
+	    	<div class="center-wrapper">
+	    		<h1><%= @user.company.nil? ? "-" : @user.company.upcase %></h1>
+	    		<% unless @user.business_sectors.blank? %>
+		    		<div class="bold-item">
+		    			<%= @user.business_sectors.join(", ") %>
+		    		</div>
+	    		<% end %>
+
+	    		<% unless @user.year_of_creation.blank? %>
+		    		<div class="item">
+		    			<%= "Since #{@user.year_of_creation}" %>
+		    		</div>
+	    		<% end %>
+
+	    		<% if !@user.staff_volume.nil? && current_user.connected_users.include?(@user) %>
+		    		<div class="item">
+		    			<%= "#{@user.staff_volume} Employees" %>
+		    		</div>
+	    		<% end %>
+
+	    		<% if !@user.turnover.nil? && current_user.connected_users.include?(@user) %>
+		    		<div class="item">
+		    			<%= "#{@user.turnover} Turnover" %>
+		    		</div>
+	    		<% end %>
+	    		
+	    		<% if @user.website %>
+							<%= link_to @user.website, url_builder(@user.website), class: "item-orange", target: "_blank" %>
+	    		<% end %>
+	    		
+	    	</div>
+	    </div>
+
+	  </div>
+	</div>
+</div>

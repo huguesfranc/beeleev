@@ -1,0 +1,121 @@
+#network-search-any, #network-search-one{
+	font-size: 1.4em;
+}
+#my_network, #network-search{
+	min-height: 83vh;
+	h1{
+		padding: 1em 0 0;
+		margin: 0 0 10px;
+	}
+	.filter-box{
+		border: 2px solid $orange;
+		border-radius: 3vh;
+		padding: 2px;
+		margin: 0 0 2vh;
+	}
+	.bordered {
+		border-right: 1px #C8C8C8 solid;
+	}
+	.form-title{
+		font-family: 'Lato-Bold', sans-serif;
+		font-weight: 700;
+		color: $gray;
+	  text-align: center;
+	  padding: 10px;
+	}
+	.inner-form-title{
+		font-family: 'Lato-Bold', sans-serif;
+    font-weight: 700;
+    color: #555555;
+    text-align: center;
+	}
+	.centerer{
+		display: flex;
+   	align-items: center;
+   	height: 100%;
+	}
+	.expanded{
+		width: 20vw;	
+	}
+	.btn-orange18-orange{
+		margin: 20px 0 10px;
+		padding: 0.25em 1em;
+		font-size: 1em;
+	}
+	.no-paginattion-placeholder-quickfix{
+		height: 20px;
+	}
+	.network-help{
+		display: inline-block;
+		font-family: 'Lato', sans-serif;
+		font-weight: 400;
+	  font-size: 1.5em;
+	  font-style: normal;
+		color: $gray;
+	  margin: 0;
+	  padding: 0;
+	}
+	.pagination{
+		margin: 5px 0;
+	}
+}
+#network-search-any form, #network-search-one form{
+	height: 370px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.input-height-wrapper{
+	min-height: 40px;
+}
+.check-geo-wrapper{
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+@media(min-width:767px) {
+	#my_network, #network-search{
+		.country-city-wrapper{
+			min-height: 7.5vw;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: space-between;
+		}
+	}
+}
+@media(max-width:767px) {
+	.pagination{
+		display: flex;
+	}
+	.check-geo-wrapper{
+		flex-direction: column;
+    align-items: center;
+	}
+	#my_network, #network-search{
+		font-size: 1.2em;
+	}
+	#network-search{
+		#network-search-any form, #network-search-one form{
+			height: unset;
+		}
+		.expanded{
+			width: 70vw;
+		}
+		.country-city-wrapper{
+			min-height: unset;
+		}
+		.bordered{
+			border-bottom: 1px #C8C8C8 solid;
+			border-right: none;
+		}
+		.btn-orange18-orange{
+			margin: 10px 0 20px;
+			padding: 0.5em 1em;
+		}
+		h1{
+		  font-size: 1.8em;
+		  margin: 1vh;			
+		}
+	}
+}

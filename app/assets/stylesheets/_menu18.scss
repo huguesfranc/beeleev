@@ -1,0 +1,228 @@
+//------------original menu.scss and navbars.scss commented-------------
+// This class must be used on anchors before blocks that we don't want to
+// be hidden by the navbar-fixed-top
+.below-navbar-fixed-top-anchor {
+  position: relative; top: -73px;
+}
+
+body.cookiebanner .lemenu {
+  top: 28px;
+}
+
+#sign_up_with_email {
+  display: none;
+}
+
+#sign_up_with_email, #log_in_with_email {
+  .form-group {
+    position: relative;
+    span.form-control-feedback {
+      opacity: 0.5;
+      top: 0px;
+    }
+
+  }
+}
+#lemenu{
+  transition: all 0.5s ease;
+}
+// .navbar-btn {
+//   text-transform: uppercase;
+//   font-family: 'Lato', sans-serif;
+//   font-size: 13px;
+//   font-weight: 300;
+//   letter-spacing: 2px;
+// }
+
+// .navbar-default{
+//   background-color: white;
+//   border-color: white;
+//   border-bottom: 1px solid $grey;
+// }
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+
+.navbar {
+  min-height: unset !important;
+}
+
+.navbar-brand-custom {
+  float: left;
+  padding: 10px 22px;
+}
+
+.navbar-default .navbar-nav > li > a, .dropdown-menu > li > a {
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: $bleu-fonce;
+  padding: 10px !important;
+  &:hover, &:focus, &:active{
+    color: $orange;
+    background-color: unset !important;
+  }
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+  color: $bleu-fonce;
+  &:hover, &:focus, &:active{
+    color: $orange;
+    background-color: unset !important;
+  }
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+  background-color: white;
+}
+
+.lemenu {
+  border: none;
+  border-radius: 0px;
+  margin: 0px;
+  padding: 10px;
+  
+  .btn.btn-default {
+    border: $bleu-fonce;
+    margin-left: 6px;
+    margin-right: 6px;
+    &:hover{
+      background-color: $bleu;
+      color: #fff;
+    }
+    &:focus{
+      background-color: #fff;
+    }
+  }
+
+  .btn.btn-default2 {
+    border: 1px solid $orange;
+    color: $orange;
+    margin-right: 4px;
+    margin-left: 4px;
+    &:hover, &:focus, &:active{
+      color: #fff;
+      background-color: $orange;
+    }
+  }
+  a {
+    text-transform: uppercase;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    &:hover {
+      color: #fff;
+    }
+  }
+  .dropdown-menu {
+    width: 100%;
+  }
+
+}
+
+.lemenu18_transparent{
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.15), rgba(0,0,0,0));
+  .navbar-nav > li a {
+    color: white;
+    &:hover{
+      color: $orange;
+    }
+  }
+  .SoMeicons i {
+    color: white;
+  }
+}
+@media(max-width:767px) {
+  .lemenu18_transparent{
+    .navbar-collapse{
+      .navbar-nav > li a {
+        color: $bleu-fonce !important;
+        &:hover{
+          color: $orange !important;
+        }
+      }
+      .SoMeicons i {
+        color: white;
+      }
+    }
+  }
+}
+
+.lemenu18_white{
+  background-color: white;
+  border-bottom: 1px solid $grey;
+  .navbar-nav > li a {
+    color: $bleu-fonce;
+    &:hover{
+      color: $orange !important;
+    }
+    &.active {
+      color: $orange;
+    }
+  }
+}
+.logo-hidden{
+  display: none; 
+}
+.SoMeicons i {
+  color: $bleu-fonce;
+}
+.scrolled_transparent {
+  background: unset;
+  background-color: white;
+  border-bottom: 1px solid $grey;
+  .navbar-nav > li a {
+    color: #555;
+  }
+  .SoMeicons i {
+    color: $bleu-fonce;
+  }
+  
+  a {
+    color: $orange;
+    &:hover{
+      color: $orange;
+    }
+  }
+  
+}
+ 
+@media (min-width: $screen-xs-min) and (max-width: $screen-sm-min) and (orientation: portrait) {
+  .logo img {
+    width: 88px;
+  }
+}
+
+@media(max-width:767px) {
+  .lemenu18_transparent{
+    // background-color: white;
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+  }
+}
+@media(max-width:767px) {
+  .lemenu {
+    .btn.btn-default2 {
+      border: 1px solid $bleu-clair;
+      margin: 5px;
+
+      &:hover{
+        color: #fff;
+        background-color: $bleu-clair;
+      }
+      &:focus{
+        background-color: $bleu;
+      }
+    }
+  }
+  .logo-hidden{
+      display: inline;
+  }
+}
+
+
+
+

@@ -1,0 +1,85 @@
+//------------original team.scss commented-------------
+#team_18{
+  h2{
+  }
+  h3{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.7em;
+    font-style: normal;
+    color: $gray;
+    text-align: unset;
+  }
+  .top-wrapper{
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bullet-points{
+    padding-top: 1em;
+  }
+  .last-wrapper {
+    .last-over-title {
+      padding: 0.5em 0 0.5em;
+      font-size: 1em;
+      text-align: center;
+    }
+    .last-title{
+      font-family: 'Lato-bold', sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: $gray;
+      text-transform: none;
+      letter-spacing: inherit;
+      font-size: 1.4em;
+    }
+  }
+  .highlight{
+    color: $orange;
+  }
+  .caption {
+    font-weight: 400;
+    font-size: 3em;
+    padding: 0.75em 0 1em;
+    font-style: normal;
+    color: $orange;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .btn-orange18-orange{
+    // margin:0 0 0.5em;
+  }
+  // ___________________________organigram______________________________
+  .team-avatar{
+    max-width: 220px;
+    margin: 0 auto;
+  }
+  h3.name{
+    margin-top: 1em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: $bleu-fonce;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  h4.title{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: $gray;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin: 10px 0 30px;
+  }
+}
+//--------------- media queries ------------------
+@media(max-width:767px) {
+  #team_18{
+    .top-wrapper{
+      text-align: center;
+    }
+  }
+}

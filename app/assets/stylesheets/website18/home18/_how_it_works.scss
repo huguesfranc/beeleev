@@ -1,0 +1,136 @@
+#navbar-switch{
+  z-index: 100;
+  position: absolute;
+}
+#how_it_works{
+	background-color: $orange;	
+	.flex-wrapper{
+		min-height: 91vh;		
+	}
+	.flex-wrapper, .flex-head, .flex-cta{
+		display: flex;
+		// justify-content: space-around;
+		align-items: center;
+		flex-direction: column;
+	}
+	.flex-head, .flex-cta{
+		min-height: 15vh;
+		width: 100%;
+	}
+	.flex-head{
+		margin-top: 58px;
+		margin-bottom: 51px;
+	}
+	.flex-head{
+		margin-top: 72px;
+	}
+	.flex-body{
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+	}
+	.title-wrapper{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 1em 0 1.5em;
+	}
+	h2, .ending-h2, .cascade0, .cascade1, .cascade2{
+
+		// color: rgb(0,53,226);
+			text-transform: uppercase;
+	 		font-family: 'Lato', sans-serif;
+	 		font-weight: 700;
+	 	  font-size: 2em;
+	 	  font-style: normal;
+	 		color: white;
+	 	  padding: 1em 0;
+	 	  text-align: unset;
+	 	  margin: 0;
+	  .discreet{
+	  	display: none;
+	  }
+	}
+	h2 {
+ 	  padding: 0;
+	}
+	.cascades{
+		padding:0 1em;
+	}
+	.cascade0,.cascade1,.cascade2{
+ 	  font-size: 2.5em;
+		text-transform: uppercase;
+	 	font-style: italic;
+		line-height: 1.2;
+	}
+	.cascade1{
+		margin-left: 1em;
+	}
+	.cascade2{
+			margin-left: 2.5em;
+		}
+	
+	i {
+		color: white;
+		// margin: 0.3em 0;
+		margin: -0.1em 0;
+	}
+	.how_it_works_step {
+		color: $text-grey;
+		font-size: 1.75em;
+		text-align: left;
+	}
+	img{
+		width: 85px;
+	}
+	.btn-orange18-white {
+		margin: 72px 0 0;
+	}
+}
+//--------------- media queries ------------------
+@media(max-width:767px) {
+	#how_it_works{
+		padding: 0 1em;
+		h2{
+			text-align: center;
+			font-size: 2em;
+			padding: 0.5em 0;
+			.cascade1{
+		  	margin-left: 0;
+			}
+			.cascade2{
+		  	margin-left: 0;
+			}
+		}
+		.title-wrapper{
+			flex-direction: column;
+		}
+		.how_it_works_step {
+			font-size: 1.2em;
+    	padding: 1em 0;
+		}
+	}	
+}
+//--- orange triangle > sloped top
+
+#how_it_works{
+	position: relative;
+}
+
+#how_it_works::after {
+  position:absolute;
+  content: " ";
+  display:block;
+  left:0;
+  bottom:-150px;
+  width:100%;
+  border-style: solid;
+  border-width: 0 0 150px  98.9vw;
+  border-color: transparent transparent transparent $orange;
+}
+@media(max-width:767px) {
+	#how_it_works::after{
+		border-width: 0 0 150px 96vw;
+	}
+}

@@ -1,0 +1,39 @@
+.container
+  h1.text-center Edit Profile
+  br
+
+  - if @user.activation_pending?
+    .alert.alert-warning role="alert"
+        | Hello #{@user.first_name}. Your application has been sent to our teams and is under review.
+        br
+        | You will receive a mail under 24 working hours notifying you of the decision. Keep an eye on your mailbox!
+        br
+        br
+        '
+
+          In the meantime, you can continue filling your profile to facilitate your introduction to other members.
+
+  = form_for @user, url: account_path do |f|
+    .panel.panel-info
+
+      .panel-heading
+        .panel-title Public Information
+
+      .panel-body
+        = render "public_tab_pane_content", f: f
+
+    .panel.panel-info
+
+      .panel-heading
+        .panel-title
+          |
+          
+            Private Information (for the sole use of Beeleev’s staff - not shared
+            with any third party)
+
+      .panel-body
+        = render "private_tab_pane_content", f: f
+
+    = f.submit "Update profile", class: "btn btn-primary"
+
+  br

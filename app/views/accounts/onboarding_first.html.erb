@@ -1,0 +1,71 @@
+<!-- <div class="image-upload">
+    <label for="file-input">
+        <img src="https://picsum.photos/200/300/?random"/>
+    </label>
+
+    <input id="file-input" type="file"/>
+</div> -->
+
+<%= form_for @user, url: onboarding_first_update_path, method: :post do |f|%>
+<div id="onboarding1">
+	<div class="flex-wrapper">
+		<h1>ABOUT YOU</h1>
+		<div class="body-wrapper">
+			<div>
+				<div class="text-center">
+				</div>
+				<div class="avatar-wrapper text-center">
+					 <label for="user_avatar">
+				      <!-- <img src="https://picsum.photos/200/200/?random"/> -->
+							<i class="fa fa-user fa-4x" aria-hidden="true"></i>
+							<br>
+							<span>PROFILE <br> PICTURE</span>
+				  </label>
+				</div>
+				<%= f.file_field :avatar, required: true %>
+			</div>
+
+			<div>
+				<div class="form-inputs">
+			  	<%= f.text_field :first_name,
+			  							class: "form-control",
+			  							placeholder: :first_name.to_s.humanize,
+			  							required: true,
+			  							autofocus: true,
+			  							label: false %>
+			
+				</div>
+				<div class="form-inputs">
+				  <%= f.text_field :last_name,
+										  class: "form-control",
+										  placeholder: :last_name.to_s.humanize,
+				  						required: true,
+				  						label: false %>
+				</div>
+				<div class="form-inputs">
+				  <%= f.select :civility,
+				   						%w( Mr. Mrs. Ms. Dr.),
+										  {prompt: "Title"},
+										  class: "form-control",
+				  						required: true,
+				  						label: false %>
+				</div>
+				<div class="form-inputs">
+				  <%= f.country_select :country, [],
+														    {prompt: :country.to_s.humanize},
+														    class: "form-control",
+														    placeholder: "Country of residence",
+														    # multiple: true,
+														    required: true %>
+				</div>
+			</div>
+		</div>
+		<div class="buttons-wrapper">
+				<div></div>
+				<div class="form-actions">
+				  <%= f.submit "NEXT PAGE 1 / 3", class: "btn btn-orange18-orange" %>
+				</div>		
+		</div>
+	</div>
+</div>
+<% end %>

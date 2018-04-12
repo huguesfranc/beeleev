@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    / Meta
+    title=meta_title
+    meta name="viewport" content="initial-scale=1.0"
+    meta name="description" content=meta_description
+    
+    / Facebook Open Graph data
+    meta property="og:title" content=meta_title
+    meta property="og:type" content="website"
+    meta property="og:url" content=request.original_url
+    meta property="og:image" content=meta_image
+    meta property="og:description" content=meta_description
+    meta property="og:site_name" content=meta_title
+
+    / Twitter Card data
+    meta name="twitter:card" content="summary_large_image"
+    meta name="twitter:site" content= DEFAULT_META["twitter_account"]
+    meta name="twitter:title" content=meta_title
+    meta name="twitter:description" content=meta_description
+    meta name="twitter:creator" content=DEFAULT_META["twitter_account"]
+    meta name="twitter:image:src" content=meta_image
+    
+    = stylesheet_link_tag    'website', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'website', 'data-turbolinks-track' => true
+    = yield :javascripts
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon-16x16.png', type: 'image/png'
+    = favicon_link_tag 'favicon-32x32.png', rel: 'apple-touch-icon', type: 'image/png'
+    link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    link rel="stylesheet" href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"  type="text/css"
+    / script type="text/javascript" src="//use.typekit.net/lln5ukr.js"
+    // javascript:
+    //   try{Typekit.load();}catch(e){}
+
+    - if Rails.env.production?
+      = render "layouts/ga"
+      = render "layouts/hubspot"
+      /= render 'layouts/tawk_to'
+
+  body class="#{yield :body_class}" data-no-turbolink="true"
+    = render "layouts/ajax_modal"
+    = render "layouts/ajax_small_modal"
+    = render "layouts/ajax_large_modal"
+    = render "layouts/mailchimp_connect"
+    = render "layouts/facebook_pixel"
+
+    - if @navbar_type == "transparent"
+      = render "layouts/menu18_transparent"
+    - else
+      = render "layouts/menu18_white"
+    end
+    
+    - if @home
+      .container
+        = render "layouts/flash"
+      = yield
+    - else
+      .below-nav
+        .container
+          = render "layouts/flash"
+        = yield
+
+    = render 'layouts/footer_18'

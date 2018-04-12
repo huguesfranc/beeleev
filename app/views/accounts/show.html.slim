@@ -1,0 +1,155 @@
+#account.container
+  .row
+    h1.text-center MY ACCOUNT
+    br
+    .col-xs-12.col-sm-2
+      .credit-box-wrapper.flex-centerer
+        h2.orange
+          | BALANCE
+        .credit-box-credit-wrapper.flex-centerer
+          .number
+            = @usable_credits.count
+          | credits
+        - unless @user.status == "rejected" || "activation_pending"
+          = link_to "Credit my Account", direct_request_path, class: "recharge"
+
+    .col-xs-12.col-sm-10
+
+      .overtitle-date.hidden-xs
+        .lign-center-hidden-xs
+        .title-wrapper-550.title-wrapper-account
+          h3.inline-block
+            i.fa.fa-arrow-right.hidden-xs aria-hidden= "true"
+            =< "CONNECTIONS WAITING FOR YOUR RESPONSE"
+
+      .overtitle-date.visible-xs
+        .lign-center-hidden-xs
+        .title-wrapper-550.title-wrapper-account
+          h3.inline-block
+            i.fa.fa-arrow-right.hidden-xs aria-hidden= "true"
+            =< "CONNECTIONS WAITING"
+            br
+            =< "FOR YOUR RESPONSE"
+    
+      .panel-body
+        - if @pending_connections.empty?
+          | No connection request is waiting for your response
+          .pull-right
+            = browse_btn(classes: "btn btn-success btn-xs", btn_title: "BROWSE", tag_classes:"")
+        - else
+          - @pending_connections.each do |resource|
+            .pending-connection
+              = connection_row resource
+
+      .overtitle-date
+        .lign-center-hidden-xs
+        .title-wrapper-300.title-wrapper-account
+          h3.inline-block
+            i.fa.fa-arrow-right.hidden-xs aria-hidden= "true"
+            =< "CONNECTION HISTORY"
+
+      .panel-body
+        - if @connections_history.empty?
+          | You have not requested any connection yet
+          .pull-right
+            = browse_btn(classes: "btn btn-success btn-xs", btn_title: "BROWSE", tag_classes:"")
+        - @connections_history.each do |resource|
+          .pending-connection
+            = connection_row resource
+
+      .overtitle-date
+        .lign-center-hidden-xs
+        .title-wrapper-500.title-wrapper-account
+          h3.inline-block
+            i.fa.fa-pencil aria-hidden= "true"
+            =< "CUSTOM CONNECTION HISTORY"
+
+      .panel-body
+        - if @connection_requests.empty?
+        | You have not requested any custom connection yet
+        .pull-right
+          = new_connection_request_btn(classes: "btn btn-success btn-xs", btn_title: "DIRECT REQUEST", tag_classes:"")
+        - else
+          .t-row.t-headers
+              .t-item-date
+                div Last update
+              .t-item-descr.t-item
+                div Description
+              .t-item-actions
+                  
+          - @connection_requests.each do |cr|
+            .t-row
+              .t-item-date.visible-xs
+                = timef cr.updated_at, :short
+              .t-item-date.hidden-xs
+                = timef cr.updated_at, :long
+              .t-item-descr.t-item-descr
+                = cr.description
+              .t-item-actions
+                = link_to "EDIT",
+                    edit_connection_request_path(cr),
+                    class: "btn btn-bleu-fonce btn-xs",
+                    data: {toggle: "modal", target: "#ajaxModal"}
+
+      .overtitle-date
+        .lign-center-hidden-xs
+        .title-wrapper.title-wrapper-account
+          h3 SHOP HISTORY
+
+      
+      .panel-body
+        - if @orders.empty?
+          | You haven't purchased anything yet in the Beeleev shop
+          .pull-right
+            - unless @user.status == "rejected" || "activation_pending"
+              = link_to "SHOP", direct_request_path, class: "btn btn-success btn-xs"
+        - else
+          .t-headers.t-row
+            .t-item-date
+              div Date
+            .t-item-date
+              div Amount
+            .t-item-descr
+              div Product
+          - @orders.each do |order|
+            .t-row
+              .t-item-date.visible-xs
+                = timef order.created_at, :short
+              .t-item-date.hidden-xs
+                = timef order.created_at, :long
+              .t-item-date
+                = number_to_currency order.money.amount,
+                    unit: order.money.currency.code
+              .t-item-descr
+                = order.product_title
+       
+        
+          br
+          .t-headers.t-row
+            .t-item-date
+              div Credit created on
+            .t-item-date.hidden-xs
+              div Expires on
+            .t-item-descr-no-wrap
+              div Connection created with this credit
+            .t-item-actions
+              div Usable?
+
+          - @connection_credits.each do |cc|
+            .t-row
+              .t-item-date.visible-xs
+                = timef cc.created_at, :short
+              .t-item-date.hidden-xs
+                = timef cc.created_at, :long
+              .t-item-date.hidden-xs
+                = connection_credit_expires_on cc
+              .t-item-descr-no-wrap
+                = connection_credit_details cc
+              .t-item-actions
+                = cc.usable? ? "Yes" : "No"
+
+
+
+      / - if @user.active?
+      = link_to destroy_account_path, class: "delete-profile", data: {confirm: "Irreversible action! \nIn accordance with EU regulations, your account will be deleted forever!"} do
+        h4 delete my profile
