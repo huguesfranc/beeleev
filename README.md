@@ -27,7 +27,7 @@ rbenv install 2.2.3
 
 ### Install dependencies
 
-Using [bundler](https://github.com/bundler/bundler):
+Using [Bundler](https://github.com/bundler/bundler):
 
 ```shell
 bundle
@@ -35,7 +35,9 @@ bundle
 
 ### Set environment variables
 
-Contact the developer: [contact@juliendargelos.com](mailto:contact@juliendargelos.com) (sensitive data).
+Using [Figaro](https://github.com/laserlemon/figaro):
+
+See [config/application.yml.sample](https://github.com/huguesfranc/beeleev/blob/master/config/application.yml.sample) and contact the developer: [contact@juliendargelos.com](mailto:contact@juliendargelos.com) (sensitive data).
 
 ### Initialize the database
 

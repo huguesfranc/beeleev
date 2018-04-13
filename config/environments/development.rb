@@ -35,15 +35,21 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  Rails.application.routes.default_url_options[:host] = 'beeleev.dev'
+  Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 
   config.action_mailer.smtp_settings = {
-    :user_name => ENV['MAILTRAP_USERNAME'],
-    :password => ENV['MAILTRAP_PASSWORD'],
-    :address => 'mailtrap.io',
-    :domain => 'mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
+    address:              'smtp.sendgrid.net',
+    port:                 '587',
+    authentication:       :plain,
+    user_name:            ENV['SENDGRID_USERNAME'],
+    password:             ENV['SENDGRID_PASSWORD'],
+    domain:               'heroku.com',
+    enable_starttls_auto: true
   }
 
+  Cloudinary.config do |config|
+    config.cloud_name = ENV['CLOUDINARY_CLOUD_NAME']
+    config.api_key = ENV['CLOUDINARY_API_KEY']
+    config.api_secret = ENV['CLOUDINARY_API_SECRET']
+  end
 end
