@@ -45,12 +45,12 @@ See [config/application.yml.sample](https://github.com/huguesfranc/beeleev/blob/
 rake db:create db:migrate db:seed
 ```
 
-### Add the production remote
+### Add the staging remote
 
 Using [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli):
 
 ```shell
-heroku git:remote -a beeleev
+heroku git:remote -a beeleev--staging
 ```
 
 ## Serve
@@ -61,6 +61,12 @@ rails s
 
 ## Deploy
 
+### Push to staging
+
 ```shell
 git push heroku
 ```
+
+### Promote to production
+
+Go to the Heroku Dashboard and [promote the app to production](https://devcenter.heroku.com/articles/pipelines).
