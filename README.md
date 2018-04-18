@@ -51,7 +51,7 @@ Using [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli):
 
 ```shell
 heroku git:remote -a beeleev
-heroku git:remote --remote heroku-staging -a beeleev--staging
+heroku git:remote --remote heroku-staging -a beeleev-staging
 ```
 
 ## Serve
