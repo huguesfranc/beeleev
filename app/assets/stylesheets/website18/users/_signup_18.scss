@@ -26,12 +26,12 @@
 
 	h2 {
 		font-family: 'Lato', sans-serif;
-		font-weight: 700;
+		font-weight: 400;
 	  font-size: 1.7em;
 	  font-style: normal;
 		color: $gray;
 	  margin: 0 0 3em;
-	  text-align:center;
+	  text-align: center;
 	  letter-spacing: unset;
     padding-top: 0;
     text-transform: none;
@@ -59,24 +59,33 @@
 	}
 
 	.sign-up-slogan {
-		min-height: 18vh;
+		padding: 50px 0;
 		display: flex;
+    flex-direction: column;
 	  justify-content: center;
 	  align-items: center;
-	}
 
-	h5 {
-		font-family: 'Lato', sans-serif;
-		font-weight: 700;
-		color: $gray;
-		margin-top: 0;
-		margin-bottom: 0;
-		font-size: 2.0em;
+    p {
+      margin-bottom: 30px;
+      font-style: italic;
+      font-size: 20px;
+      font-weight: 300;
+    }
 
-		span {
-			color: $orange;
-			font-size: 1.6em;
-		}
+    h5 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      color: $gray;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 2.7em;
+
+      span {
+        color: $orange;
+        font-weight: 400;
+        font-size: 1.6em;
+      }
+    }
 	}
 
   .sign-up-header {
