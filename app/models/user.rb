@@ -279,6 +279,13 @@ class User < ActiveRecord::Base
     local_partner: 2
   }
 
+  enum pack: {
+    free_access: 1,
+    premium: 2,
+    plus: 3,
+    expert: 4
+  }
+
   # State machine
   ###############
 
