@@ -79,6 +79,22 @@
 		}
 	}
 
+  .sign-up-header {
+    background: image-url('people.png') center center;
+    padding: 60px 15px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    font-style: normal;
+    color: #fff;
+    text-align:center;
+    letter-spacing: unset;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+  }
+
 	.btn-orange18-orange {
 		margin:0 0 0.5em;
 		padding: 0.5em 4em;
