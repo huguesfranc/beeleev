@@ -70,6 +70,12 @@
 // BEM
 @import 'professional-status-selector';
 
+// Template
+
+.btn-wrap {
+  white-space: normal;
+}
+
 //----------HM18 TODO put at the right place------------
 @import 'website18/index18';
 @import "menu18";
