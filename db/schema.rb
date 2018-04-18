@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413172204) do
+ActiveRecord::Schema.define(version: 20180418133950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -306,6 +306,7 @@ ActiveRecord::Schema.define(version: 20180413172204) do
     t.string   "company_linkedin_account"
     t.integer  "activate_user_reminder_count",     default: 0
     t.integer  "professional_status",              default: 1
+    t.integer  "pack"
   end
 
   add_index "users", ["expertises"], name: "index_users_on_expertises", using: :gin
