@@ -1,7 +1,7 @@
 <div id="partners_18">
   <div class="container">
     <div class="row">
-      
+
       <div class="col-xs-12 text-center">
         <h1>Meet our partners</h1>
         <h2>International Groups and Leaders in their Fields, our Partners Support our Community of Entrepreneurs</h2>
@@ -17,7 +17,7 @@
             <p>
               Providing them Useful Content, <br>
               Contacts & Support for their <br>
-              International Growth 
+              International Growth
             </p>
             •
             <p>
@@ -27,9 +27,9 @@
             </p>
         </div>
       </div>
-    
 
-      
+
+
       <!--  && unless current_user.status == "activation_pending" -->
       <% if user_signed_in? %>
         <%= new_connection_request_btn(classes: "btn btn-orange18-orange", btn_title: "CONTACT OUR PARTNERS", tag_classes: "col-xs-12 text-center") %>
@@ -38,12 +38,12 @@
         <!-- </div> -->
       <% else  %>
         <div class="col-xs-12 text-center">
-          <%= link_to "APPLY NOW", new_user_registration_path, class: "btn btn-orange18-orange" %>
+          <%= link_to "APPLY NOW", '', class: "btn btn-orange18-orange", data: { toggle: :modal, target: '#professional-status-selector-modal' } %>
         </div>
-          
+
         </div>
       <% end %>
-      
+
       <% @partners_categories.each do |partner_category| %>
       <div class="col-xs-12">
         <div class="overtitle-date">

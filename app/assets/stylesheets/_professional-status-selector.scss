@@ -1,0 +1,8 @@
+.professional-status-selector {
+}
+
+.professional-status-selector__item {
+  &:first-of-type {
+    border-right: 1px solid $orange;
+  }
+}

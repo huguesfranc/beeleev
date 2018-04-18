@@ -3,6 +3,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # Callbacks
   ###########
 
+  before_action :set_professional_status, only: [:new, :create]
+
   after_action(
     EmailTemplateSender.new("after-new-application", :@user1),
     only: [:create]
@@ -22,14 +24,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
 
-    @user = User.new params
-      .require(:user)
-      .permit(
-        :first_name, :last_name, :email, :position, :company,
-        :password, :password_confirmation, :country
-      )
+    @user = User.new user_params
 
-    @user.profil = "Entrepreneur"
     if @user.save
       # For Email template liquid variables
       @user1 = @user
@@ -43,5 +39,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   end
 
+  protected
+
+  def user_params
+    params
+      .require(:user)
+      .permit(:first_name, :last_name, :email, :position, :company, :password, :password_confirmation, :country)
+      .merge(professional_status: @professional_status)
+  end
+
+  def set_professional_status
+    @professional_status = params[:professional_status].in?(User.professional_statuses.keys) ? params[:professional_status] : User.professional_statuses.keys.first
+  end
 end
 

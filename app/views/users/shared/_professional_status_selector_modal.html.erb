@@ -1,0 +1,38 @@
+<div class="modal modal-custom fade modal-ajax" id="professional-status-selector-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title text-center" id="connectionRequest">
+          Choose your professional status
+        </h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="professional-status-selector">
+          <div class="row">
+            <div class="col-md-6 professional-status-selector__item">
+              <div class="text-center">
+                <%= link_to "Entrepreneur", new_user_registration_path(professional_status: :entrepreneur), class: 'btn btn-orange18-orange' %>
+              </div>
+
+              <p class="text-center">
+                Find partners and tools to help you grow your business internationaly
+              </p>
+            </div>
+
+            <div class="col-md-6 professional-status-selector__item">
+              <div class="text-center">
+                <%= link_to "Expert/Local partner", new_user_registration_path(professional_status: :local_partner), class: 'btn btn-orange18-orange' %>
+              </div>
+
+              <p class="text-center">
+                Bring out your company services and products to find new customers internationaly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

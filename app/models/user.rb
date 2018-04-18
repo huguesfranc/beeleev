@@ -61,12 +61,17 @@
 #  application_reject_reason        :text
 #  business_sectors                 :string(255)      default([]), is an Array
 #  investment_levels                :string(255)      default([]), is an Array
-#  activate_user_reminder_count     :integer          default(0)
-#  activated_at                     :datetime
 #  stripe_customer_id               :string(255)
+#  activated_at                     :datetime
 #  can_post                         :boolean          default(TRUE)
 #  company_description              :string(255)      default("")
 #  facebook_username                :string(255)      default("")
+#  company_logo                     :string(255)
+#  company_twitter_account          :string(255)
+#  company_facebook_account         :string(255)
+#  company_linkedin_account         :string(255)
+#  activate_user_reminder_count     :integer          default(0)
+#  professional_status              :integer          default(1)
 #
 
 class User < ActiveRecord::Base
@@ -236,6 +241,8 @@ class User < ActiveRecord::Base
               unless: -> { password_confirmation.present? || skip_international_activity_countries_validation == "1"}
             }
 
+  validates :professional_status, presence: true
+
   validate :presence_of_business_sectors,  on: :update
 
   mount_uploader :avatar, AvatarUploader
@@ -263,6 +270,14 @@ class User < ActiveRecord::Base
   has_many :posts, class_name: 'BeeleeverPost', foreign_key: 'author_id'
 
   include Shop
+
+  # Enumerators
+  #############
+
+  enum professional_status: {
+    entrepreneur: 1,
+    local_partner: 2
+  }
 
   # State machine
   ###############

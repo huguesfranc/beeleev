@@ -7,17 +7,17 @@
         <br>
       </div>
       <div class="col-xs-12 col-sm-4 col-sm-push-8">
-        
+
         <div class="sign-up-body">
 
-          <%= link_to user_omniauth_authorize_path(:linkedin), class: "btn btn-primary btn-block" do %> 
+          <%= link_to user_omniauth_authorize_path(:linkedin), class: "btn btn-primary btn-block" do %>
             <%= t("sign_up_with") %>
             <%= image_tag "LinkedIn-Logo-2C.png", size: "83x20" %>
           <% end %>
 
           <hr>
 
-            <%= form_for resource, as: resource_name, url: user_registration_path(resource) do |f| %>
+            <%= form_for resource, as: resource_name, url: user_registration_path(resource, professional_status: @professional_status) do |f| %>
 
               <div class="form-group">
                 <div class="input-group">
@@ -58,7 +58,7 @@
                     <%= link_to "General Terms & Conditions", gtc_path, target: "_blank" %>.
                   </label>
                 </label>
-              </div> 
+              </div>
               <div class="text-center">
                 <%= f.submit "APPLY NOW", class: "btn btn-orange18-orange", id: "sign_up_btn_js_slider" %>
               </div>
@@ -90,7 +90,7 @@
           <%= render partial: "users/shared/kpis" %>
 
         </div>
-      </div>  
+      </div>
 
     </div>
   </div>
@@ -98,7 +98,7 @@
 
 
 
-<%= content_for :javascripts do %> 
+<%= content_for :javascripts do %>
   <%= render "shared/linkedin" %>
 
   <script>

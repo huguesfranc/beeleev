@@ -1,13 +1,12 @@
 .footer
   .footer-left
-    = cl_image_tag "white-logo", height: 30, id: "white-logo-footer", class: "hidden-xs" 
+    = cl_image_tag "white-logo", height: 30, id: "white-logo-footer", class: "hidden-xs"
 
   .footer-right
     ul.list-inline
       - unless user_signed_in?
         li
-          / a href=new_user_registration_path data-toggle="modal" data-target="#ajaxSmallModal" Apply
-          a href=new_user_registration_path Apply
+          a href='' data-toggle="modal" data-target="#professional-status-selector-modal" Apply
       - else
         li
           a href=members_path

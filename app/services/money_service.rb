@@ -6,12 +6,12 @@ class MoneyService
     end
 
     def save_rates
-      Money.default_bank.save_rates(bank_cache)
+      # Money.default_bank.save_rates(bank_cache)
     end
 
     def update_rates(force = false)
-      return unless force || should_update_rates?
-      Money.default_bank.update_rates(bank_cache)
+      # return unless force || should_update_rates?
+      # Money.default_bank.update_rates(bank_cache)
     end
 
     def should_update_rates?

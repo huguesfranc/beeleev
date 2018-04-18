@@ -9,7 +9,7 @@
 #  body               :text
 #  illustration       :string(255)
 #  published          :boolean          default(FALSE)
-#  publication_date   :date             default(Mon, 22 Dec 2014)
+#  publication_date   :date             default(Mon, 09 Apr 2018)
 #  created_at         :datetime
 #  updated_at         :datetime
 #  detailed_body      :text

@@ -4,9 +4,9 @@ html
     title Beeleev – Connect With Entrepreneurs Worldwide
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    
+
     script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_BROWSER_KEY']}&libraries=places"
-    
+
     = yield :javascripts
     = csrf_meta_tags
     meta name="viewport" content="initial-scale=1.0"
@@ -34,10 +34,12 @@ html
     = render "layouts/mailchimp_connect"
     = render "layouts/facebook_pixel"
 
-    
+
     .below-nav
       .container
         = render "layouts/flash"
       = yield
 
     = render "layouts/footer_18"
+
+    = render partial: "users/shared/professional_status_selector_modal" unless user_signed_in?
