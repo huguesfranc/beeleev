@@ -2,7 +2,37 @@
 }
 
 .professional-status-selector__item {
-  &:first-of-type {
-    border-right: 2px solid $orange;
+  position: relative;
+
+  &:first-of-type::after {
+    content: '';
+    background: $orange;
+    width: 2px;
+    height: 150px;
+    margin-top: -75px;
+    top: 50%;
+    right: -1px;
+    position: absolute;
+    display: block;
   }
+
+  @media screen and (max-width: 991px) {
+    &:first-of-type::after {
+      height: 2px;
+      width: 30%;
+      right: 0;
+      left: 35%;
+      top: 100%;
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      padding-top: 20px;
+    }
+  }
+}
+
+.professional-status-selector__description {
+  padding-left: 20px;
+  padding-right: 20px;
 }
