@@ -1,6 +1,7 @@
 #signup_18{
 	min-height: 84vh;
-	.sign-up-left{
+
+	.sign-up-left {
 		min-height: 62vh;
 		border-right: $bg-grey 2px solid;
 		flex-direction: column;
@@ -8,7 +9,8 @@
 	  justify-content: space-between;
 	  height: 100%
 	}
-	h1{
+
+	h1 {
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
 	  font-size: 2.5em;
@@ -18,22 +20,29 @@
 	  letter-spacing: unset;
 	  margin: 0;
 	  padding: 1em 0 0;
+    text-transform: none;
+    font-style: italic;
 	}
-	h2{
+
+	h2 {
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
 	  font-size: 1.7em;
 	  font-style: normal;
 		color: $gray;
-	  margin: 0 0 0.4em ;
+	  margin: 0 0 3em;
 	  text-align:center;
-	  letter-spacing: unset;	
+	  letter-spacing: unset;
     padding-top: 0;
+    text-transform: none;
+    font-style: italic;
 	}
-	.bullets{
+
+	.bullets {
 	 	text-align: center;
 	  margin-bottom:  1em;
-		h3{
+
+		h3 {
 			font-family: 'Lato', sans-serif;
 			font-weight: 400;
 			color: $gray;
@@ -43,59 +52,70 @@
 			text-transform: none;
 			font-style: italic;
 		}
+
 		.middle-dash {
 			font-size: 1.4em;
 		}
 	}
-	.sign-up-slogan{
+
+	.sign-up-slogan {
 		min-height: 18vh;
 		display: flex;
 	  justify-content: center;
 	  align-items: center;
 	}
-	h5{
+
+	h5 {
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
 		color: $gray;
 		margin-top: 0;
 		margin-bottom: 0;
 		font-size: 2.0em;
+
 		span {
 			color: $orange;
 			font-size: 1.6em;
 		}
 	}
-	.btn-orange18-orange{
+
+	.btn-orange18-orange {
 		margin:0 0 0.5em;
 		padding: 0.5em 4em;
 		font-size: 1.3em;
 		font-weight: normal;
 	}
-	.linkedin-btn{
+
+	.linkedin-btn {
 		padding: 0.35em 1em;
 	}
-	.secundary-cta{
+
+	.secundary-cta {
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
 		color: $orange;
 	}
-	.sign-up-body{
+
+	.sign-up-body {
     padding: 0 2em;
 	}
-	.sign-up-footer{
+
+	.sign-up-footer {
 	}
-	.approve-terms a{
+
+	.approve-terms a {
 		color: $bleu-fonce;
 		text-decoration: none;
 	}
 }
 @media (max-width: $screen-xs-max) {
-	#signin_18{
-		.sign-in-left{
+	#signin_18 {
+		.sign-in-left {
 			border-right: none;
 		}
-		.bullets{
-		  margin-bottom:  2em;
+
+		.bullets {
+		  margin-bottom: 2em;
 		}
-	}	
+	}
 }
