@@ -5,7 +5,9 @@ $(function() {
   sign_up_button.attr("disabled","disabled");
   chkbox.change(function(){
       if(this.checked){
-        sign_up_button.removeAttr("disabled");
+        if($('#user_pack').val()) {
+          sign_up_button.removeAttr("disabled");
+        }
       }else{
         sign_up_button.attr("disabled","disabled");
       }
@@ -20,6 +22,14 @@ $(function() {
         onboarding_button.attr("disabled","disabled");
       }
   });
+
+  $('[data-pack-selector]').on('click', function() {
+    var selector = $(this);
+    $('[data-pack-selector].hover').removeClass('hover').text('SELECT');
+    selector.addClass('hover').text('SELECTED');
+    $('#user_pack').val(selector.attr('data-pack-selector'));
+    if(chkbox.prop('checked')) sign_up_button.removeAttr("disabled");
+  });
 });
-	
+
 

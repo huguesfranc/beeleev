@@ -1,3 +1,29 @@
+<% content_for :expert_packs do %>
+  <div class="packs">
+    <div class="pack pack--centered">
+      <div class="pack__head">
+        Expert pack
+      </div>
+
+      <div class="pack__body">
+        <div class="pack__description">
+          Feature as an expert in the community<br>
+          Your logo on our Partners Page<br>
+          Your interview, published on all our Media*<br>
+          Share 1 Technical Content<br>
+          Free invites to all our Events
+        </div>
+      </div>
+
+      <div class="pack__selector">
+        <div class="pack__price">
+          500€ per Year
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div id="signup_18">
   <div class="sign-up-header">
     Choose your package
@@ -30,7 +56,7 @@
                 <div class="pack__price">
                   Free!
                 </div>
-                <div class="btn btn-orange18-orange">SELECT</div>
+                <div class="btn btn-orange18-orange" data-pack-selector="free_access">SELECT</div>
               </div>
             </div>
           </div>
@@ -55,7 +81,7 @@
                 <div class="pack__price">
                   250€ Yearly
                 </div>
-                <div class="btn btn-orange18-orange">SELECT</div>
+                <div class="btn btn-orange18-orange" data-pack-selector="premium">SELECT</div>
               </div>
             </div>
           </div>
@@ -81,7 +107,7 @@
                 <div class="pack__price">
                   350€ Yearly
                 </div>
-                <div class="btn btn-orange18-orange">SELECT</div>
+                <div class="btn btn-orange18-orange" data-pack-selector="plus">SELECT</div>
               </div>
             </div>
           </div>
@@ -98,6 +124,10 @@
         Our offer allows you to <strong>Gain Visibility</strong> within our Community,<br>
         to <strong>provide our Business Founders all the support they require</strong> for their projects
       </p>
+
+       <div class="visible-xs">
+          <%= content_for :expert_packs %>
+        </div>
     <% end %>
 
     <div class="row">
@@ -113,6 +143,7 @@
           <hr>
 
             <%= form_for resource, as: resource_name, url: user_registration_path(resource, professional_status: @professional_status) do |f| %>
+              <%= f.hidden_field :pack, value: @professional_status == 'entrepreneur' ? nil : :expert %>
 
               <div class="form-group">
                 <div class="input-group">
@@ -174,18 +205,24 @@
           <%#= render partial: "users/shared/world" %>
           <%#= render partial: "users/shared/kpis" %> -->
 
-          <div class="sign-up-slogan">
-            <p class="entrepreneur-offer hidden-xs">
-              Select a package & Apply to Join the Community
-            </p>
+          <% if @professional_status == 'entrepreneur' %>
+            <div class="sign-up-slogan">
+              <p class="entrepreneur-offer hidden-xs">
+                Select a package & Apply to Join the Community
+              </p>
 
-            <h5>
-              GROW GLOBAL<br>
-              <span>
-                WITH US!
-              </span>
-            </h5>
-          </div>
+              <h5>
+                GROW GLOBAL<br>
+                <span>
+                  WITH US!
+                </span>
+              </h5>
+            </div>
+          <% else %>
+            <div class="hidden-xs">
+              <%= content_for :expert_packs %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

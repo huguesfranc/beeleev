@@ -187,6 +187,13 @@
     }
   }
 
+  .pack--centered {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+
   .pack__head {
     background: $orange;
     padding: 15px;
