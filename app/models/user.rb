@@ -269,6 +269,8 @@ class User < ActiveRecord::Base
   has_many :feedbacks, foreign_key: 'author_id'
   has_many :posts, class_name: 'BeeleeverPost', foreign_key: 'author_id'
 
+  has_one :pack
+
   include Shop
 
   # Enumerators
@@ -277,13 +279,6 @@ class User < ActiveRecord::Base
   enum professional_status: {
     entrepreneur: 1,
     local_partner: 2
-  }
-
-  enum pack: {
-    free_access: 1,
-    premium: 2,
-    plus: 3,
-    expert: 4
   }
 
   # State machine

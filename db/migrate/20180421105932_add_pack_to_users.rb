@@ -1,5 +1,5 @@
 class AddPackToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :pack, :integer
+    add_reference :users, :pack, index: true
   end
 end

@@ -1,15 +1,19 @@
 $(function() {
   var chkbox = $("#user_terms_of_service");
+  var submit = $('#registration-submit')
+
   //__________________submit button disabled unless Conditions Checked Signup
   sign_up_button = $("#sign_up_btn_js_slider");
   sign_up_button.attr("disabled","disabled");
-  chkbox.change(function(){
-      if(this.checked){
-        if($('#user_pack').val()) {
-          sign_up_button.removeAttr("disabled");
+  chkbox.change(function() {
+      if(this.checked) {
+        if($('#pack').val()) {
+          $('[data-submit]').addClass('hidden').attr('disabled', 'disabled');
+          $('[data-submit="' + $('#pack').val() + '"]').removeClass('hidden').removeAttr('disabled');
         }
-      }else{
-        sign_up_button.attr("disabled","disabled");
+      } else {
+        $('[data-submit]').addClass('hidden').attr('disabled', 'disabled');
+        $('[data-submit="empty"]').removeClass('hidden');
       }
   });
   //__________________submit button disabled unless Conditions Checked Onboarding
@@ -27,8 +31,11 @@ $(function() {
     var selector = $(this);
     $('[data-pack-selector].hover').removeClass('hover').text('SELECT');
     selector.addClass('hover').text('SELECTED');
-    $('#user_pack').val(selector.attr('data-pack-selector'));
-    if(chkbox.prop('checked')) sign_up_button.removeAttr("disabled");
+    $('#pack').val(selector.attr('data-pack-selector'));
+    if(chkbox.prop('checked')) {
+      $('[data-submit]').addClass('hidden').attr('disabled', 'disabled');
+      $('[data-submit="' + selector.attr('data-pack-selector') + '"]').removeClass('hidden').removeAttr('disabled');
+    }
   });
 });
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418133950) do
+ActiveRecord::Schema.define(version: 20180421105932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -190,6 +190,17 @@ ActiveRecord::Schema.define(version: 20180418133950) do
   add_index "orders", ["product_id"], name: "index_orders_on_product_id", using: :btree
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
+  create_table "packs", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "stripe_charge_id"
+    t.integer  "kind"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "packs", ["stripe_charge_id"], name: "index_packs_on_stripe_charge_id", using: :btree
+  add_index "packs", ["user_id"], name: "index_packs_on_user_id", using: :btree
+
   create_table "partner_categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -306,10 +317,11 @@ ActiveRecord::Schema.define(version: 20180418133950) do
     t.string   "company_linkedin_account"
     t.integer  "activate_user_reminder_count",     default: 0
     t.integer  "professional_status",              default: 1
-    t.integer  "pack"
+    t.integer  "pack_id"
   end
 
   add_index "users", ["expertises"], name: "index_users_on_expertises", using: :gin
+  add_index "users", ["pack_id"], name: "index_users_on_pack_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   Foreigner.load
