@@ -269,7 +269,7 @@ class User < ActiveRecord::Base
   has_many :feedbacks, foreign_key: 'author_id'
   has_many :posts, class_name: 'BeeleeverPost', foreign_key: 'author_id'
 
-  has_one :pack
+  has_one :pack, dependent: :destroy
 
   include Shop
 

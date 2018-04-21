@@ -1,0 +1,18 @@
+<div class="signup_18">
+  <div class="container-fluid text-center">
+    <h2>
+      <small>You chose the following pack:</small><br>
+      <%= @pack.name %>
+    </h2>
+
+    <%= form_for @pack, html: { style: 'min-height: calc(100vh - 225px)' } do %>
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= ENV['STRIPE_LIVE'] =='1' ? ENV['STRIPE_LIVE_PUBLISHABLE_KEY'] : ENV['STRIPE_TEST_PUBLISHABLE_KEY'] %>"
+        data-description="A year's subscription"
+        data-amount="<%= @pack.price_in_cents %>"
+        data-locale="eur"
+      ></script>
+    <% end %>
+  </div>
+</div>

@@ -41,4 +41,12 @@ class Pack < ActiveRecord::Base
   def price_in_cents
     properties[:price_in_cents]
   end
+
+  def duration
+    properties[:duration]
+  end
+
+  def operating?
+    Time.now - created_at <= duration
+  end
 end

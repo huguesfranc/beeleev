@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
-  # ActiveAdmin.routes(self) #Original 
+  # ActiveAdmin.routes(self) #Original
   ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get "account_old", to: "accounts#show_old"
   resource :account, only: [:show, :edit, :update]
   get "destroy_account", to: "accounts#destroy_account"
-  
+
   get "onboarding_first", to: "accounts#onboarding_first"
   post "onboarding_first_update", to: "accounts#onboarding_first_update"
   get "onboarding_second", to: "accounts#onboarding_second"
@@ -32,13 +32,14 @@ Rails.application.routes.draw do
   resources :connection_propositions, only: [:show, :update]
   resources :feedbacks, only: [:new, :edit, :create, :update]
   resources :orders, only: [:create]
+  resources :packs, only: [:new, :create]
   resources :products,
             only: [:show],
             constraints: lambda { |request| request.xhr? }
 
   # get 'shop', to: 'shop#show'
   get 'direct_request', to: 'shop#show'
-  
+
   # get 'network_show_old',  to: 'networks#show_original'
   resource :network, only: [:show] do
     get :search
@@ -54,7 +55,7 @@ Rails.application.routes.draw do
   resources :event_posts, path: 'news', only: [:show], as: 'events'
   # get 'events_18', to: 'event_posts#index_18'
   get 'news', to: 'event_posts#index_18', as: :events
-  
+
   resources :beeleever_posts, only: [:index, :create]
   resources :comments, only: [:create]
   # resources :partners, only: [:index]

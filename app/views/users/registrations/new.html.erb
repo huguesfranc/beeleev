@@ -1,5 +1,3 @@
-<% stripe_publishable_key = ENV['STRIPE_LIVE'] =='1' ? ENV['STRIPE_LIVE_PUBLISHABLE_KEY'] : ENV['STRIPE_TEST_PUBLISHABLE_KEY'] %>
-
 <% content_for :expert_packs do %>
   <div class="packs">
     <div class="pack pack--centered">
@@ -188,42 +186,8 @@
                 </label>
               </div>
 
-              <div class="text-center" id="registration-submit">
-                <% if @professional_status == 'entrepreneur' %>
-                  <div data-submit="empty">
-                    Select a pack and accept the General terms & Conditions to register.
-                  </div>
-
-                  <%= f.submit "APPLY NOW", disabled: :disabled, 'data-submit': :free_access, class: "btn btn-orange18-orange hidden", id: "sign_up_btn_js_slider" %>
-
-                  <div data-submit="premium" class="hidden">
-                    <script
-                      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                      data-key="<%= stripe_publishable_key %>"
-                      data-description="A year's subscription"
-                      data-amount="25000"
-                      data-locale="eur"
-                    ></script>
-                  </div>
-
-                  <div data-submit="plus" class="hidden">
-                    <script
-                      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                      data-key="<%= stripe_publishable_key %>"
-                      data-description="A year's subscription"
-                      data-amount="3500"
-                      data-locale="eur"
-                    ></script>
-                  </div>
-                <% else %>
-                  <script
-                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="<%= stripe_publishable_key %>"
-                    data-description="A year's subscription"
-                    data-amount="5000"
-                    data-locale="eur"
-                  ></script>
-                <% end %>
+              <div class="text-center">
+                <%= f.submit "APPLY NOW", disabled: :disabled, class: "btn btn-orange18-orange", id: "sign_up_btn_js_slider" %>
               </div>
 
             <% end %>

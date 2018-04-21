@@ -30,33 +30,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
       # For Email template liquid variables
       @user1 = @user
 
-      pack = Pack.new user: @user, kind: params[:pack]
-
-      customer = Stripe::Customer.create(
-        email: params[:stripeEmail],
-        source: params[:stripeToken]
-      )
-
-      charge = Stripe::Charge.create(
-        customer: customer.id,
-        amount: pack.price_in_cents,
-        description: pack.name,
-        currency: 'eur'
-      )
-
-      pack.save
-
-      @user.update pack: pack
+      Pack.create user: @user, kind: :free_access
 
       sign_in @user
-      # redirect_to edit_account_path
-      redirect_to onboarding_first_path
+
+      if @user.professional_status != 'local_expert' && params[:pack] == 'free_access'
+        redirect_to onboarding_first_path
+      else
+        redirect_to new_pack_path(pack: params[:pack])
+      end
     else
       redirect_to root_path, alert: "Could not save user"
     end
-  rescue Stripe::CardError => e
-    @user.destroy if @user.persisted?
-    redirect_to root_path, alert: e.message
   end
 
   protected
