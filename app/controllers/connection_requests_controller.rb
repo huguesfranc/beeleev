@@ -35,7 +35,7 @@ class ConnectionRequestsController < ApplicationController
   def create
     redirect_to direct_request_path, notice: UNAUTHORIZED_MESSAGE and return \
       unless can? :create, ConnectionRequest
-    
+
     @cr = current_user.connection_requests
           .build formatted_params
           .require(:connection_request)

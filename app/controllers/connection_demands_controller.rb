@@ -15,6 +15,9 @@ class ConnectionDemandsController < ApplicationController
 
   def create
 
+    redirect_to network_path, alert: 'You cannot make more connection demand this month with a free access pack' and return \
+      unless current_user.can_make_connection_demand?
+
     @connection_demand = current_user.sent_connection_demands.build(params
       .require(:connection_demand)
       .permit(:user2_id, :description)

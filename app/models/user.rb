@@ -444,6 +444,23 @@ class User < ActiveRecord::Base
     profil == 'Local Partner'
   end
 
+  def connection_demands_for_current_month
+    now = DateTime.now
+    beginning_of_current_month = DateTime.new now.year, now.month, 1, 0, 0
+    end_of_current_month = beginning_of_current_month + 1.month - 1.day
+
+    sent_connection_demands.where 'created_at >= ? AND created_at <= ?', beginning_of_current_month, end_of_current_month
+  end
+
+  def remaining_connection_demands
+    return Float::INFINITY if pack.connection_demands_per_month == Float::INFINITY
+    pack.connection_demands_per_month - connection_demands_for_current_month.count
+  end
+
+  def can_make_connection_demand?
+    remaining_connection_demands > 0
+  end
+
   def connected_user_ids
     (
       user1_connections.live.pluck(:user2_id) +
