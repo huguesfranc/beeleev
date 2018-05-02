@@ -1,18 +1,37 @@
-<div class="signup_18">
-  <div class="container-fluid text-center">
-    <h2>
-      <small>You chose the following pack:</small><br>
-      <%= @pack.name %>
-    </h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-info product-panel">
+        <div class="panel-heading">You chose the pack <%= @pack.name %></div>
 
-    <%= form_for @pack, html: { style: 'min-height: calc(100vh - 225px)' }, url: packs_path(pack: @pack.kind) do %>
-      <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= ENV['STRIPE_LIVE'] =='1' ? ENV['STRIPE_LIVE_PUBLISHABLE_KEY'] : ENV['STRIPE_TEST_PUBLISHABLE_KEY'] %>"
-        data-description="A year's subscription"
-        data-amount="<%= @pack.price_in_cents %>"
-        data-locale="usd"
-      ></script>
-    <% end %>
+        <div class="panel-footer">
+          <p class="amount">
+            <%= number_to_currency @pack.money.amount, unit: @pack.money.currency.code %>
+          </p>
+
+          <%= form_for @pack, url: packs_path(pack: @pack.kind) do |f| %>
+            <div class="coupon_code col-sm-10 col-sm-offset-1">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="fa fa-spinner fa-spin"></i>
+                </span>
+
+                <%= text_field_tag 'coupon_code', nil, placeholder: 'coupon', id: nil, class: 'form-control' %>
+                <span class="input-group-btn">
+                  <%= f.submit 'Check', class: 'btn btn-info btn-check-coupon' %>
+                </span>
+              </div>
+            </div>
+
+            <div class="stripe_checkout_buttons">
+              <%= stripe_checkout_button(@pack.name, @pack.money, current_user.email) %>
+              ' &nbsp;
+              <%= stripe_checkout_button(@pack.name, @pack.euro_money, current_user.email) %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
   </div>
 </div>

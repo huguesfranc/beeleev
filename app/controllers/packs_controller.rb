@@ -25,7 +25,12 @@ class PacksController < ApplicationController
 
     @pack.save
 
-    redirect_to onboarding_first_path
+    if session[:registration_in_progress] == true
+      session.delete :registration_in_progress
+      redirect_to onboarding_first_path
+    else
+      redirect_to account_path
+    end
   rescue Stripe::CardError => e
     redirect_to edit_packs_path(pack: params[:pack]), alert: e.message
   end

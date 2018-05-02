@@ -38,7 +38,7 @@ class Pack < ActiveRecord::Base
 
   enum kind: KINDS.map { |key, properties| [key, properties[:value]] }.to_h
 
-  before_save :create_connection_credits, on: :create
+  before_save :create_connection_credits
 
   def properties
     KINDS[kind.to_s.to_sym]
@@ -54,6 +54,16 @@ class Pack < ActiveRecord::Base
 
   def operating?
     Time.zone.now - updated_at <= duration
+  end
+
+  def money
+    Money.new price_in_cents, 'usd'
+  end
+
+  def euro_money
+    return money
+    MoneyService.update_rates
+    money.exchange_to 'eur'
   end
 
   protected

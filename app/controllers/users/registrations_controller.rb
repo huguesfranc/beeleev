@@ -37,6 +37,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       if @user.professional_status != 'local_expert' && params[:pack] == 'free_access'
         redirect_to onboarding_first_path
       else
+        session[:registration_in_progress] = true
         redirect_to edit_packs_path(pack: params[:pack])
       end
     else
