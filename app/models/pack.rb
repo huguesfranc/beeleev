@@ -61,7 +61,6 @@ class Pack < ActiveRecord::Base
   end
 
   def euro_money
-    return money
     MoneyService.update_rates
     money.exchange_to 'eur'
   end
