@@ -37,10 +37,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       if @user.professional_status != 'local_expert' && params[:pack] == 'free_access'
         redirect_to onboarding_first_path
       else
-        redirect_to new_pack_path(pack: params[:pack])
+        redirect_to edit_packs_path(pack: params[:pack])
       end
     else
-      redirect_to root_path, alert: "Could not save user"
+      redirect_to root_path, alert: 'Could not save user'
     end
   end
 

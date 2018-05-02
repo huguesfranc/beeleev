@@ -5,13 +5,13 @@
       <%= @pack.name %>
     </h2>
 
-    <%= form_for @pack, html: { style: 'min-height: calc(100vh - 225px)' } do %>
+    <%= form_for @pack, html: { style: 'min-height: calc(100vh - 225px)' }, url: packs_path(pack: @pack.kind) do %>
       <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= ENV['STRIPE_LIVE'] =='1' ? ENV['STRIPE_LIVE_PUBLISHABLE_KEY'] : ENV['STRIPE_TEST_PUBLISHABLE_KEY'] %>"
         data-description="A year's subscription"
         data-amount="<%= @pack.price_in_cents %>"
-        data-locale="eur"
+        data-locale="usd"
       ></script>
     <% end %>
   </div>

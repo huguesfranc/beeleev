@@ -11,7 +11,7 @@ class Pack < ActiveRecord::Base
     premium: {
       value: 2,
       name: 'Premium',
-      price_in_cents: 25000,
+      price_in_cents: 29900,
       duration: 1.year,
       connection_credits: 4,
       connection_demands_per_month: Float::INFINITY
@@ -19,7 +19,7 @@ class Pack < ActiveRecord::Base
     plus: {
       value: 3,
       name: 'Plus',
-      price_in_cents: 35000,
+      price_in_cents: 35900,
       duration: 1.year,
       connection_credits: 4,
       connection_demands_per_month: Float::INFINITY
@@ -27,7 +27,7 @@ class Pack < ActiveRecord::Base
     expert: {
       value: 4,
       name: 'Expert pack',
-      price_in_cents: 50000,
+      price_in_cents: 59900,
       duration: 1.year,
       connection_credits: 0,
       connection_demands_per_month: Float::INFINITY
@@ -53,7 +53,7 @@ class Pack < ActiveRecord::Base
   ].each { |property| define_method(property) { properties[property] } }
 
   def operating?
-    Time.zone.now - created_at <= duration
+    Time.zone.now - updated_at <= duration
   end
 
   protected

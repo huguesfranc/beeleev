@@ -1,11 +1,16 @@
 class PacksController < ApplicationController
-  before_action :set_pack
+  before_action :set_professional_status, only: :index
+  before_action :set_pack, only: [:edit, :update]
 
-  def new
+  def index
+    @packs = (Pack.kinds.keys - ['free_access']).map { |kind| Pack.new kind: kind }
+  end
+
+  def edit
 
   end
 
-  def create
+  def update
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
       source: params[:stripeToken]
@@ -18,25 +23,26 @@ class PacksController < ApplicationController
       currency: 'eur'
     )
 
-    current_user.pack.destroy if current_user.pack
-
-    @pack.user = current_user
     @pack.save
 
     redirect_to onboarding_first_path
   rescue Stripe::CardError => e
-    redirect_to new_pack_path(pack: params[:pack]), alert: e.message
+    redirect_to edit_packs_path(pack: params[:pack]), alert: e.message
   end
 
   protected
 
+  def set_professional_status
+    @professional_status = current_user.professional_status
+  end
+
   def set_pack
-    @pack = Pack.new
+    @pack = current_user.pack
 
     if current_user.professional_status == 'local_expert'
       @pack.kind = :expert
     else
-      @pack.kind = params[:pack].in?(Pack.kinds.keys - ['free_access']) ? params[:pack] : 'premium'
+      @pack.kind = params[:pack].in?(Pack.kinds.keys - ['free_access']) ? params[:pack] : (@pack.kind == 'free_access' ? 'premium' : @pack.kind)
     end
   end
 end

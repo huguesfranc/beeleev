@@ -15,6 +15,15 @@
 
     .col-xs-12.col-sm-10
 
+      .overtitle-date
+        .lign-center-hidden-xs
+        .title-wrapper-550.title-wrapper-account
+          h3.inline-block
+            = "PACK: #{current_user.pack.name.upcase}"
+            .pull-right
+              = link_to 'MANAGE', packs_path, class: 'btn btn-orange18-orange', style: 'font-size: 14px; margin: -11px 0 0 20px'
+
+
       .overtitle-date.hidden-xs
         .lign-center-hidden-xs
         .title-wrapper-550.title-wrapper-account
@@ -30,7 +39,7 @@
             =< "CONNECTIONS WAITING"
             br
             =< "FOR YOUR RESPONSE"
-    
+
       .panel-body
         - if @pending_connections.empty?
           | No connection request is waiting for your response
@@ -76,7 +85,7 @@
               .t-item-descr.t-item
                 div Description
               .t-item-actions
-                  
+
           - @connection_requests.each do |cr|
             .t-row
               .t-item-date.visible-xs
@@ -96,7 +105,7 @@
         .title-wrapper.title-wrapper-account
           h3 SHOP HISTORY
 
-      
+
       .panel-body
         - if @orders.empty?
           | You haven't purchased anything yet in the Beeleev shop
@@ -122,8 +131,8 @@
                     unit: order.money.currency.code
               .t-item-descr
                 = order.product_title
-       
-        
+
+
           br
           .t-headers.t-row
             .t-item-date

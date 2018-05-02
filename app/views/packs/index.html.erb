@@ -1,0 +1,95 @@
+<div id="signup_18">
+  <div class="container-fluid">
+    <h2>Update your package</h1>
+
+    <% if @professional_status == 'entrepreneur' %>
+      <div class="packs">
+        <div class="packs__list">
+          <div class="pack">
+            <div class="pack__head">
+              Premium
+            </div>
+
+            <div class="pack__body">
+              <div class="pack__description">
+                <strong>All free advantages</strong>, plus:<br>
+                Community Slack Membership<br>
+                Get all our Content<br>
+                Unlimited Connection Requests<br>
+                Your interview published on our Media*<br>
+                4 Direct Request Credits<br>
+                Special Rates on our Learning Expeditions
+              </div>
+
+              <div class="pack__selector">
+                <div class="pack__price">
+                  Launching offer<br>
+                  $299 Yearly <del>$359 Yearly</del>
+                </div>
+                <%= link_to 'SELECT', edit_packs_path(pack: :premium), class: 'btn btn-orange18-orange' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="pack">
+            <div class="pack__head">
+              Plus
+            </div>
+
+            <div class="pack__body">
+              <div class="pack__description">
+                <strong>All free advantages</strong>, plus:<br>
+                Community Slack Membership<br>
+                Access all our Content<br>
+                Unlimited Connection Requests<br>
+                Your interview published on our Media*<br>
+                4 Direct Request Credits**<br>
+                Special Rates on our Learning Expeditions<br>
+                Free Invites to all our Events
+              </div>
+
+              <div class="pack__selector">
+                <div class="pack__price">
+                  Launching offer<br>
+                  $359€ Yearly <del>$479 Yearly</del>
+                </div>
+                <%= link_to 'SELECT', edit_packs_path(pack: :plus), class: 'btn btn-orange18-orange' %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="packs__additional-information">
+          *&nbsp;We organize 2 Networking Breakfasts per Month and 1 Networking Event per Trimester<br>
+          **&nbsp;Valid for the current Membership Cycle
+        </p>
+      </div>
+    <% else %>
+      <div class="packs">
+        <div class="pack pack--centered">
+          <div class="pack__head">
+            Expert pack
+          </div>
+
+          <div class="pack__body">
+            <div class="pack__description">
+              Feature as an expert in the community<br>
+              Your logo on our Partners Page<br>
+              Your interview, published on all our Media*<br>
+              Share 1 Technical Content<br>
+              Free invites to all our Events
+            </div>
+          </div>
+
+          <div class="pack__selector">
+            <div class="pack__price">
+              Launching offer<br>
+              $599 Yearly <del>$719 Yearly</del>
+            </div>
+            <%= link_to 'SELECT', edit_packs_path(pack: :expert), class: 'btn btn-orange18-orange' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

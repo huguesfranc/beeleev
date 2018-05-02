@@ -32,7 +32,10 @@ Rails.application.routes.draw do
   resources :connection_propositions, only: [:show, :update]
   resources :feedbacks, only: [:new, :edit, :create, :update]
   resources :orders, only: [:create]
-  resources :packs, only: [:new, :create]
+  resources :packs, only: :index do
+    patch '/' => 'packs#update', on: :collection
+    get 'edit' => 'packs#edit', on: :collection, as: :edit
+  end
   resources :products,
             only: [:show],
             constraints: lambda { |request| request.xhr? }
