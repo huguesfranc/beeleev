@@ -5,6 +5,7 @@ class Pack < ActiveRecord::Base
       name: 'Free access',
       price_in_cents: 0,
       duration: 1.year,
+      connection_credits: 0,
       connection_demands_per_month: 3
     },
     premium: {
@@ -12,6 +13,7 @@ class Pack < ActiveRecord::Base
       name: 'Premium',
       price_in_cents: 25000,
       duration: 1.year,
+      connection_credits: 4,
       connection_demands_per_month: Float::INFINITY
     },
     plus: {
@@ -19,6 +21,7 @@ class Pack < ActiveRecord::Base
       name: 'Plus',
       price_in_cents: 35000,
       duration: 1.year,
+      connection_credits: 4,
       connection_demands_per_month: Float::INFINITY
     },
     expert: {
@@ -26,6 +29,7 @@ class Pack < ActiveRecord::Base
       name: 'Expert pack',
       price_in_cents: 50000,
       duration: 1.year,
+      connection_credits: 0,
       connection_demands_per_month: Float::INFINITY
     }
   }
@@ -34,27 +38,28 @@ class Pack < ActiveRecord::Base
 
   enum kind: KINDS.map { |key, properties| [key, properties[:value]] }.to_h
 
+  before_save :create_connection_credits, on: :create
+
   def properties
     KINDS[kind.to_s.to_sym]
   end
 
-  def name
-    properties[:name]
-  end
-
-  def price_in_cents
-    properties[:price_in_cents]
-  end
-
-  def duration
-    properties[:duration]
-  end
-
-  def connection_demands_per_month
-    properties[:connection_demands_per_month]
-  end
+  [
+    :name,
+    :price_in_cents,
+    :duration,
+    :connection_demands_per_month,
+    :connection_credits
+  ].each { |property| define_method(property) { properties[property] } }
 
   def operating?
-    Time.now - created_at <= duration
+    Time.zone.now - created_at <= duration
+  end
+
+  protected
+
+  def create_connection_credits
+    in_one_year = Time.zone.now + 1.year
+    connection_credits.times { user.connection_credits.create expires_on: in_one_year }
   end
 end

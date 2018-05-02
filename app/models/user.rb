@@ -445,8 +445,8 @@ class User < ActiveRecord::Base
   end
 
   def connection_demands_for_current_month
-    now = DateTime.now
-    beginning_of_current_month = DateTime.new now.year, now.month, 1, 0, 0
+    now = Time.zone.now
+    beginning_of_current_month = Time.zone.new now.year, now.month, 1, 0, 0
     end_of_current_month = beginning_of_current_month + 1.month - 1.day
 
     sent_connection_demands.where 'created_at >= ? AND created_at <= ?', beginning_of_current_month, end_of_current_month
