@@ -1,2 +1,2 @@
 $(document).on 'ready page:load', ->
-  Stripe.setPublishableKey('<%= StripeService.publishable_key %>');
+  Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key] %>');
