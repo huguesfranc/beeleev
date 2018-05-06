@@ -7,10 +7,10 @@ nav#lemenu.lemenu.lemenu18_white.nav.navbar.navbar-default.navbar-fixed-top role
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      
+
       a.navbar-brand-custom href=root_path
         = cl_image_tag "blue-logo", height: 30
-      
+
 
       .navbar-social-links.hidden-xs
         = render "shared/company_social_links18"
@@ -19,6 +19,7 @@ nav#lemenu.lemenu.lemenu18_white.nav.navbar.navbar-default.navbar-fixed-top role
       ul.nav.navbar-nav.navbar-right
         = menu_link 'Our Partners', partners_path
         = menu_link 'Events', events_path
+        = menu_link 'Documents', documents_path
         li= link_to 'Blog', 'http://blog.beeleev.com/', target: '_blank'
         = menu_link 'About Us', team_path
 

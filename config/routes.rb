@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'documents/index'
+
+  get 'documents/show'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   # ActiveAdmin.routes(self) #Original
   ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
@@ -64,6 +68,8 @@ Rails.application.routes.draw do
   # resources :partners, only: [:index]
   # get 'partners_18',     to: 'partners#index_18', as: :partners_18
   get 'partners',     to: 'partners#index_18', as: :partners
+
+  resources :documents, only: :index
 
   # get 'team',     to: 'home#team',        as: :team
   # get 'team_18',     to: 'home#team_18',  as: :team_18

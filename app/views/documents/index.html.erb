@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-center" style="margin-bottom: 40px;">DOCUMENTS</h1>
+  <% if @documents.empty? %>
+    <div class="text-center">
+      <h2>No document</h2>
+    </div>
+  <% else %>
+    <div class="row">
+      <% @documents.each do |document| %>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-sm-1">
+              <br>
+              <span class="glyphicon glyphicon-file" style="font-size: 30px"></span>
+            </div>
+            <div class="col-sm-6">
+              <h3><%= document.name %></h3>
+              <p><%= simple_format document.description %></p>
+            </div>
+            <div class="col-sm-4">
+              <%= link_to 'DOWNLOAD', document.file.url, class: 'btn btn-orange18-orange pull-right', download: true, style: 'font-size: 13px;margin: 0' %>
+              <div class="clearix"></div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+    </div>
+  <% end %>
+</div>
