@@ -36,9 +36,10 @@ Rails.application.routes.draw do
   resources :connection_propositions, only: [:show, :update]
   resources :feedbacks, only: [:new, :edit, :create, :update]
   resources :orders, only: [:create]
-  resources :packs, only: :index do
-    patch '/' => 'packs#update', on: :collection
-    get 'edit' => 'packs#edit', on: :collection, as: :edit
+  scope :packs do
+    get '/' => 'packs#index', as: :packs
+    get 'edit' => 'packs#edit', as: :edit_pack
+    patch '/' => 'packs#update'
   end
   resources :products,
             only: [:show],
