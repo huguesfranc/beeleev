@@ -200,13 +200,11 @@ ActiveRecord::Schema.define(version: 20180506201158) do
 
   create_table "packs", force: true do |t|
     t.integer  "user_id"
-    t.integer  "stripe_charge_id"
     t.integer  "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "packs", ["stripe_charge_id"], name: "index_packs_on_stripe_charge_id", using: :btree
   add_index "packs", ["user_id"], name: "index_packs_on_user_id", using: :btree
 
   create_table "partner_categories", force: true do |t|
@@ -234,7 +232,7 @@ ActiveRecord::Schema.define(version: 20180506201158) do
     t.text     "body"
     t.string   "illustration"
     t.boolean  "published",          default: false
-    t.date     "publication_date",   default: '2018-04-09'
+    t.date     "publication_date",   default: '2018-05-07'
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "detailed_body"
@@ -315,6 +313,7 @@ ActiveRecord::Schema.define(version: 20180506201158) do
     t.string   "business_sectors",                 default: [],                 array: true
     t.string   "investment_levels",                default: [],                 array: true
     t.string   "stripe_customer_id"
+    t.integer  "activate_user_reminder_count",     default: 0
     t.datetime "activated_at"
     t.boolean  "can_post",                         default: true
     t.string   "company_description",              default: ""
@@ -323,7 +322,6 @@ ActiveRecord::Schema.define(version: 20180506201158) do
     t.string   "company_twitter_account"
     t.string   "company_facebook_account"
     t.string   "company_linkedin_account"
-    t.integer  "activate_user_reminder_count",     default: 0
     t.integer  "professional_status",              default: 1
     t.integer  "pack_id"
   end
