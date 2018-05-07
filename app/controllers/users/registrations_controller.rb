@@ -38,7 +38,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to onboarding_first_path
       else
         session[:registration_in_progress] = true
-        redirect_to edit_packs_path(pack: params[:pack])
+        redirect_to edit_pack_path(pack: params[:pack])
       end
     else
       redirect_to root_path, alert: 'Could not save user'

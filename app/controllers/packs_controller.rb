@@ -32,7 +32,7 @@ class PacksController < ApplicationController
       redirect_to account_path
     end
   rescue Stripe::CardError => e
-    redirect_to edit_packs_path(pack: params[:pack]), alert: e.message
+    redirect_to edit_pack_path(pack: params[:pack]), alert: e.message
   end
 
   protected
