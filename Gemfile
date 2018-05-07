@@ -3,6 +3,7 @@ ruby '2.2.3'
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.1.9'
+gem 'rake', '< 12.0.0'
 
 gem 'pg'
 gem 'postgres_ext'
