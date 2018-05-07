@@ -3,7 +3,6 @@ ruby '2.2.3'
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.1.9'
-gem 'rake', '< 12.0.0'
 
 gem 'pg'
 gem 'postgres_ext'
@@ -14,11 +13,10 @@ gem 'slim'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'jquery-ui-rails', '= 5.0.5'
 gem 'turbolinks'
 gem 'unicorn'
 gem 'newrelic_rpm'
-gem 'activeadmin', '= 1.0.0.pre3'
+gem 'activeadmin', git: 'https://github.com/huguesfranc/active_admin.git'
 gem 'bower'
 gem 'devise'
 gem 'devise-i18n'
@@ -58,8 +56,8 @@ gem 'draper'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-	gem "rails-erd" # schema graph
-	gem 'annotate' # model attributes annotation
+  gem "rails-erd" # schema graph
+  gem 'annotate' # model attributes annotation
 end
 
 group :test, :development do
