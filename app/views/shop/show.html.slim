@@ -6,12 +6,13 @@
   .row.margin-top-20
     .col-xs-12.col-sm-7.height-wrapper
       .shop-top-wrapper.height-wrapper
-        .content When receiving your request, we will contact you to detail it further.
-        .content After which, we’ll come back with as many contacts as you requested.
-        .content If they suit you, just credit your account and we’ll do the introductions!
+        .content Looking for a specific Entrepreneur or CEO to contact? Don't have the time to browse the net?
+        .content With your free Direct Request Credits, you can have us do a tailored search of any Key Partner you want, and we'll put you in contact with them.
+        .content Credit System: 1&nbsp;Entrepreneur&nbsp;=&nbsp;1&nbsp;Credit, 1&nbsp;Expert&nbsp;=&nbsp;2&nbsp;Credits, 1&nbsp;Key&nbsp;Account&nbsp;=&nbsp;4&nbsp;Credits
         .text-center
           = new_connection_request_btn(classes: "btn btn-orange btn-shop", btn_title: "SEND YOUR REQUEST")
-        .content Our service is efficient. Choose the best contacts from our selection and pay only when you are introduced to each other.
+        .content Direct Request Credits will be deducted from your Beeleev account after you are introduced to your new contact.
+If you don't have enough credits for your direct request, you can buy more credits below or you can upgrade your package.
         .visible-xs
           br
 
@@ -21,7 +22,7 @@
 
     - @products.each do |product|
       .col-xs-12.col-sm-4{id="product-#{product.id}"}
-      
+
         .panel.panel-info.product-panel
           .panel-heading = product.title
           .panel-body
@@ -30,29 +31,29 @@
           .panel-footer
             p.amount= number_to_currency product.money.amount,
                 unit: product.money.currency.code
-            
+
             div.coupon_code.col-sm-10.col-sm-offset-1
-              = form_for product, remote: true, method: :get do |f|              
-              
+              = form_for product, remote: true, method: :get do |f|
+
                 .input-group
                   span.input-group-addon
                     i.fa.fa-spinner.fa-spin
-                    
+
                   = text_field_tag 'coupon_code',
                                    nil,
                                    placeholder: 'coupon', id: nil,
                                    class: 'form-control'
                   span.input-group-btn
                     = f.submit "Check", class: 'btn btn-info btn-check-coupon'
-                
-            .stripe_checkout_buttons              
+
+            .stripe_checkout_buttons
               = render partial="orders/stripe_checkout_form",
                        product: product,
                        currency: 'usd',
                        money: product.money
-                       
+
               ' &nbsp;
-              
+
               = render partial="orders/stripe_checkout_form",
                        product: product,
                        currency: 'eur',
