@@ -13,6 +13,6 @@ class DocumentsController < ApplicationController
   end
 
   def alert_and_redirect_to_edit_pack
-    redirect_to edit_pack_path, alert: 'Your cannot access documents with a free access pack.'
+    redirect_to packs_path, alert: 'Your cannot access documents with a free access pack.'
   end
 end
