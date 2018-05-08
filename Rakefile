@@ -1,5 +1,15 @@
 require File.expand_path('../config/application', __FILE__)
 
+unless Rake::Application.instance_methods.include? :last_comment
+  module TempFixForRakeLastComment
+    def last_comment
+      last_description
+    end
+  end
+
+  Rake::Application.send :include, TempFixForRakeLastComment
+end
+
 Rails.application.load_tasks
 
 # This task loops on users selected by the for_activate_user_reminder scope,
