@@ -23,11 +23,22 @@ $(function() {
       }
   });
 
+  var form = $('.sign-up-body').first();
+
   $('[data-pack-selector]').on('click', function() {
     var selector = $(this);
     $('[data-pack-selector].hover').removeClass('hover').text('SELECT');
     selector.addClass('hover').text('SELECTED');
     $('#pack').val(selector.attr('data-pack-selector'));
     if(chkbox.prop('checked')) sign_up_button.removeAttr("disabled");
+    if(form.length) {
+      setTimeout(function() {
+        $('body').animate({
+          scrollTop: Math.min(form.offset().top - 100, document.body.offsetHeight - window.innerHeight)
+        });
+
+        $('#user_email').focus();
+      }, 300);
+    }
   });
 });
