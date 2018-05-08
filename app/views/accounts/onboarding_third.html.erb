@@ -1,7 +1,7 @@
 <%= form_for @user, url: onboarding_third_update_path, method: :post do |f|%>
 <div id="onboarding3">
 	<div class="flex-wrapper">
-		<h1>YOUR INTERESTS</h1>		
+		<h1>YOUR INTERESTS</h1>
 		<div class="body-wrapper">
 			<div>
 	      <div class="form-inputs">
@@ -17,14 +17,14 @@
 													  class: "form-control",
 													  placeholder: "Which countries are you interested in?",
 													  multiple: true,
-													  required: true, 
-													  syle: "width: 100%;" %>	  							
+													  required: true,
+													  syle: "width: 100%;" %>
 				</div>
 				<div class="checkbox">
 				  <label>
 				    <%= check_box(:user, :terms_of_service) %>
 				    <label for="client_terms_of_service">
-				      By joining Beeleev, I commit to reach out to others and answer in the shortest delays possible, as they would when I need support myself.Because we grow faster together!
+				      By joining Beeleev, I commit to reach out to others and answer in the shortest delays possible, as they would when I need support myself. Because we grow faster together!
 				    </label>
 				  </label>
 				</div>
