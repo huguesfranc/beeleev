@@ -35,7 +35,7 @@ class ConnectionDemand < Connection
   # Callbacks
   ###########
 
-  after_save :attach_connection_credit
+  # after_save :attach_connection_credit
 
   # State machine
   ###############
@@ -65,11 +65,11 @@ class ConnectionDemand < Connection
     end
   end
 
-  private
+  # private
 
-  def attach_connection_credit
-    return unless (cc = user1.next_usable_connection_credit)
-    cc.update_attribute :connection_id, id
-  end
+  # def attach_connection_credit
+  #   return unless (cc = user1.next_usable_connection_credit)
+  #   cc.update_attribute :connection_id, id
+  # end
 
 end
