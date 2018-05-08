@@ -42,7 +42,7 @@ See [config/application.yml.sample](https://github.com/huguesfranc/beeleev/blob/
 ### Initialize the database
 
 ```shell
-rake db:create db:migrate db:seed
+bundle exec rake db:create db:migrate db:seed
 ```
 
 ### Add heroku remotes
@@ -57,7 +57,7 @@ heroku git:remote --remote heroku-staging -a beeleev-staging
 ## Serve
 
 ```shell
-rails s
+bundle exec rails s
 ```
 
 ## Deploy
