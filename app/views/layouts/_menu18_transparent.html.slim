@@ -19,7 +19,7 @@ nav#lemenu.lemenu.lemenu18_transparent.nav.navbar.navbar-default.navbar-fixed-to
       ul.nav.navbar-nav.navbar-right
         = menu_link 'Our Partners', partners_path
         = menu_link 'Events', events_path
-        = menu_link 'Content', documents_path
+        = menu_link 'Content', documents_path if current_user.present?
         li= link_to 'Blog', 'http://blog.beeleev.com/', target: '_blank'
         = menu_link 'About Us', team_path
 
