@@ -305,6 +305,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def eligible_for_pack_launching_offer?
+    created_at < Pack::LAUNCHING_OFFER_LIMIT_DATE
+  end
+
   # State machine
   ###############
 

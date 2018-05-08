@@ -24,7 +24,7 @@
               <div class="pack__selector">
                 <div class="pack__price">
                   Launching Offer<br>
-                  $299 Yearly <del>$359 Yearly</del>
+                  $<%= Pack.premium(user: current_user).price %> Yearly <del>$<%= Pack.premium(user: current_user).deleted_price %> Yearly</del>
                 </div>
                 <%= link_to 'SELECT', edit_pack_path(pack: :premium), class: 'btn btn-orange18-orange' %>
               </div>
@@ -51,7 +51,7 @@
               <div class="pack__selector">
                 <div class="pack__price">
                   Launching Offer<br>
-                  $359€ Yearly <del>$479 Yearly</del>
+                  $<%= Pack.plus(user: current_user).price %> Yearly <del>$<%= Pack.plus(user: current_user).deleted_price %> Yearly</del>
                 </div>
                 <%= link_to 'SELECT', edit_pack_path(pack: :plus), class: 'btn btn-orange18-orange' %>
               </div>
@@ -89,7 +89,7 @@
           <div class="pack__selector">
             <div class="pack__price">
               Launching Offer<br>
-              $599 Yearly <del>$719 Yearly</del>
+              $<%= Pack.expert(user: current_user).price %> Yearly <del>$<%= Pack.expert(user: current_user).deleted_price %> Yearly</del>
             </div>
             <%= link_to 'SELECT', edit_pack_path(pack: :expert), class: 'btn btn-orange18-orange' %>
           </div>

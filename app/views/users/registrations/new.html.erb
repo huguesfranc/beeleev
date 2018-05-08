@@ -19,7 +19,7 @@
       <div class="pack__selector">
         <div class="pack__price">
           Launching Offer<br>
-          $599 Yearly <del>$719 Yearly</del>
+          $<%= Pack.expert.price %> Yearly <del>$<%= Pack.expert.deleted_price %> Yearly</del>
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@
               <div class="pack__selector">
                 <div class="pack__price">
                   Launching Offer<br>
-                  $299 Yearly <del>$359 Yearly</del>
+                  $<%= Pack.premium.price %> Yearly <del>$<%= Pack.premium.deleted_price %> Yearly</del>
                 </div>
                 <div class="btn btn-orange18-orange" data-pack-selector="premium" data-pack-amount="25000">SELECT</div>
               </div>
@@ -113,7 +113,7 @@
               <div class="pack__selector">
                 <div class="pack__price">
                   Launching Offer<br>
-                  $359 Yearly <del>$479 Yearly</del>
+                  $<%= Pack.plus.price %> Yearly <del>$<%= Pack.plus.deleted_price %> Yearly</del>
                 </div>
                 <div class="btn btn-orange18-orange" data-pack-selector="plus" data-pack-amount="35000">SELECT</div>
               </div>
