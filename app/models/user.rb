@@ -281,6 +281,30 @@ class User < ActiveRecord::Base
     local_partner: 2
   }
 
+  def connection_credits_count
+    ConnectionCredit.where(user: self).count
+  end
+
+  def connection_credits_count=(v)
+    v = v.to_i
+    connection_credits = ConnectionCredit.where user: self
+    count = connection_credits.count
+
+    if v < count
+      until count == v
+        connection_credits.last.destroy
+        connection_credits = ConnectionCredit.where user: self
+        count -= 1
+      end
+    else
+      until count == v
+        ConnectionCredit.create user: self, expires_on: Time.zone.today + 1.year
+        connection_credits = ConnectionCredit.where user: self
+        count += 1
+      end
+    end
+  end
+
   # State machine
   ###############
 

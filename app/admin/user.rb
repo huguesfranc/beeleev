@@ -91,7 +91,7 @@ ActiveAdmin.register User do
     if_proc = proc { resource.aasm.events.include? event_name }
 
     action_item only: :show, if: if_proc do
-      
+
       link_to(
         event_name.to_s.titleize,
         polymorphic_path(
@@ -108,7 +108,7 @@ ActiveAdmin.register User do
   #######
 
   index title: 'Users' do
-    
+
     column :first_name
     column :last_name
     column :email
@@ -361,6 +361,7 @@ ActiveAdmin.register User do
       f.input :new_application_reminder_count
       f.input :activate_user_reminder_count
       f.input :application_reject_reason
+      f.input :connection_credits_count, as: :number, input_html: { min: 0 }
 
       if current_admin_user.super_admin?
         f.input :stripe_customer_id
