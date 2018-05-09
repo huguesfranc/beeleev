@@ -3,7 +3,7 @@ namespace :users do
     count = User.count
 
     User.all.each.with_index do |user, n|
-      user.update professional_status: :entrepreneur
+      user.update_column :professional_status, :entrepreneur
       puts "#{n}/#{count}"
     end
   end
@@ -12,7 +12,7 @@ namespace :users do
     count = User.count
 
     User.all.each.with_index do |user, n|
-      user.update pack: Pack.free_access
+      user.update_column :pack_id, Pack.create(kind: :free_access).id
       puts "#{n}/#{count}"
     end
   end
