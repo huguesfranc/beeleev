@@ -3,7 +3,7 @@ namespace :users do
     count = User.count
 
     User.all.each.with_index do |user, n|
-      user.update profesionnal_status: :entrepreneur
+      user.update professional_status: :entrepreneur
       puts "#{n}/#{count}"
     end
   end
