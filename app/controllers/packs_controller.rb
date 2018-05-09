@@ -1,4 +1,5 @@
 class PacksController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_professional_status, only: :index
   before_action :set_pack, only: [:edit, :update]
 
