@@ -71,7 +71,7 @@ class Pack < ActiveRecord::Base
 
     case :"#{kind}"
     when :premium
-      5000
+      6400
     when :plus
       7000
     else
