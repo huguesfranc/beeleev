@@ -14,8 +14,8 @@ class Pack < ActiveRecord::Base
     premium: {
       value: 2,
       name: 'Premium',
-      price_in_cents: 29900,
-      deleted_price_in_cents: 35900,
+      price_in_cents: 34900,
+      deleted_price_in_cents: 42900,
       duration: 1.year,
       connection_credits: 4,
       connection_demands_per_month: Float::INFINITY
@@ -23,8 +23,8 @@ class Pack < ActiveRecord::Base
     plus: {
       value: 3,
       name: 'Plus',
-      price_in_cents: 35900,
-      deleted_price_in_cents: 47900,
+      price_in_cents: 41900,
+      deleted_price_in_cents: 53900,
       duration: 1.year,
       connection_credits: 4,
       connection_demands_per_month: Float::INFINITY
@@ -32,8 +32,8 @@ class Pack < ActiveRecord::Base
     expert: {
       value: 4,
       name: 'Expert pack',
-      price_in_cents: 59900,
-      deleted_price_in_cents: 71900,
+      price_in_cents: 70900,
+      deleted_price_in_cents: 82900,
       duration: 1.year,
       connection_credits: 0,
       connection_demands_per_month: Float::INFINITY
@@ -66,8 +66,21 @@ class Pack < ActiveRecord::Base
     Time.zone.now - updated_at <= duration
   end
 
+  def reduction_in_cents
+    return 0 unless user.present? && user.eligible_for_pack_launching_offer?
+
+    case :"#{kind}"
+    when :premium
+      5000
+    when :plus
+      7000
+    else
+      0
+    end
+  end
+
   def price_in_cents
-    properties[:price_in_cents] - (user.present? && user.eligible_for_pack_launching_offer? ? 5000 : 0)
+    properties[:price_in_cents] - reduction_in_cents
   end
 
   def price
