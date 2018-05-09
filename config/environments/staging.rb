@@ -93,7 +93,7 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 
-  Rails.application.routes.default_url_options[:host] = 'beeleev--staging.herokuapp.com'
+  Rails.application.routes.default_url_options[:host] = 'beeleev-staging.herokuapp.com'
 end
 
 Cloudinary.config do |config|
