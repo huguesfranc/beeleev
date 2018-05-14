@@ -11,19 +11,19 @@ ActiveAdmin.register Document do
   controller do
     def create
       super do |format|
-        redirect_to edit_admin_document_path(resource), notice: resource.valid? ? "Document created" : "Could not create document"
+        redirect_to(edit_admin_document_path(resource), notice: resource.valid? ? "Document created" : "Could not create document") and return
       end
     end
 
     def update
       super do |format|
-        redirect_to edit_admin_document_path(resource), notice: resource.valid? ? "Document updated" : "Could not update document"
+        redirect_to(edit_admin_document_path(resource), notice: resource.valid? ? "Document updated" : "Could not update document") and return
       end
     end
 
     def destroy
       super do |format|
-        redirect_to admin_documents_path, notice: "Document destroyed"
+        redirect_to(admin_documents_path, notice: "Document destroyed") and return
       end
     end
   end
