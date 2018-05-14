@@ -68,7 +68,7 @@ module ConnectionsHelper
       resource.user1
     end
 
-    user.profil
+    user.try :profil
   end
 
 end
