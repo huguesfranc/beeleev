@@ -172,6 +172,7 @@ class User < ActiveRecord::Base
   ###########
 
   before_save :clean_array_attributes
+  before_save :set_pack, if: :pack_blank?, on: :create
 
   # Validations
   #############
@@ -613,6 +614,14 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def set_pack
+    self.pack = Pack.free_access
+  end
+
+  def pack_blank?
+    pack.blank?
+  end
 
   # Strip blank values from :spoken_languages, :expertises,
   # :international_activity_countries, :business_sectors and :investment_levels
