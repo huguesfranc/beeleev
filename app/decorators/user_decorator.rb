@@ -2,7 +2,7 @@ class UserDecorator < Draper::Decorator
   delegate_all
 
   def active_network
-    network.reject{ |u| !u.active? }
+    network.reject{ |u| !u.try(:active?) }
   end
 
   def network
