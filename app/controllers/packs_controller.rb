@@ -17,11 +17,16 @@ class PacksController < ApplicationController
       source: params[:stripeToken]
     )
 
+    money = case params[:currency]
+            when 'eur' then @pack.euro_money
+            else @pack.money
+            end
+
     charge = Stripe::Charge.create(
       customer: customer.id,
-      amount: @pack.price_in_cents,
+      amount: money.cents,
       description: @pack.name,
-      currency: 'eur'
+      currency: money.currency.iso_code.downcase
     )
 
     @pack.save

@@ -9,26 +9,30 @@
             <%= number_to_currency @pack.money.amount, unit: @pack.money.currency.code %>
           </p>
 
-          <%= form_for @pack, url: packs_path(pack: @pack.kind) do |f| %>
-            <div class="coupon_code col-sm-10 col-sm-offset-1">
-              <div class="input-group">
-                <span class="input-group-addon">
-                  <i class="fa fa-spinner fa-spin"></i>
-                </span>
+          <div class="coupon_code col-sm-10 col-sm-offset-1">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-spinner fa-spin"></i>
+              </span>
 
-                <%= text_field_tag 'coupon_code', nil, placeholder: 'coupon', id: nil, class: 'form-control' %>
-                <span class="input-group-btn">
-                  <%= f.submit 'Check', class: 'btn btn-info btn-check-coupon' %>
-                </span>
-              </div>
+              <%= text_field_tag 'coupon_code', nil, placeholder: 'coupon', id: nil, class: 'form-control' %>
+              <span class="input-group-btn">
+                <%= submit_tag 'Check', class: 'btn btn-info btn-check-coupon' %>
+              </span>
             </div>
+          </div>
 
-            <div class="stripe_checkout_buttons">
+          <div class="stripe_checkout_buttons">
+            <%= form_for @pack, url: packs_path(pack: @pack.kind) do |f| %>
+              <%= hidden_field_tag :currency, 'usd' %>
               <%= stripe_checkout_button(@pack.name, @pack.money, current_user.email) %>
-              ' &nbsp;
+            <% end %>
+            &nbsp;
+            <%= form_for @pack, url: packs_path(pack: @pack.kind) do |f| %>
+              <%= hidden_field_tag :currency, 'eur' %>
               <%= stripe_checkout_button(@pack.name, @pack.euro_money, current_user.email) %>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
 
         </div>
       </div>

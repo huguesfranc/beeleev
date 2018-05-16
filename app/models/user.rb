@@ -242,9 +242,9 @@ class User < ActiveRecord::Base
               unless: -> { password_confirmation.present? || skip_international_activity_countries_validation == "1"}
             }
 
-  validates :professional_status, presence: true
+  validates :professional_status, presence: true, unless: -> { skip_professional_status_validation == '1' }
 
-  validate :presence_of_business_sectors,  on: :update
+  validate :presence_of_business_sectors,  on: :update, unless: -> { skip_presence_of_business_sectors_validation == '1' }
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :company_logo, CompanyLogoUploader
@@ -449,6 +449,7 @@ class User < ActiveRecord::Base
   attr_accessor :skip_website_validation
   attr_accessor :skip_international_activity_countries_validation
   attr_accessor :skip_business_sectors_validation
+  attr_accessor :skip_professional_status_validation
 
   # Instance methods
   ##################
