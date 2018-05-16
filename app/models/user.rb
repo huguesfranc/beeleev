@@ -450,6 +450,7 @@ class User < ActiveRecord::Base
   attr_accessor :skip_international_activity_countries_validation
   attr_accessor :skip_business_sectors_validation
   attr_accessor :skip_professional_status_validation
+  attr_accessor :skip_presence_of_business_sectors_validation
 
   # Instance methods
   ##################
