@@ -4,18 +4,21 @@ class AccountsController < BeeleeverSpaceController
                                                   :onboarding_first_update,
                                                   :onboarding_second_update,
                                                   :onboarding_third_update]
-  before_action :validations_by_pass, only: [ :onboarding_first,
-                                              :onboarding_first_update,
-                                              :onboarding_second,
-                                              :onboarding_second_update,
-                                              :onboarding_third,
-                                              :onboarding_third_update]
-
 
   def onboarding_first
   end
 
   def onboarding_first_update
+    @user.skip_city_validation = '1'
+    @user.skip_position_validation = '1'
+    @user.skip_website_validation = '1'
+    @user.skip_international_activity_countries_validation = '1'
+    @user.skip_business_sectors_validation = '1'
+    @user.skip_turnover_validation = '1'
+    @user.skip_staff_volume_validation = '1'
+    @user.skip_year_of_creation_validation = '1'
+    @user.skip_headquarters_city_validation = '1'
+
     if @user.save
       redirect_to onboarding_second_path
     else
@@ -29,6 +32,10 @@ class AccountsController < BeeleeverSpaceController
   end
 
   def onboarding_second_update
+    @user.skip_city_validation = '1'
+    @user.skip_position_validation = '1'
+    @user.skip_international_activity_countries_validation = '1'
+
     if @user.save
       redirect_to onboarding_third_path
     else
@@ -39,6 +46,9 @@ class AccountsController < BeeleeverSpaceController
   end
 
   def onboarding_third
+    @user.skip_city_validation = '1'
+    @user.skip_position_validation = '1'
+
     @expertises = YAML.load (Rails.root + 'config/expertises.yml').read
   end
 
@@ -98,18 +108,5 @@ class AccountsController < BeeleeverSpaceController
 
   def authorize_account_params
     @user.attributes = params.require(:user).permit!
-  end
-
-  def validations_by_pass
-    @user.skip_civility_validation = '1'
-    @user.skip_country_validation = '1'
-    @user.skip_city_validation = '1'
-    @user.skip_position_validation = '1'
-    @user.skip_website_validation = '1'
-    @user.skip_international_activity_countries_validation = '1'
-    @user.skip_business_sectors_validation = '1'
-    @user.skip_turnover_validation = '1'
-    @user.skip_staff_volume_validation = '1'
-    @user.skip_year_of_creation_validation = '1'
   end
 end
