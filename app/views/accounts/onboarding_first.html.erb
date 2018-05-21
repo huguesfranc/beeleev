@@ -33,7 +33,7 @@
 			  							required: true,
 			  							autofocus: true,
 			  							label: false %>
-			
+
 				</div>
 				<div class="form-inputs">
 				  <%= f.text_field :last_name,
@@ -42,6 +42,13 @@
 				  						required: true,
 				  						label: false %>
 				</div>
+        <div class="form-inputs">
+          <%= f.phone_field :cellphone,
+                            class: "form-control",
+                            placeholder: 'Cell phone',
+                            required: true,
+                            label: false %>
+        </div>
 				<div class="form-inputs">
 				  <%= f.select :civility,
 				   						%w( Mr. Mrs. Ms. Dr.),
@@ -64,7 +71,7 @@
 				<div></div>
 				<div class="form-actions">
 				  <%= f.submit "NEXT PAGE 1 / 3", class: "btn btn-orange18-orange" %>
-				</div>		
+				</div>
 		</div>
 	</div>
 </div>

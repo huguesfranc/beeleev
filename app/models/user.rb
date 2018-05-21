@@ -72,6 +72,8 @@
 #  company_linkedin_account         :string(255)
 #  activate_user_reminder_count     :integer          default(0)
 #  professional_status              :integer          default(1)
+#  pack_id                          :integer
+#  headquarters_city                :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -193,27 +195,33 @@ class User < ActiveRecord::Base
                 on: :update,
                 unless: -> { skip_first_name_validation == '1' }
               }
+
   validates :last_name,
               presence: {
                 on: :update,
                 unless: -> { skip_last_name_validation == '1' }
               }
+
   validates :civility,
               presence: {
                 on: :update,
                 unless: -> { skip_civility_validation == '1' }
               }
+
   validates :country,
               presence: {
                 on: :update,
                 unless: -> { skip_country_validation == '1' }
               }
-  # validates :city,
-  #             presence: {
-  #               on: :update,
-  #               unless: -> { skip_city_validation == '1' }
-  #             }
+
+  validates :city,
+              presence: {
+                on: :update,
+                unless: -> { skip_city_validation == '1' }
+              }
+
   validates :position,
+
               presence: {
                 on: :update,
                 unless: -> { skip_position_validation == '1' }
@@ -224,17 +232,17 @@ class User < ActiveRecord::Base
                 unless: -> { skip_website_validation == '1' }
               }
 
-  # validates :turnover,
-  #           presence: {
-  #             on: :update,
-  #             unless: -> { skip_turnover_validation == '1' }
-  #           }
+  validates :turnover,
+            presence: {
+              on: :update,
+              unless: -> { skip_turnover_validation == '1' }
+            }
 
-  # validates :staff_volume,
-  #           presence: {
-  #             on: :update,
-  #             unless: -> { skip_staff_volume_validation == '1' }
-  #           }
+  validates :staff_volume,
+            presence: {
+              on: :update,
+              unless: -> { skip_staff_volume_validation == '1' }
+            }
 
   validates :international_activity_countries,
             presence: {
@@ -242,9 +250,31 @@ class User < ActiveRecord::Base
               unless: -> { password_confirmation.present? || skip_international_activity_countries_validation == "1"}
             }
 
-  validates :professional_status, presence: true, unless: -> { skip_professional_status_validation == '1' }
+  validates :professional_status,
+            presence: {
+              on: :update,
+              unless: -> { skip_professional_status_validation == '1' }
+            }
 
-  validate :presence_of_business_sectors,  on: :update, unless: -> { skip_presence_of_business_sectors_validation == '1' }
+  validates :cellphone,
+            presence: {
+              on: :update,
+              unless: -> { skip_cellphone_validation == '1' }
+            }
+
+  validates :year_of_creation,
+            presence: {
+              on: :update,
+              unless: -> { skip_year_of_creation_validation == '1' }
+            }
+
+  validates :headquarters_city,
+            presence: {
+              on: :update,
+              unless: -> { skip_headquarters_city_validation == '1' }
+            }
+
+  validate :presence_of_business_sectors, on: :update, unless: -> { skip_presence_of_business_sectors_validation == '1' }
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :company_logo, CompanyLogoUploader
@@ -451,6 +481,9 @@ class User < ActiveRecord::Base
   attr_accessor :skip_business_sectors_validation
   attr_accessor :skip_professional_status_validation
   attr_accessor :skip_presence_of_business_sectors_validation
+  attr_accessor :skip_cellphone_validation
+  attr_accessor :skip_year_of_creation_validation
+  attr_accessor :skip_headquarters_city_validation
 
   # Instance methods
   ##################
@@ -538,6 +571,21 @@ class User < ActiveRecord::Base
   def reset_password!(new_password, new_password_confirmation)
     self.skip_turnover_validation = '1'
     self.skip_staff_volume_validation = '1'
+    self.skip_first_name_validation = '1'
+    self.skip_last_name_validation = '1'
+    self.skip_civility_validation = '1'
+    self.skip_title_validation = '1'
+    self.skip_country_validation = '1'
+    self.skip_city_validation = '1'
+    self.skip_position_validation = '1'
+    self.skip_website_validation = '1'
+    self.skip_international_activity_countries_validation = '1'
+    self.skip_business_sectors_validation = '1'
+    self.skip_professional_status_validation = '1'
+    self.skip_presence_of_business_sectors_validation = '1'
+    self.skip_cellphone_validation = '1'
+    self.skip_year_of_creation_validation = '1'
+    self.skip_headquarters_city_validation = '1'
     super
   end
 

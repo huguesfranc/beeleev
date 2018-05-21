@@ -27,16 +27,17 @@ class AccountsController < BeeleeverSpaceController
   def onboarding_second
     @business_sectors = YAML.load (Rails.root + 'config/business_sectors.yml').read
   end
-  
+
   def onboarding_second_update
     if @user.save
       redirect_to onboarding_third_path
     else
       flash.now[:alert] = @user.errors.full_messages.join('<br>').html_safe
+      @business_sectors = YAML.load (Rails.root + 'config/business_sectors.yml').read
       render :onboarding_second
     end
   end
-  
+
   def onboarding_third
     @expertises = YAML.load (Rails.root + 'config/expertises.yml').read
   end
@@ -49,8 +50,8 @@ class AccountsController < BeeleeverSpaceController
       render :onboarding_third
     end
   end
-  
-  def show    
+
+  def show
       @orders = current_user.orders.order(created_at: :desc)
       @credits = current_user.connection_credits.order(created_at: :desc)
       @usable_credits = current_user.connection_credits.reject{|cc| !cc.usable?}
@@ -89,7 +90,7 @@ class AccountsController < BeeleeverSpaceController
     redirect_to root_path, notice: "profile destroyed"
   end
 
-  private 
+  private
 
   def set_user
     @user = current_user
@@ -109,5 +110,6 @@ class AccountsController < BeeleeverSpaceController
     @user.skip_business_sectors_validation = '1'
     @user.skip_turnover_validation = '1'
     @user.skip_staff_volume_validation = '1'
+    @user.skip_year_of_creation_validation = '1'
   end
 end

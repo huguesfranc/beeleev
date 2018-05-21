@@ -29,7 +29,7 @@
         span.input-group-addon
           span.glyphicon.glyphicon-user
         = f.text_field :last_name, class: "form-control"
-  
+
   .col-md-4
     .form-group
       = f.label :profil, "Profile"
@@ -37,7 +37,7 @@
         span.input-group-addon
           span.glyphicon.glyphicon-user
         = f.select :profil, %w(Entrepreneur Expert Company),
-            {prompt: "Select profile"}, class: "form-control"            
+            {prompt: "Select profile"}, class: "form-control"
     .form-group
       = f.label :country
       .input-group
@@ -104,7 +104,7 @@ br
       = f.label :year_of_creation, "Year of Creation"
       = f.select :year_of_creation, (1920..Date.today.year).to_a.reverse,
         {prompt: "Select Year of creation"}, class: "form-control"
-  
+
   .col-md-4
     .form-group
       = f.label :company
@@ -112,6 +112,12 @@ br
         span.input-group-addon
           span.glyphicon.glyphicon-home
         = f.text_field :company, class: "form-control"
+    .form-group
+      = f.label :headquarters_city
+      .input-group
+        span.input-group-addon
+          span.glyphicon.glyphicon-globe
+        = f.text_field :headquarters_city, class: "form-control", placeholder: 'Select a city'
     .form-group
       = f.label :website
       .input-group
@@ -128,7 +134,7 @@ br
             {prompt: "Select your business sectors"},
             multiple: true,
             class: "form-control"
-  
+
   .col-md-4
     .form-group
       = f.label :company_twitter_account, "Company Twitter Account"
@@ -147,8 +153,8 @@ br
       .input-group
         span.input-group-addon
           i.fa.fa-linkedin
-        = f.text_field :company_linkedin_account, class: "form-control"            
+        = f.text_field :company_linkedin_account, class: "form-control"
 
 .form-group
   = f.label :company_description, "About your Company"
-  = f.text_area :company_description, class: "form-control", rows: 3    
+  = f.text_area :company_description, class: "form-control", rows: 3

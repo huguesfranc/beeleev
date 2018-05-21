@@ -12,7 +12,7 @@
 	      </div>
 
 				<div class="form-inputs">
-					<%= f.country_select :international_activity_countries, [],
+					<%= f.country_select :international_activity_countries, ['All', 'Africa', 'Asia', 'North America', 'South America', 'Europe', 'Oceania'],
 													  {prompt: "Which countries are you interested in?"},
 													  class: "form-control",
 													  placeholder: "Which countries are you interested in?",

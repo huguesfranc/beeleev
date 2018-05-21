@@ -1,41 +1,72 @@
 <%= form_for @user, url: onboarding_second_update_path, method: :post do |f|%>
 <div id="onboarding2">
 	<div class="flex-wrapper">
-		<h1>ABOUT YOUR COMPANY</h1>	
+		<h1>ABOUT YOUR COMPANY</h1>
 		<div class="body-wrapper">
 			<div>
 				<div class="form-inputs">
 			  	<%= f.text_field :company,
-			  							class: "form-control",
-			  							placeholder: "Company Name",
-			  							required: true,
-			  							autofocus: true,
-			  							label: false %>
-			
+			  						       class: "form-control",
+			  						       placeholder: "Company Name",
+			  						       required: true,
+			  						       autofocus: true,
+			  						       label: false %>
+
 				</div>
+        <div class="form-inputs">
+          <%= f.text_field :headquarters_city,
+                           class: "form-control",
+                           placeholder: "Select a city",
+                           required: true,
+                           label: false %>
+        </div>
 				<div class="form-inputs">
 				  <%= f.text_field :website,
-										  class: "form-control",
-										  placeholder: :website.to_s.humanize,
-				  						required: true,
-				  						label: false %>
+										       class: "form-control",
+										       placeholder: :website.to_s.humanize,
+				  						     required: true,
+				  						     label: false %>
 				</div>
 				<div class="form-inputs">
 				  <%= f.select :business_sectors,
-											  @business_sectors,
-											  {},
-											  class: "form-control",
-											   multiple: true,
-											   placeholder: "Industry",
-											   required: true %>
+											 @business_sectors,
+											 {},
+											 class: "form-control",
+											 multiple: true,
+											 placeholder: "Industry",
+											 required: true %>
 				</div>
-				<div class="form-inputs">
-				  <%= f.text_field :position,
-						  							class: "form-control",
-						  							placeholder: :position.to_s.humanize,
-						  							required: true,
-						  							label: false %>
-				</div>
+        <div class="form-inputs">
+          <%= f.text_field :position,
+                           class: "form-control",
+                           placeholder: :position.to_s.humanize,
+                           required: true,
+                           label: false %>
+        </div>
+        <div class="form-inputs">
+          <%= f.select :year_of_creation,
+                       (1920..Date.today.year).to_a.reverse,
+                       {prompt: "Select Year of creation"},
+                       class: "form-control",
+                       required: true,
+                       label: false %>
+        </div>
+        <div class="form-inputs">
+          <%= f.select :staff_volume,
+                       ["myself only", "2-10", "11-50", "51-200", "201-500", "501-1000", "1001-5000", "5001-10000", "+10001"],
+                       {prompt: "Select Staff volume"},
+                       class: "form-control",
+                       required: true,
+                       label: false %>
+        </div>
+        <div class="form-inputs">
+          <%= f.select :turnover,
+                       ["0 to $100K", "$100K to $500K", "$500K to $1.000K", "$1.000K to $3.000K", "$3.000K to $5.000K", "$5.000K to $10.000K", "More than $10.000K", "More than $20.000K", "More than $50.000K", "More than $150.000K"],
+                       {prompt: "Select Turnover"},
+                       class: "form-control",
+                       required: true,
+                       label: false %>
+        </div>
 			</div>
 		</div>
 		<div class="buttons-wrapper">
@@ -44,7 +75,7 @@
 			</div>
 			<div class="form-actions">
 				<%= f.submit "NEXT PAGE 2 / 3", class: "btn btn-orange18-orange" %>
-			</div>			
+			</div>
 		</div>
 	</div>
 </div>

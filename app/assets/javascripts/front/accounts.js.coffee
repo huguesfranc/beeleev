@@ -24,3 +24,7 @@ $(document).on 'ready page:load', ->
 
   if $('#user_city').size() == 1
     ca = new CityAutocomplete $('#user_city'), {types: ['(cities)']};
+
+
+  if $('#user_headquarters_city').size() == 1
+    ca = new CityAutocomplete $('#user_headquarters_city'), {types: ['(cities)']};

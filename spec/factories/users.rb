@@ -72,6 +72,8 @@
 #  company_linkedin_account         :string(255)
 #  activate_user_reminder_count     :integer          default(0)
 #  professional_status              :integer          default(1)
+#  pack_id                          :integer
+#  headquarters_city                :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

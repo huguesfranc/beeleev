@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: packs
+#
+#  id               :integer          not null, primary key
+#  user_id          :integer
+#  stripe_charge_id :integer
+#  kind             :integer
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 class Pack < ActiveRecord::Base
   LAUNCHING_OFFER_LIMIT_DATE = Time.zone.parse '2018-05-09 15:00:00'
 
