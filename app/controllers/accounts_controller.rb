@@ -33,7 +33,6 @@ class AccountsController < BeeleeverSpaceController
 
   def onboarding_second_update
     @user.skip_city_validation = '1'
-    @user.skip_position_validation = '1'
     @user.skip_international_activity_countries_validation = '1'
 
     if @user.save
@@ -46,13 +45,12 @@ class AccountsController < BeeleeverSpaceController
   end
 
   def onboarding_third
-    @user.skip_city_validation = '1'
-    @user.skip_position_validation = '1'
-
     @expertises = YAML.load (Rails.root + 'config/expertises.yml').read
   end
 
   def onboarding_third_update
+    @user.skip_city_validation = '1'
+
     if @user.save
       redirect_to edit_account_path, notice: "Profile completed"
     else
