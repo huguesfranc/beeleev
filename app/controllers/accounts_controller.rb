@@ -57,6 +57,7 @@ class AccountsController < BeeleeverSpaceController
       redirect_to edit_account_path, notice: "Profile completed"
     else
       flash.now[:alert] = @user.errors.full_messages.join('<br>').html_safe
+      @expertises = YAML.load (Rails.root + 'config/expertises.yml').read
       render :onboarding_third
     end
   end
