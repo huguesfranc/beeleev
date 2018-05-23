@@ -61,7 +61,12 @@ ActiveAdmin.register User do
 
       # HACK
       resource.skip_turnover_validation = '1'
-      resource.skip_staff_volume_validation = '1'
+      resource.skip_headquarters_city_validation = '1'
+      resource.skip_international_activity_countries_validation = '1'
+      resource.skip_presence_of_business_sectors_validation = '1'
+      resource.skip_cellphone_validation = '1'
+      resource.skip_year_of_creation_validation = '1'
+      resource.skip_headquarters_city_validation = '1'
 
       resource.send params[:aasm_event]
       resource.save(validate: false)
@@ -344,6 +349,13 @@ ActiveAdmin.register User do
                 'Other'
               ],
               multiple: true
+
+      f.input :skip_headquarters_city_validation, as: :hidden, input_html: { value: '1' }
+      f.input :skip_international_activity_countries_validation, as: :hidden, input_html: { value: '1' }
+      f.input :skip_presence_of_business_sectors_validation, as: :hidden, input_html: { value: '1' }
+      f.input :skip_cellphone_validation, as: :hidden, input_html: { value: '1' }
+      f.input :skip_year_of_creation_validation, as: :hidden, input_html: { value: '1' }
+      f.input :skip_headquarters_city_validation, as: :hidden, input_html: { value: '1' }
     end
 
     f.inputs 'Newsfeed' do
