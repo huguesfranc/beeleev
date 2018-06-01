@@ -6,9 +6,14 @@
       h4#connectionRequest.modal-title= title
 
     .modal-body
+      p.text-center
+        | Looking for a Specific Entrepreneur or CEO to Contact even Outside our Community ?
+        br
+        | Direct Request Credits (Premium & Plus packages) allow you to get a Tailored Search of any Key Contacts you want, and be introduced to them.
+
       .top-wrapper
         .top-left I'm Looking For
-        
+
         div
           - @targets.each do |k, v|
             .flex-horiz
@@ -16,7 +21,7 @@
               = f.radio_button :targets, k, tar_checked
               = f.label k, k.titleize
 
-        div 
+        div
           - @targets.each do |k, v|
             .credits
               = "(#{pluralize v, 'credit'})"
@@ -24,7 +29,7 @@
       .middle-wrapper
         .middle-left In
 
-        .middle-right      
+        .middle-right
           .form-group
             = f.text_field :countries,
                             class: "form-control",
@@ -45,6 +50,6 @@
     .modal-footer
       = f.submit submit_label, class: "btn btn-orange18-orange"
       .note
-        | This Request is 
+        | This Request is
         span Free of Charge
         | . You will spend credits only if you decide to be introduced to the contacts we find for you!
