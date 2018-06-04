@@ -49,6 +49,7 @@
 		margin-top: 0;
 		margin-bottom: 0;
 		font-size: 1.8em;
+    text-shadow: 1px 1px gray;
 	}
 	.subsubtitles {
 		margin-top: 3em;
@@ -66,7 +67,7 @@
 			font-size: 1.4em;
 		}
 		& span {
-			font-size: 2em;	
+			font-size: 2em;
 		}
 	}
 	.down-arrow {
@@ -87,7 +88,7 @@
 			padding: 0 1em;
 		}
 		#slideshow_title h1 {
-			font-size: 3em;		
+			font-size: 3em;
 		}
 		.subsubtitles{
 			flex-direction: column;
