@@ -108,7 +108,7 @@ git push heroku-staging
 
 Vérification du rendu en staging: http://beeleev-staging.herokuapp.com
 
-Mise en production:
+**Mise en production:**
 
 *Promote* depuis l'interface de la pipeline Heroku ou:
 
@@ -116,7 +116,7 @@ Mise en production:
 heroku pipelines:promote -a beeleev-staging
 ```
 
-**Annuler le dernier déploiement:***
+**Annuler le dernier déploiement:**
 
 ```shell
 heroku rollback
