@@ -20,11 +20,21 @@ Mise à jour des dépendances:
 bundle
 ```
 
-Mise à jour dela base de données:
+Mise à jour de la base de données:
 
 ```shell
 bundle exec rake db:migrate
 ```
+
+## Démarrer l'application
+
+Lancer le serveur avec Rails:
+
+```shell
+bundle exec rails s
+```
+
+Accéder à l'application: http://localhost:3000
 
 ## Modifier à la vue
 
@@ -80,16 +90,6 @@ Ouvrir le projet avec Sublime Text.
   - `<%=`: Exécute le code Ruby et affiche le résultat
   - `<%#`: Initie un commentaire dans le code; ne fait rien
 
-## Vérifier le rendu
-
-Lancer le serveur avec Rails:
-
-```shell
-rails s
-```
-
-Accéder à l'application: http://localhost:3000
-
 ## Déployer l'application
 
 Commit des modifications:
@@ -114,4 +114,10 @@ Mise en production:
 
 ```shell
 heroku pipelines:promote -a beeleev-staging
+```
+
+**Annuler le dernier déploiement:***
+
+```shell
+heroku rollback
 ```
