@@ -29,10 +29,10 @@
 		color: white;
 		font-size: 3.3em;
 		padding: 20% 0 2%;
-    letter-spacing: 0.02em;
-    text-shadow: 1px 1px gray;
+    	letter-spacing: 0.02em;
+    	text-shadow: 2px 2px 2px black;
 		span {
-			text-shadow: none;
+			text-shadow: 1px 1px 1px black;
 			font-family: 'Lato-Bold', sans-serif;
 			font-weight: 900;
 			color: $orange;
@@ -49,7 +49,7 @@
 		margin-top: 0;
 		margin-bottom: 0;
 		font-size: 1.8em;
-    text-shadow: 1px 1px gray;
+    	text-shadow: 2px 2px 2px black;
 	}
 	.subsubtitles {
 		margin-top: 3em;
@@ -57,6 +57,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
+		text-shadow: 2px 2px 2px black;
 		width: 80vw;
 		& h3{
 			font-family: 'Lato', sans-serif;
