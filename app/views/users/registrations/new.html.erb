@@ -191,7 +191,7 @@
                 </div>
               </div>
 
-              <div class="checkbox text-center">
+              <div class="checkbox text-center" style="max-width: 300px;margin: 0 auto">
                 <label>
                   <%= check_box(:user, :terms_of_service) %>
                   <label for="client_terms_of_service" class="approve-terms">
@@ -200,6 +200,19 @@
                   </label>
                 </label>
               </div>
+
+              <br>
+
+               <div class="checkbox text-center" style="max-width: 300px;margin: 0 auto">
+                <label>
+                  <%= check_box(:user, :data_use) %>
+                  <label for="client_data_use" class="approve-terms">
+                    By applying to Beeleev, I hereby accept that my personnal data can be used by Beeleev to provide its services.
+                  </label>
+                </label>
+              </div>
+
+              <br>
 
               <div class="text-center">
                 <%= f.submit "APPLY NOW", disabled: :disabled, class: "btn btn-orange18-orange", id: "sign_up_btn_js_slider" %>

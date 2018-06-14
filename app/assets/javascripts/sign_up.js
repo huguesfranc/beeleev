@@ -1,11 +1,21 @@
 $(function() {
-  var chkbox = $("#user_terms_of_service");
+  var chkbox1 = $("#user_terms_of_service");
+  var chkbox2 = $("#user_data_use");
   //__________________submit button disabled unless Conditions Checked Signup
   sign_up_button = $("#sign_up_btn_js_slider");
   sign_up_button.attr("disabled","disabled");
-  chkbox.change(function(){
+  chkbox1.change(function(){
       if(this.checked){
-        if($('#pack').val()) {
+        if($('#pack').val() && chkbox2.prop('checked')) {
+          sign_up_button.removeAttr("disabled");
+        }
+      }else{
+        sign_up_button.attr("disabled","disabled");
+      }
+  });
+  chkbox2.change(function(){
+      if(this.checked){
+        if($('#pack').val() && chkbox1.prop('checked')) {
           sign_up_button.removeAttr("disabled");
         }
       }else{
@@ -15,7 +25,7 @@ $(function() {
   //__________________submit button disabled unless Conditions Checked Onboarding
   onboarding_button = $("#onboarding");
   onboarding_button.attr("disabled","disabled");
-  chkbox.change(function(){
+  chkbox1.change(function(){
       if(this.checked){
         onboarding_button.removeAttr("disabled");
       }else{
@@ -30,7 +40,7 @@ $(function() {
     $('[data-pack-selector].hover').removeClass('hover').text('SELECT');
     selector.addClass('hover').text('SELECTED');
     $('#pack').val(selector.attr('data-pack-selector'));
-    if(chkbox.prop('checked')) sign_up_button.removeAttr("disabled");
+    if(chkbox1.prop('checked') && chkbox2.prop('checked')) sign_up_button.removeAttr("disabled");
     if(form.length) {
       setTimeout(function() {
         $('body').animate({

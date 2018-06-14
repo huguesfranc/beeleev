@@ -186,6 +186,7 @@ class User < ActiveRecord::Base
   #   message: 'must be between 1900 and today'
   # }, allow_nil: true
   validates :terms_of_service, acceptance: { message: 'must be abided' }
+  validates :data_use, acceptance: { message: 'must be abided' }
 
 
   # only validate this on update, which means those validations will not run
@@ -467,6 +468,7 @@ class User < ActiveRecord::Base
   ############
 
   attr_accessor :terms_of_service
+  attr_accessor :data_use
   attr_accessor :skip_turnover_validation
   attr_accessor :skip_staff_volume_validation
   attr_accessor :skip_first_name_validation
