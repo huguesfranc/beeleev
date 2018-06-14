@@ -27,7 +27,7 @@
           <%= link_to "TO COMMUNITY", network_path, class: "btn btn-orange18-orange" %>
         <% elsif user_signed_in? %>
         <% else %>
-          <%= link_to "APPLY NOW", class: "btn btn-orange18-orange", data: { toggle: :modal, target: '#professional-status-selector-modal' } %>
+          <%= link_to "APPLY NOW", '#', class: "btn btn-orange18-orange", data: { toggle: :modal, target: '#professional-status-selector-modal' } %>
         <% end %>
 
   </div>
