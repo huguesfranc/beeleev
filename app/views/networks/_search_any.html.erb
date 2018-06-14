@@ -1,11 +1,11 @@
 <div id="network-search-any">
-  <%= search_form_for @q, url: members_search_any_path do |f| %> 
+  <%= search_form_for @q, url: members_search_any_path do |f| %>
 
       <div class="form-title">I'm Looking for a</div>
-        
+
         <div class="check-geo-wrapper">
           <div class="check-boxes-wrapper">
-            <% @profiles.each do |profile| %> 
+            <% @profiles.each do |profile| %>
               <div class= "italic input-height-wrapper">
                 <% if params[:q] && params[:q]["profil_eq_any"] %>
                 <%= check_box_tag('q[profil_eq_any][]',
@@ -18,9 +18,9 @@
                 <% end %>
                 <%= profile %>
               </div>
-            <% end %>         
-          </div> 
-              
+            <% end %>
+          </div>
+
           <div class="inner-form-title">
             <div class="centerer">
               In
@@ -42,16 +42,16 @@
                 placeholder: "City",
                 multiple: true  %>
           </div>
-              
+
         </div>
 
-        <div class="inner-form-title">That Can Help Me With</div>
+        <div class="inner-form-title">In this Business Sector</div>
           <div class="expanded">
-          <%= f.select :expertises_overlap,
-            @q.result.pluck(:expertises).flatten.uniq.compact.sort,
+          <%= f.select :business_sectors_overlap,
+            User::BUSINESS_SECTORS.sort,
               {},
               class: "form-control padded-width",
-              placeholder: "Expertises",
+              placeholder: "Business sectors",
               multiple: true %>
           </div>
         <div>
