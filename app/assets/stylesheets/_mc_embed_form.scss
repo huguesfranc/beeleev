@@ -14,10 +14,10 @@
 	  font-weight: 400;
 	  font-size: 2.5em;
 	  font-style: italic;
-	  color: #333333;
+	  color: white;
 	  padding: 2em 0 1em !important;
-	  // text-align: center;
-	  margin: 15px 0 15px 30vh !important;
+	  text-align: center;
+	  //margin: 15px 0 15px 30vh !important;
 	}
 	.outer-wrapper{
 		display: flex;
@@ -69,12 +69,12 @@
 //--- orange triangle > sloped top
 #mc_embed_signup{
 		position: relative;
-		padding: 50px 10px 10px;
+		padding: 0px 10px 10px;
 }
 
 #mc_embed_signup::before {
   position:absolute;
-  content: " ";
+  //content: " ";
   display:block;
   left:0;
   top:0;
