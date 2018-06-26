@@ -27,6 +27,10 @@
     }
 	}
 
+  .text-center{
+  font-size : 1.1em;
+  }
+
 	h2 {
 		font-family: 'Lato', sans-serif;
 		font-weight: 400;
@@ -90,6 +94,10 @@
 	  justify-content: center;
 	  align-items: center;
     text-align:center;
+
+    h2 {
+    color:$orange;
+    }
 
     h5 {
       font-family: 'Lato', sans-serif;
@@ -226,6 +234,7 @@
     color: $bleu;
     font-style: italic;
   }
+
 }
 
 @media (max-width: $screen-xs-max) {

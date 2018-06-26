@@ -7,12 +7,12 @@
 
       <div class="pack__body">
         <div class="pack__description">
-          Your logo on our Partners Page<br>
-          Feature as an expert in the community<br>
-          Your interview, published on all our Media<br>
-          Share 1 Technical Content<br>
-          Helping you organize one breakfast event<sup>*</sup><br>
-          Free invites to all our Events
+          &check;   Your logo on our Partners Page<br>
+          &check;   Feature as an expert in the community<br>
+          &check;   Your interview, published on all our Media<br>
+          &check;   Share 1 Technical Content<br>
+          &check;   Helping you organize one breakfast event<sup>*</sup><br>
+          &check;   Free invites to all our Events
         </div>
       </div>
 
@@ -37,16 +37,16 @@
 
   <div class="container-fluid">
     <% if @professional_status == 'entrepreneur' %>
-      <h1 class="italic">It's difficult to grow alone!</h1>
-      <h2 style="margin-bottom: 30px">Get support - Find Contacts - Meet in Real Life</h2>
+      <!--<h1 class="italic">It's difficult to grow alone!</h1>-->
+      <h1 style="margin-bottom: 30px">Get support - Find Contacts - Meet in Real Life</h1>
 
       <p class="entrepreneur-offer visible-xs">
         Select a package & Apply to Join the Community
       </p>
 
       <p class="text-center" style="font-weight: bold">
-        Looking for a Specific Entrepreneur or CEO to Contact even Outside our Community?<br>
-        Direct Request Credits (Premium & Plus packages) allow you to get a Tailored Search of any Key Contacts you want, and be introduced to them.
+        <!--Looking for a Specific Entrepreneur, CEO, Expert, Partner or Key account even Outside our Community?<br>-->
+        With our Packages, you can Benefit from a Dedicated Team that Performs a Tailored Search of any Key Contacts you want, and introduces You to Them
       </p>
 
       <div class="packs">
@@ -58,9 +58,9 @@
 
             <div class="pack__body">
               <div class="pack__description">
-                Browse the community<br>
-                Access to all Free Content<br>
-                3 Connection Request per Month<sup>***</sup><br>
+                &check;   Browse the community<br>
+                &check;   Access to all Free Content<br>
+                &check;   3 Connection Requests per Month <br> within the Digital Platform<!--<sup>***</sup>--><br>
               </div>
 
               <div class="pack__selector">
@@ -79,12 +79,11 @@
 
             <div class="pack__body">
               <div class="pack__description">
-                <strong>4 Direct Request Credits</strong><sup>*</sup><br>
-                Unlimited Connection Requests<sup>***</sup><br>
-                Community Slack Membership<br>
-                Access all our Content<br>
-                Your interview published on our Media<br>
-                Special Rates on our Learning Expeditions
+                &check;   <strong>4 Credits for Tailored Contacts <br>found by our dedicated team</strong><sup>*</sup><br>
+                &check;   Unlimited Connection Requests <br> within the Digital Platform<!--<sup>***</sup>--><br>
+                &check;   Access to all our Content<br>
+                &check;   Your interview published on our Media<br>
+                &check;   Special Rates on our Learning Expeditions
               </div>
 
               <div class="pack__selector">
@@ -104,13 +103,12 @@
 
             <div class="pack__body">
               <div class="pack__description">
-                <strong>4 Direct Request Credits</strong><sup>*</sup><br>
-                <strong>Free Invites to all our Events</strong><sup>**</sup><br>
-                Unlimited Connection Requests<sup>***</sup><br>
-                Community Slack Membership<br>
-                Access all our Content<br>
-                Your interview published on our Media<br>
-                Special Rates on our Learning Expeditions
+                &check;   <strong>4 Credits for Tailored Contacts <br>found by our dedicated team</strong><sup>*</sup><br>
+                &check;   <strong>Free Invites to all our Events</strong><!--<sup>**</sup>--><br>
+                &check;   Unlimited Connection Requests <br> within the Digital Platform<!--<sup>***</sup>--><br>
+                &check;   Access to all our Content<br>
+                &check;   Your interview published on our Media<br>
+                &check;   Special Rates on our Learning Expeditions
               </div>
 
               <div class="pack__selector">
@@ -125,12 +123,12 @@
         </div>
 
         <p class="packs__additional-information">
-          <sup>*</sup>Looking for a specific Entrepreneur or CEO to contact even outside the community? Don't have the time to browse the net? With your free Direct Request Credits, you can have us do a tailored search of any Key Partner you want, and put you in contact with them.<br>
-          Credit System: 1&nbsp;Entrepreneur&nbsp;=&nbsp;1&nbsp;Credit, 1&nbsp;Expert&nbsp;=&nbsp;2&nbsp;Credits, 1&nbsp;Key&nbsp;Account&nbsp;=&nbsp;4&nbsp;Credits<br>
+          <sup>*</sup><!--Looking for a specific Entrepreneur or CEO to contact even outside the community? Don't have the time to browse the net? With your free Direct Request Credits, you can have us do a tailored search of any Key Partner you want, and put you in contact with them.<br>-->
+          From our International Network of 30,000 CEO's; <br> Credit System: 1&nbsp;Entrepreneur&nbsp;=&nbsp;1&nbsp;Credit, 1&nbsp;Expert&nbsp;=&nbsp;2&nbsp;Credits, 1&nbsp;Key&nbsp;Account&nbsp;=&nbsp;4&nbsp;Credits<br>
           <br>
-          <sup>**</sup>25 events per year: networking events in the evening and breakfast events; all in Paris and France actually.<br>
+          <!--<sup>**</sup>25 events per year: networking events in the evening and breakfast events; all in Paris and France actually.<br>
           <br>
-          <sup>***</sup>You can browse through our entire community of entrepreneurs to connect with anyone of them. After the other party has accepted your request, you will obtain each other's coordinates to start communicating.
+          <sup>***</sup>You can browse through our entire community of entrepreneurs to connect with anyone of them. After the other party has accepted your request, you will obtain each other's coordinates to start communicating.-->
         </p>
       </div>
     <% else %>
@@ -236,16 +234,26 @@
 
           <% if @professional_status == 'entrepreneur' %>
             <div class="sign-up-slogan">
-              <p class="entrepreneur-offer hidden-xs">
-                Select a package & Apply to Join the Community
-              </p>
-
-              <h5>
-                GROW GLOBAL<br>
-                <span>
-                  TOGETHER!
-                </span>
-              </h5>
+  <h2>
+    A FEW SUCCESSFUL PROJECTS
+  </h2>
+  <div class="container">
+    <div class="row text-center entrepreneurs-examples-wrapper">
+      <div class="entrepreneurs-examples col-xs-12 col-md-4">
+        <%= image_tag "18/rasmus.png" %>
+        <p>
+          Rasmus Arendt Nielsen, CEO of Brandheroes, <br/>has been put in contact with a Communication Agency  <br>
+          in NYC to help him in his expansion strategy
+        </p>
+      </div>
+      <div class="entrepreneurs-examples col-xs-12 col-md-4">
+        <%= image_tag "18/esteban.png" %>
+        <p>
+          Esteban Sarabia, CEO of Q4tech,<br/>met 5 french entrepreneurs during his last business trip in Paris. These qualified connections allowed him to talk about his services and better understand how he should develop his company in France
+        </p>
+      </div>
+    </div>
+</div>  
             </div>
           <% else %>
             <div class="hidden-xs">
