@@ -1,33 +1,56 @@
 <% content_for :expert_packs do %>
-  <div class="packs">
-    <div class="pack pack--centered">
-      <div class="pack__head">
-        Expert pack
-      </div>
+   <div class="packs">
+        <div class="packs__list">
+          <div class="pack_image">
+            <%= image_tag "18/logos_2.png" %>
+            <!--<div class="pack__head">
+              Free Access
+            </div>
 
-      <div class="pack__body">
-        <div class="pack__description">
-          &check;   Your logo on our Partners Page<br>
-          &check;   Feature as an expert in the community<br>
-          &check;   Your interview, published on all our Media<br>
-          &check;   Share 1 Technical Content<br>
-          &check;   Helping you organize one breakfast event<sup>*</sup><br>
-          &check;   Free invites to all our Events
+            <div class="pack__body">
+              <div class="pack__description">
+                &check;   Browse the community<br>
+                &check;   Access to all Free Content<br>
+                &check;   3 Connection Requests per Month <br> within the Digital Platform<!--<sup>***</sup>--><!--<br>
+              </div>
+
+              <div class="pack__selector">
+                <div class="pack__price">
+                  <strong>Free!</strong>
+                </div>
+                <div class="btn btn-orange18-orange" data-pack-selector="free_access" data-pack-amount="0">SELECT</div>
+              </div>
+            </div>-->
+          </div>
+
+          <div class="pack">
+              <div class="pack__head">
+                Expert pack
+              </div>
+
+            <div class="pack__body">
+              <div class="pack__description">
+                &check;   Your logo on our Partners Page<br>
+                &check;   Feature as an expert in the community<br>
+                &check;   Your interview, published on all our Media<br>
+                &check;   Share 1 Technical Content<br>
+                &check;   Helping you organize one breakfast event<sup>*</sup><br>
+                &check;   Free invites to all our Events
+              </div>
+            </div>
+
+          <div class="pack__selector">
+            <div class="pack__price">
+              <strong>Launching Offer</strong><br>
+              <strong>$<%= Pack.expert.price %> Yearly</strong> <del>$<%= Pack.expert.deleted_price %> Yearly</del>
+            </div>
+          </div>
+        <p class="packs__additional-information text-center">
+          <sup>*</sup>In a location of your choosing and we'll help increase its visibility on our platforms.
+        </p>
+        </div>
         </div>
       </div>
-
-      <div class="pack__selector">
-        <div class="pack__price">
-          <strong>Launching Offer</strong><br>
-          <strong>$<%= Pack.expert.price %> Yearly</strong> <del>$<%= Pack.expert.deleted_price %> Yearly</del>
-        </div>
-      </div>
-    </div>
-
-    <p class="packs__additional-information text-center">
-      <sup>*</sup>In a location of your choosing and we'll help increase its visibility on our platforms.
-    </p>
-  </div>
 <% end %>
 
 <div id="signup_18">
@@ -241,7 +264,7 @@
                 GROW GLOBAL
                 <br>
                 <span>TOGETHER</span>
- <!-- <div class="container">
+ <!--<div class="container">
       <div class="row text-center entrepreneurs-examples-wrapper">
       <div class="entrepreneurs-examples col-xs-12 col-md-4">
         <%= image_tag "18/rasmus.png" %>
@@ -257,7 +280,7 @@
         </p>
       </div>
     </div>
-</div>-->  
+</div>--> 
             </div>
           <% else %>
             <div class="hidden-xs">
