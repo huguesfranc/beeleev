@@ -77,6 +77,13 @@ Rails.application.routes.draw do
   get 'faq',      to: 'home#faq',         as: :faq
   get 'adp',      to: 'adp#show',         as: :adp
 
+  scope :pages do
+    Dir[Rails.root + 'app/views/pages/*.html.erb'].each do |route|
+      route = File.basename route, '.html.erb'
+      get route.split('_').join('-') => "pages##{route}", as: route
+    end
+  end
+
   # root to: 'home#index'
   root to: 'home#home_18'
   # get 'home_18', to: 'home#home_18'

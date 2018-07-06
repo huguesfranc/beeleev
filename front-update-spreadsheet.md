@@ -36,7 +36,7 @@ bundle exec rails s
 
 Accéder à l'application: http://localhost:3000
 
-## Modifier à la vue
+## Modifier une vue
 
 Ouvrir le projet avec Sublime Text.
 
@@ -89,6 +89,12 @@ Ouvrir le projet avec Sublime Text.
   - `<%`:  Exécute juste le code ruby
   - `<%=`: Exécute le code Ruby et affiche le résultat
   - `<%#`: Initie un commentaire dans le code; ne fait rien
+
+## Créer une page
+
+Créer un fichier de la forme `nouvelle_page.html.erb` dans le répertoire `app/views/pages`: Le nom ne peut contenir que des lettres minuscules sans accent, des chiffres et des underscores. Il ne peut pas commencer par un underscore.
+
+L'url de la page prendra la forme `https://www.beeleev.com/pages/nouvelle-page`: Les underscores sont remplacés par des tirets.
 
 ## Déployer l'application
 
