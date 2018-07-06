@@ -15,6 +15,8 @@ class NetworksController < BeeleeverSpaceController
 
   def show
     authorize! :access_network, current_user
+    throw CanCan::AccessDenied unless current_user.fully_registered?
+
     @users = users_scope.page(params[:page]).per(@pagination)
   rescue CanCan::AccessDenied
     redirect_to edit_account_path
@@ -64,7 +66,7 @@ class NetworksController < BeeleeverSpaceController
   def setup_profiles
     @profiles = ['Entrepreneur', 'Local Partner', 'Expert']
   end
-  
+
   def set_pagination
     @pagination = 24
   end

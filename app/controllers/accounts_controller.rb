@@ -1,9 +1,27 @@
 class AccountsController < BeeleeverSpaceController
   before_action :set_user
-  before_action :authorize_account_params, only: [:update,
-                                                  :onboarding_first_update,
-                                                  :onboarding_second_update,
-                                                  :onboarding_third_update]
+  before_action :redirect_to_onboarding_first_path, unless: :current_user_fully_registered?, except: [
+    :onboarding_first,
+    :onboarding_first_update,
+    :onboarding_second,
+    :onboarding_second_update,
+    :onboarding_third,
+    :onboarding_third_update
+  ]
+  before_action :redirect_to_account_path, if: :current_user_fully_registered?, only: [
+    :onboarding_first,
+    :onboarding_first_update,
+    :onboarding_second,
+    :onboarding_second_update,
+    :onboarding_third,
+    :onboarding_third_update
+  ]
+  before_action :authorize_account_params, only: [
+    :update,
+    :onboarding_first_update,
+    :onboarding_second_update,
+    :onboarding_third_update
+  ]
 
   def onboarding_first
   end
@@ -107,5 +125,17 @@ class AccountsController < BeeleeverSpaceController
 
   def authorize_account_params
     @user.attributes = params.require(:user).permit!
+  end
+
+  def redirect_to_onboarding_first_path
+    redirect_to onboarding_first_path
+  end
+
+  def current_user_fully_registered?
+    current_user.fully_registered?
+  end
+
+  def redirect_to_account_path
+    redirect_to account_path
   end
 end

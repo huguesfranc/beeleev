@@ -510,6 +510,19 @@ class User < ActiveRecord::Base
     profil == 'Local Partner'
   end
 
+  def fully_registered?
+    ![
+      :first_name, :last_name,
+      :cellphone, :civility,
+      :country, :company,
+      :headquarters_city, :website,
+      :business_sectors, :position,
+      :year_of_creation, :staff_volume,
+      :turnover, :expertises,
+      :international_activity_countries
+    ].find { |attribute| send(attribute).blank? }
+  end
+
   def connection_demands_for_current_month
     now = Time.zone.now
     beginning_of_current_month = Time.new now.year, now.month, 1, 0, 0
