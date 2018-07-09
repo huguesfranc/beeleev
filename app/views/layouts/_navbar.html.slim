@@ -18,12 +18,12 @@ nav#lemenu.lemenu.lemenu18_white.nav.navbar.navbar-default.navbar-fixed-top role
     .collapse.navbar-collapse#navbar-collapse-body
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-         - if can?(:access_network, current_user) && current_user.fully_registered?
-
+          - if can?(:access_network, current_user) && current_user.fully_registered?
             li= menu_link "MEMBERS", members_path
             li= link_to 'To Slack', 'https://entrepreneurs-beeleev.slack.com', target: '_blank' unless current_user.profil == "Expert"
             li= menu_link 'DIRECT REQUEST', direct_request_path
 
+          - if current_user.fully_registered?
             li.dropdown
               a.dropdown-toggle[href="#" data-toggle="dropdown"]
                 b.caret
