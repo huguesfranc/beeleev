@@ -15,7 +15,7 @@ class NetworksController < BeeleeverSpaceController
 
   def show
     authorize! :access_network, current_user
-    throw CanCan::AccessDenied unless current_user.fully_registered?
+    redirect_to(edit_account_path) and return unless current_user.fully_registered?
 
     @users = users_scope.page(params[:page]).per(@pagination)
   rescue CanCan::AccessDenied
