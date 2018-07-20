@@ -26,7 +26,7 @@ class Pack < ActiveRecord::Base
     premium: {
       value: 2,
       name: 'Premium',
-      price_in_cents: 34900,
+      price_in_cents: 42900,
       deleted_price_in_cents: 42900,
       duration: 1.year,
       connection_credits: 4,
@@ -34,8 +34,8 @@ class Pack < ActiveRecord::Base
     },
     plus: {
       value: 3,
-      name: 'Plus',
-      price_in_cents: 41900,
+      name: 'Business',
+      price_in_cents: 99900,
       deleted_price_in_cents: 53900,
       duration: 1.year,
       connection_credits: 4,
@@ -44,7 +44,7 @@ class Pack < ActiveRecord::Base
     expert: {
       value: 4,
       name: 'Expert pack',
-      price_in_cents: 70900,
+      price_in_cents: 82900,
       deleted_price_in_cents: 82900,
       duration: 1.year,
       connection_credits: 0,

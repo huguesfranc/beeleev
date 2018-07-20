@@ -30,19 +30,19 @@
 
             <div class="pack__body">
               <div class="pack__description">
-                &check;   Your logo on our Partners Page<br>
-                &check;   Feature as an expert in the community<br>
-                &check;   Your interview, published on all our Media<br>
-                &check;   Share 1 Technical Content<br>
-                &check;   Helping you organize one breakfast event<sup>*</sup><br>
+                &check;   Your logo on our Partners Page<br><br/>
+                &check;   Feature as an expert in the community<br><br/>
+                &check;   Your interview, published on all our Media<br><br/>
+                &check;   Share 1 Technical Content<br><br/>
+                &check;   Helping you organize one breakfast event<sup>*</sup><br><br/>
                 &check;   Free invites to all our Events
-              </div>
+              </div><br/>
             </div>
 
           <div class="pack__selector">
             <div class="pack__price">
-              <strong>Launching Offer</strong><br>
-              <strong>$<%= Pack.expert.price %> Yearly</strong> <del>$<%= Pack.expert.deleted_price %> Yearly</del>
+              <!--<strong>Launching Offer</strong><br>-->
+              <strong>$<%= Pack.expert.price %> / year</strong> <!--<del>$<%= Pack.expert.deleted_price %> Yearly</del>-->
             </div>
           </div>
         <p class="packs__additional-information text-center">
@@ -67,10 +67,46 @@
         Select a package & Apply to Join the Community
       </p>
 
-      <p class="text-center" style="font-weight: bold">
+      <p class="text-center-title">
         <!--Looking for a Specific Entrepreneur, CEO, Expert, Partner or Key account even Outside our Community?<br>-->
         With our Packages, you can Benefit from a Dedicated Team that Performs a Tailored Search of any Key Contacts you want, and introduces You to Them
       </p>
+
+      <div class="sign-up-slogan">
+              <!--<p class="entrepreneur-offer hidden-xs">
+                Select a package & Grow your Business
+              </p>-->
+              <h5 class="entrepreneur-offer hidden-xs">
+                Some examples of tailormade contacts we provided</h5>
+                
+    <div class="container">
+      <br/>
+      <div class="row text-center entrepreneurs-examples-wrapper2">
+      <div class="entrepreneurs-examples col-xs-12 col-md-4">
+        <%= image_tag "18/charles.jpeg" %>
+        <p>
+          Charles Wanecq, CEO of Optylon, <br/>had the opportunity to have an appointment with the General Director of Airbnb Portugal. <br/>They discussed about their strategic development and potential partnerships.
+        </p>
+      </div>  
+      <div class="entrepreneurs-examples col-xs-12 col-md-4">
+        <%= image_tag "18/rasmus.png" %>
+        <p>
+          Rasmus Arendt Nielsen, CEO of Brandheroes, <br/>has been put in contact with a Communication Agency  <br>
+          in NYC to help him in his expansion strategy
+        </p>
+      </div>
+      <div class="entrepreneurs-examples col-xs-12 col-md-4">
+        <%= image_tag "18/esteban.png" %>
+        <p>
+          Esteban Sarabia, CEO of Q4tech,<br/>met 5 french entrepreneurs during his last business trip in Paris. These qualified connections allowed him to talk about his services and better understand how he should develop his company in France
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="text-center-title2">
+        Just click on a package feature to explore it !
+      </p>
+            </div>
 
       <div class="packs">
         <div class="packs__list">
@@ -81,9 +117,9 @@
 
             <div class="pack__body">
               <div class="pack__description">
-                &check;   Browse the community<br>
-                &check;   Access to all Free Content<br>
-                &check;   Unlimited Connection Requests <br> within the Digital Platform<!--<sup>***</sup>--><br>
+                &check;   Browse the community<br><br/>
+                &check;   Access to all Free Content<br><br/>
+                &check;   Unlimited Connection Requests <br> within the Digital Platform<!--<sup>***</sup>--><br><br/>
               </div>
 
               <div class="pack__selector">
@@ -102,17 +138,17 @@
 
             <div class="pack__body">
               <div class="pack__description">
-                &check;   <strong>4 Tailored Contacts <br>found by our dedicated team</strong><sup>*</sup><br>
-                &check;   Access to all our Premium Content<br>
-                &check;   Your interview published on our Media<br>
-                &check;   Special Rates on our Learning Expeditions<br>
-                &check;   All Free Access Features<!--<sup>***</sup>-->
+                &check;   <strong>4 Tailored Contacts outside the platform<br>found by our dedicated team</strong><sup>*</sup><br><br/>
+                &check;   <a href="https://www.beeleev-media.com/wp-content/uploads/2018/07/Business%20Guide%20UK.pdf" target=_blank>Access to all our Premium Content</a><br><br/>
+                &check;   <a href="http://www.beeleev-media.com/" target=_blank>Your interview published on our Media</a><br><br/>
+                &check;   Special Rates on our Learning Expeditions<br><br/>
+                &check;   All Free Access Features<br/><br/><!--<sup>***</sup>-->
               </div>
 
               <div class="pack__selector">
                 <div class="pack__price">
-                  <strong>Launching Offer</strong><br>
-                  <strong>$<%= Pack.premium.price %> Yearly</strong> <del>$<%= Pack.premium.deleted_price %> Yearly</del>
+                  <!--<strong>Launching Offer</strong><br>-->
+                  <strong>$<%= Pack.premium.price %> / year</strong> <!--<del>$<%= Pack.premium.deleted_price %> Yearly</del>-->
                 </div>
                 <div class="btn btn-orange18-orange" data-pack-selector="premium" data-pack-amount="25000">SELECT</div>
               </div>
@@ -121,23 +157,24 @@
 
           <div class="pack">
             <div class="pack__head">
-              Plus
+              Business
             </div>
 
             <div class="pack__body">
               <div class="pack__description">
-                &check;   <strong>4 Tailored Contacts <br>found by our dedicated team</strong><sup>*</sup><br>
-                &check;   <strong>Free Invites to all our Events</strong><!--<sup>**</sup>--><br>
-                &check;   Access to all our Premium Content<br>
-                &check;   Your interview published on our Media<br>
-                &check;   Special Rates on our Learning Expeditions<br>
-                &check;   All Free Access Features<!--<sup>***</sup>-->
+                &check;   <strong>Unlimited Tailored Contacts <br>outside the platform <br>
+                found by our dedicated team</strong><br><br/>
+                &check;   <strong><a href="https://www.beeleev.com/news">Free Invites to all our Events</a></strong><!--<sup>**</sup>--><br><br/>
+                &check;   <a href="https://www.beeleev-media.com/wp-content/uploads/2018/07/Business%20Guide%20UK.pdf" target=_blank>Access to all our Premium Content</a><br><br/>
+                &check;   <a href="http://www.beeleev-media.com/" target=_blank>Your interview published on our Media</a><br><br/>
+                &check;   Special Rates on our Learning Expeditions<br><br/>
+                &check;   All Free Access Features<br/><br/><!--<sup>***</sup>-->
               </div>
 
               <div class="pack__selector">
                 <div class="pack__price">
-                  <strong>Launching Offer</strong><br>
-                  <strong>$<%= Pack.plus.price %> Yearly</strong> <del>$<%= Pack.plus.deleted_price %> Yearly</del>
+                  <!--<strong>Launching Offer</strong><br>-->
+                  <strong>$<%= Pack.plus.price %> / year</strong> <!--<del>$<%= Pack.plus.deleted_price %> Yearly</del>-->
                 </div>
                 <div class="btn btn-orange18-orange" data-pack-selector="plus" data-pack-amount="35000">SELECT</div>
               </div>

@@ -3,10 +3,42 @@
     <h1 style="margin-bottom: 30px">Update your package</h1>
 
     <% if @professional_status == 'entrepreneur' %>
-      <p class="text-center" style="font-weight: bold">
+      <p class="text-center-title">
         <!--Looking for a Specific Entrepreneur, CEO, Expert, Partner or Key account even Outside our Community?<br>-->
         With our Packages, you can Benefit from a Dedicated Team that Performs a Tailored Search of any Key Contacts you want, and introduces You to Them
       </p>
+<div class="sign-up-slogan">
+              <!--<p class="entrepreneur-offer hidden-xs">
+                Select a package & Grow your Business
+              </p>-->
+              <h5 class="entrepreneur-offer hidden-xs">
+                Some examples of tailormade contacts we provided</h5>
+                
+    <div class="container">
+      <br/>
+      <div class="row text-center entrepreneurs-examples-wrapper">
+      <div class="entrepreneurs-examples col-xs-12 col-md-4">
+        <%= image_tag "18/charles.jpeg" %>
+        <p>
+          Charles Wanecq, CEO of Optylon, <br/>had the opportunity to have an appointment with the General Director of Airbnb Portugal. <br/>They discussed about their strategic development and potential partnerships.
+        </p>
+      </div>  
+      <div class="entrepreneurs-examples col-xs-12 col-md-4">
+        <%= image_tag "18/rasmus.png" %>
+        <p>
+          Rasmus Arendt Nielsen, CEO of Brandheroes, <br/>has been put in contact with a Communication Agency  <br>
+          in NYC to help him in his expansion strategy
+        </p>
+      </div>
+      <div class="entrepreneurs-examples col-xs-12 col-md-4">
+        <%= image_tag "18/esteban.png" %>
+        <p>
+          Esteban Sarabia, CEO of Q4tech,<br/>met 5 french entrepreneurs during his last business trip in Paris. These qualified connections allowed him to talk about his services and better understand how he should develop his company in France
+        </p>
+      </div>
+    </div>
+  </div>
+            </div>
 
       <div class="packs">
         <div class="packs__list">
@@ -17,17 +49,18 @@
 
             <div class="pack__body">
               <div class="pack__description">
-                &check;   <strong>4 Tailored Contacts found by our dedicated team</strong><sup>*</sup><br>
-                &check;   Access to all our Premium Content<br>
-                &check;   Your interview published on our Media<br>
-                &check;   Special Rates on our Learning Expeditions<br>
-                &check;   All Free Access Features<!--<sup>***</sup>-->
+                &check;   <strong>4 Tailored Contact found by our dedicated team</strong><sup>*</sup><br><br>
+                &check;   Access to all our Premium Content<br><br>
+                &check;   Your interview published on our Media<br><br>
+                &check;   Special Rates on our Learning Expeditions<br><br>
+                &check;   All Free Access Features<!--<sup>***</sup>--><br>
               </div>
 
               <div class="pack__selector">
                 <div class="pack__price">
-                  <strong>Launching Offer</strong><br>
-                  <strong>$<%= Pack.premium(user: current_user).price %> Yearly</strong> <del>$<%= Pack.premium(user: current_user).deleted_price %> Yearly</del>
+                  <!--<strong>Launching Offer</strong><br>-->
+                  <strong>$<%= Pack.premium(user: current_user).price %> / year</strong>
+                   <!--<del>$<%= Pack.premium(user: current_user).deleted_price %> Yearly</del>-->
                 </div>
                 <%= link_to 'SELECT', edit_pack_path(pack: :premium), class: 'btn btn-orange18-orange' %>
               </div>
@@ -36,23 +69,24 @@
 
           <div class="pack">
             <div class="pack__head">
-              Plus
+              Executive
             </div>
 
             <div class="pack__body">
               <div class="pack__description">
-                &check;   <strong>4 Tailored Contacts found by our dedicated team</strong><sup>*</sup><br>
-                &check;   <strong>Free Invites to all our Events</strong><!--<sup>**</sup>--><br>
-                &check;   Access to all our Premium Content<br>
-                &check;   Your interview published on our Media<br>
-                &check;   Special Rates on our Learning Expeditions<br>
-                &check;   All Free Access Features<!--<sup>***</sup>-->
+                &check;   <strong>Unlimited Tailored Contacts found by our dedicated team</strong><br><br>
+                &check;   <strong>Free Invites to all our Events</strong><!--<sup>**</sup>--><br><br>
+                &check;   Access to all our Premium Content<br><br>
+                &check;   Your interview published on our Media<br><br>
+                &check;   Special Rates on our Learning Expeditions<br><br>
+                &check;   All Free Access Features<!--<sup>***</sup>--><br>
               </div>
 
               <div class="pack__selector">
                 <div class="pack__price">
-                  <strong>Launching Offer</strong><br>
-                  <strong>$<%= Pack.plus(user: current_user).price %> Yearly</strong> <del>$<%= Pack.plus(user: current_user).deleted_price %> Yearly</del>
+                  <!--<strong>Launching Offer</strong><br>-->
+                  <strong>$<%= Pack.plus(user: current_user).price %> / year</strong>
+                   <!--<del>$<%= Pack.plus(user: current_user).deleted_price %> Yearly</del>-->
                 </div>
                 <%= link_to 'SELECT', edit_pack_path(pack: :plus), class: 'btn btn-orange18-orange' %>
               </div>
@@ -63,7 +97,6 @@
         <p class="packs__additional-information">
           <sup>*</sup><!--Looking for a specific Entrepreneur or CEO to contact even outside the community? Don't have the time to browse the net? With your free Direct Request Credits, you can have us do a tailored search of any Key Partner you want, and put you in contact with them.<br>-->
           From our International Network of 30,000 CEO's; <br> Possibility to ask for more tailormade contacts<br>
-          <br>
           <!--<br>
           <sup>**</sup>25 events per year: 4 networking events in the evening and 21 breakfast events; all in Paris and France actually.<br>
           <br>

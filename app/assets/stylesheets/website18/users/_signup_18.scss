@@ -27,8 +27,20 @@
     }
 	}
 
+ .text-center-title{
+  font-size : 1.3em;
+  color: $gray;
+  text-align:center;
+  }
+
+  .text-center-title2{
+  font-size : 1.5em;
+  color: $orange;
+  text-align:center;
+  }
+
   .text-center{
-  font-size : 1.1em;
+  font-size : 1em;
   }
 
 	h2 {
@@ -88,7 +100,7 @@
 	}
 
 	.sign-up-slogan {
-		padding: 50px 0;
+		padding: 20px 0;
 		display: flex;
     flex-direction: column;
 	  justify-content: center;
@@ -105,7 +117,7 @@
       color: $gray;
       margin-top: 0;
       margin-bottom: 0;
-      font-size: 2.7em;
+      font-size: 2em;
 
       span {
         color: $orange;
@@ -117,7 +129,7 @@
 
   .sign-up-header {
     background: image-url('people.png') center center;
-    padding: 60px 15px;
+    padding: 30px 15px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 2.5em;
@@ -277,6 +289,7 @@
     margin-bottom: 10px;
     color: $bleu;
     font-style: italic;
+    font-size: 17px;
   }
 
 }
