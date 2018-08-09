@@ -32,7 +32,7 @@
     	letter-spacing: 0.02em;
     	text-shadow: 2px 2px 2px black;
 		span {
-			text-shadow: 2px 2px 2px white;
+			text-shadow: 1px 1px 1px black;
 			font-family: 'Lato-Bold', sans-serif;
 			font-weight: 900;
 			color: $orange;
@@ -75,7 +75,7 @@
 		width: 12vw;
 		margin: 2em auto 0;
     path {
-    	fill: $orange;
+    	fill: white;
     }
 	}
 	.btn-orange18-orange{
