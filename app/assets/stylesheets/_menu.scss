@@ -2,10 +2,33 @@
   padding: 10px 10px;
 
   .navbar-brand {
-    color: $yellow;
+    color: $new-orange;
     font-size: 3em;
   }
 
-  .navbar-collapse {
+  .btn-menu {
+    border: 2px solid $new-orange;
+    border-radius: 10%;
+    margin-right: 10px;
+
+    a {
+      font-weight: bold;
+    }
+  }
+
+  .orange-background {
+    color: white;
+    background-color: $new-orange;
+    &:hover {
+      color: $new-orange;
+    }
+  }
+
+  .new-orange {
+    color: $new-orange;
+    &:hover {
+      color: white;
+      background-color: $new-orange !important;
+    }
   }
 }
