@@ -1,9 +1,13 @@
 #white-orange-menu {
-  padding: 10px 10px;
 
   .navbar-brand {
+    margin-top: 5px;
     color: $new-orange;
     font-size: 3em;
+  }
+
+  .navbar-collapse {
+    padding: 10px 30px;
   }
 
   .btn-menu {
@@ -43,4 +47,24 @@
       color: $new-orange;
     }
   }
+
+  .horizontal-menu {
+    background-image: linear-gradient(to bottom, transparent, lightgrey);
+    height: 50px;
+    color: $text-color;
+    ul {
+      vertical-align: middle;
+      display: flex;
+      width: 100%;
+      list-style-type: none;
+    }
+    li {
+      flex: 1 1 100%;
+      margin-top: 16px; // TODO: improve :|
+      a {
+        color: black;
+      }
+    }
+  }
+
 }

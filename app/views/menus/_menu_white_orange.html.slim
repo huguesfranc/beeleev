@@ -1,27 +1,33 @@
 nav#white-orange-menu.navbar.navbar-default.navbar-fixed-top role="navigation"
-  .container-fluid
 
-    .navbar-header
-      button.navbar-toggle.collapsed data-target="#navbar-collapse-body" data-toggle="collapse" type="button"
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
+  .navbar-header
+    button.navbar-toggle.collapsed data-target="#navbar-collapse-body" data-toggle="collapse" type="button"
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
 
-      a.navbar-brand href=root_path
-        = "Beeleev"
+    a.navbar-brand href=root_path
+      = "Beeleev"
 
-    .collapse.navbar-collapse#navbar-collapse-body
-      ul.nav.navbar-nav.navbar-right
-        li.btn-menu.btn-orange-background
-          a {
-            href=""
-            data-toggle="modal"
-            data-target="#professional-status-selector-modal"
-          } Apply
-        li.btn-menu.btn-new-orange
-          a {
-            href=new_user_session_path
-            data-toggle="modal"
-            data-target="#ajaxSmallModal"
-          } Login
+  .collapse.navbar-collapse#navbar-collapse-body
+    ul.nav.navbar-nav.navbar-right
+      li.btn-menu.btn-orange-background
+        a {
+          href=""
+          data-toggle="modal"
+          data-target="#professional-status-selector-modal"
+        } Apply
+      li.btn-menu.btn-new-orange
+        a {
+          href=new_user_session_path
+          data-toggle="modal"
+          data-target="#ajaxSmallModal"
+        } Login
+
+  .horizontal-menu
+    ul
+      - for link in ["About us", "Why Beeleev", "Events", "Partners", "Media"]
+        /! TODO: update with @horizontal_menu_links
+        li
+          a href="#" = link
