@@ -2,8 +2,9 @@
 
   .navbar-brand {
     margin-top: 5px;
-    color: $new-orange;
-    font-size: 3em;
+    img {
+      height: 30px;
+    }
   }
 
   .navbar-collapse {
@@ -49,7 +50,7 @@
   }
 
   .horizontal-menu {
-    background-image: linear-gradient(to bottom, transparent, lightgrey);
+    background-color: lighten(#dadada, 9%); // #dadada
     height: 50px;
     color: $text-color;
     ul {
