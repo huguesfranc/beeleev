@@ -10,25 +10,37 @@
     border: 2px solid $new-orange;
     border-radius: 10%;
     margin-right: 10px;
+    padding: 0 10px;
 
     a {
       font-weight: bold;
     }
   }
 
-  .orange-background {
-    color: white;
+  .btn-orange-background {
     background-color: $new-orange;
     &:hover {
-      color: $new-orange;
+      background-color: transparent;
+      & a {
+        color: $new-orange;
+      }
+    }
+    a {
+      color: white;
     }
   }
 
-  .new-orange {
-    color: $new-orange;
+  .btn-new-orange {
     &:hover {
       color: white;
-      background-color: $new-orange !important;
+      background-color: $new-orange;
+      & a {
+        color: white;
+      }
+    }
+
+    a {
+      color: $new-orange;
     }
   }
 }
