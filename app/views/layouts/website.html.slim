@@ -46,7 +46,9 @@ html
     = render "layouts/mailchimp_connect"
     = render "layouts/facebook_pixel"
 
-    - if @navbar_type == "transparent"
+    - if @navbar_type == "white_orange"
+      = render "menus/menu_white_orange"
+    - elsif @navbar_type == "transparent"
       = render "layouts/menu18_transparent"
     - else
       = render "layouts/menu18_white"
