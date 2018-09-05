@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   end
 
   def home_18
-    @navbar_type = "transparent"
+    @navbar_type = "white_orange"
     active_users = User.active
 
     @beeleevers    = active_users.size.round(-2) + 100
