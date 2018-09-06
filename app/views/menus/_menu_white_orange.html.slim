@@ -27,7 +27,6 @@ nav#white-orange-menu.navbar.navbar-default.navbar-fixed-top role="navigation"
 
   .horizontal-menu
     ul
-      /! TODO: update with @horizontal_menu_links
-      - for link in ["About us", "Why Beeleev", "Events", "Partners", "Media"]
+      - for link in @horizontal_menu_links
         li
           a href="#" = link
