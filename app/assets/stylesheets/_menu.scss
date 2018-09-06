@@ -1,142 +1,72 @@
-// #sign_up_with_email {
-//   display: none;
-// }
+#white-orange-menu {
 
-// #sign_up_with_email, #log_in_with_email {
+  .navbar-brand {
+    margin-top: 5px;
+    img {
+      height: 30px;
+    }
+  }
 
-//   .form-group {
-//     position: relative;
+  .navbar-collapse {
+    padding: 10px 30px;
+  }
 
-//     span.form-control-feedback {
-//       opacity: 0.5;
-//       top: 0px;
-//     }
+  .btn-menu {
+    border: 2px solid $new-orange;
+    border-radius: 10%;
+    margin-right: 10px;
+    padding: 0 10px;
 
-//   }
-// }
+    a {
+      font-weight: bold;
+    }
+  }
 
-// .navbar-default .navbar-nav > li {
+  .btn-orange-background {
+    background-color: $new-orange;
+    &:hover {
+      background-color: transparent;
+      & a {
+        color: $new-orange;
+      }
+    }
+    a {
+      color: white;
+    }
+  }
 
-//   a {color: #555;}
+  .btn-new-orange {
+    &:hover {
+      color: white;
+      background-color: $new-orange;
+      & a {
+        color: white;
+      }
+    }
 
-//   .btn-default.active {
-//     background-color: inherit;
-//     @include box-shadow(none);
-//     color: $orange;
-//   }
-// }
+    a {
+      color: $new-orange;
+    }
+  }
 
-// body.cookiebanner .lemenu {
-//   top: 28px;
-// }
+  .horizontal-menu {
+    background-color: lighten(#dadada, 9%);
+    height: 50px;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    ul {
+      display: flex;
+      width: 90%;
+      list-style-type: none;
+    }
+    li {
+      flex: 1 1 100%;
+      margin-top: 16px; // TODO: improve :|
+      a {
+        color: black;
+      }
+    }
+  }
 
-// .lemenu {
-//   background-color: white;
-//   border: none;
-//   border-radius: 0px;
-//   margin: 0px;
-//   padding: 10px;
-
-//   .navbar-nav {
-//     li {
-//       a {
-//         padding: 10px;
-//       }
-//     }
-
-//   }
-
-//   .navbar-brand {
-//     position: relative;
-//     top: -7px;
-//   }
-
-//   .btn.btn-default {
-//     border: $bleu-fonce;
-//     margin-left: 6px;
-//     margin-right: 6px;
-//     &:hover{
-//       background-color: $bleu;
-//       color: #fff;
-//     }
-//     &:focus{
-//       background-color: #fff;
-//     }
-//   }
-
-
-//   .btn.btn-default2 {
-//     //color: $orange;
-//     border: 1px solid $orange;
-//     color: $orange;
-//     //background-color: white;
-//     margin-right: 4px;
-//     margin-left: 4px;
-//     &:hover{
-//       color: #fff;
-//       background-color: $orange; //$bleu-clair;
-//     }
-//     &:focus{
-//       background-color: $bleu;
-//     }
-
-//   }
-
-//   a {
-//     //padding-top: 7px;
-//     text-transform: uppercase;
-//     font-family: "proxima-nova", sans-serif;
-//     font-size: 13px;
-//     font-weight: 300;
-//     letter-spacing: 2px;
-//     color: #fff;
-
-//     &:hover {
-//       color: #fff;
-//     }
-//   }
-
-
-//   .dropdown-menu {
-//     width: 100%;
-//     .simple-lien {
-//       text-transform: none;
-//       letter-spacing: 1px;
-//     }
-//   }
-
-// }
-
-
-// @media (min-width: $screen-xs-min) and (max-width: $screen-sm-min) and (orientation: portrait) {
-//   .logo img {
-//     width: 88px;
-//   }
-// }
-
-
-// @media(max-width:767px) {
-
-
-//   .lemenu {
-//     .btn.btn-default2 {
-//       border: 1px solid $bleu-clair;
-//       margin: 5px;
-
-//       &:hover{
-//         color: #fff;
-//         background-color: $bleu-clair;
-//       }
-//       &:focus{
-//         background-color: $bleu;
-//       }
-//     }
-//   }
-
-// }
-
-// // This class must be used on anchors before blocks that we don't want to
-// // be hidden by the navbar-fixed-top
-// .below-navbar-fixed-top-anchor {
-//   position: relative; top: -62px;
-// }
+}
