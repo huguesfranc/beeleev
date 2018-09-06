@@ -1,86 +1,64 @@
 #home_banner {
-	color:white;
-  font-family: 'Lato', sans-serif;
-	.slideshow_wrapper {
-		min-height: 100vh;
-		display: flex;
-	  justify-content: center;
-	  align-items: center;
-  	position: relative;
-  	overflow: hidden;
-	}
-  video {
-    object-fit: cover;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    // filter: grayscale(50%);
-    // filter: sepia(1);
-    z-index: -1;
-  }
-	.slideshow_inner_wrapper{
-	}
+  margin-top: 116px;
+  position: relative;
 
-	#slideshow_title h1{
-		font-family: 'Lato', sans-serif;
-		font-weight: 700;
-		color: white;
-		font-size: 3.5em;
-		padding: 20% 0 2%;
-    	letter-spacing: 0.02em;
-    	text-shadow: 2px 2px 2px black;
-		span {
-			text-shadow: 1px 1px 1px black;
-			font-family: 'Lato-Bold', sans-serif;
-			font-weight: 900;
-			color: $orange;
-			letter-spacing: 5px;
-			font-size: 50px;
-		}
-	}
-	#slideshow_subtitle h2{
-		font-style: italic;
-		text-transform: none;
-		font-family: 'Lato', sans-serif;
-		font-weight: 400;
-		color: white;
-		margin-top: 0;
-		margin-bottom: 0;
-		font-size: 2.1em;
-    	text-shadow: 2px 2px 2px black;
-	}
-	.subsubtitles {
-		margin-top: 3em;
-		margin-bottom: 2em;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		text-shadow: 2px 2px 2px black;
-		width: 80vw;
-		& h3{
-			font-family: 'Lato', sans-serif;
-			font-weight: 700;
-			color: white;
-			margin-top: 0;
-			margin-bottom: 0;
-			font-size: 1.4em;
-		}
-		& span {
-			font-size: 2em;
-		}
-	}
-	.down-arrow {
-		width: 12vw;
-		margin: 2em auto 0;
-    path {
-    	fill: white;
+  .img_banner {
+    margin-top: 3%;
+    width: 98%;
+  }
+
+  .corner-triangle {
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-bottom : 40vw solid white;
+    border-left : 40vw solid transparent;
+
+    float: right;
+    position: absolute;
+    right: 2%;
+    top: 27%;
+    z-index: 2;
+  }
+
+  .triangle-text-wrapper {
+    float: right;
+    top: 60%;
+    right: 1%;
+    position: absolute;
+    z-index: 3;
+    font-weight: bold;
+
+    p {
+      text-align: center;
+      &:first-child {
+        font-size: 2.7em; // 265% ?
+      }
+
+      &.orange-bloc {
+        font-size: 2.4em;
+        color: $new-orange;
+        position: relative;
+        right: 16px;
+      }
     }
-	}
-	.btn-orange18-orange{
-		margin: 2.5em 0 0;
-	}
+
+
+    a {
+      text-transform: uppercase;
+      color: white;
+      background-color: $new-light-blue;
+      position: relative;
+      left: 16%;
+      top: 5px;
+      font-size: 1.3em;
+      padding: 2% 0;
+      display: inline-block;
+      width: 60%;
+      text-align: center;
+      border-radius: 7%;
+    }
+  }
 }
 //--------------- media queries ------------------
 @media(max-width:767px) {
