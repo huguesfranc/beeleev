@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   end
 
   def home_18
-    @navbar_type = "white_orange"
+    @navbar_type = "transparent" # "white_orange"
     @horizontal_menu_links = ["About us", "Why join Beeleev", "Events",
                               "Partners", "Media"]
     active_users = User.active
