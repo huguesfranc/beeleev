@@ -1,45 +1,18 @@
 <div id="home_banner" class="">
+  <%= image_tag "homepage/banner.jpg", class: "img_banner" %>
+  <div class="corner-triangle" draggable="true">
+  </div>
 
-	<div class="slideshow_wrapper text-center">
-    <video autoplay="" muted="" loop="" class="embed-responsive-item video-banner" id="autovid" width="100%">
-      <source src="/assets/videos/banner.webm" type="video/webm">
-      <source src="/assets/videos/banner.mp4"  type="video/mp4">
-      <source src="/assets/videos/banner.mov"  type="video/quicktime">
-      <source src="/assets/videos/banner.ogg"  type="video/ogg">
-	  </video>
-
-		<div class="slideshow_inner_wrapper">
-			<div id="slideshow_title">
-				<h1>
-					WE HELP ENTREPRENEURS
-					<br>
-					<span>GROW GLOBALLY</span>
-				</h1>
-			</div>
-
-			<div id="slideshow_subtitle">
-				<h2>
-					All the Services you Need to Boost your International Development
-				</h2>
-			</div>
-
-			<%= link_to "APPLY NOW", '', class: "btn btn-orange18-orange", data: { toggle: :modal, target: '#professional-status-selector-modal' } %>
-
-			<div class="subsubtitles">
-					<h3>TAILOR MADE <br> CONTACTS</h3>
-					<span>•</span>
-					<h3>IMMERSION <br> PROGRAMS</h3>
-					<span>•</span>
-					<h3>EXCHANGE & <br> LEARN</h3>
-					<span>•</span>
-					<h3>MEET IN <br> REAL LIFE</h3>
-					<span>•</span>
-					<h3>MARKET <br> EXPERTISE</h3>
-			</div>
-
-			<div class="down-arrow floating">
-				<%= show_svg 'down_arrow.svg' %>
-			</div>
-		</div>
-	</div>
+  <div class="triangle-text-wrapper">
+    <p>
+      We help<br/>
+      entrepreneurs<br/>
+      grow globally<br/>
+    </p>
+    <p class="orange-bloc">
+      A Community of 3,500<br/>
+      Internation Entrepreneurs<br/>
+    </p>
+    <a href="#">Why join us</a>
+  </div>
 </div>
