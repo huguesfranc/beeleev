@@ -1,6 +1,8 @@
 #testimonials{
 	color: $text-grey;
+  margin-top: 10%;
   margin-bottom: -4em;
+
 	h2{
 		font-family: 'Lato', sans-serif;
 		font-weight: 700;
@@ -12,7 +14,11 @@
 	}
 	.testimonial{
 		display: flex;
-	  min-height: 325px;
+	    min-height: 325px;
+        flex-wrap: wrap;
+        img {
+          min-width: 400px;
+        }
 	}
 	.testimonial-img-wrapper{
 		flex: 0 0 30%;
