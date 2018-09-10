@@ -63,6 +63,7 @@
 
 @media(max-width: 1475px) {
   #home_banner {
+    margin-bottom: -150px; // weird margin hack
     .img_banner {
       width: 100% !important;
       min-width: 100% !important;
