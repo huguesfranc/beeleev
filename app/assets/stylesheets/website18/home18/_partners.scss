@@ -1,17 +1,19 @@
 #partners_home_18{
-	background-color: $bg-grey; 
-	h2{
-		font-family: 'Lato', sans-serif;
-		font-weight: 700;
-	  font-size: 2.5em;
-	  font-style: normal;
-		color: $orange;
-	  margin: 1em 0 0;
-	}
-	.partners-logo {
-		width: 150px;
-		margin: 0 auto;
-	}
+  position: relative;
+  bottom: 50px;
+  .partners-logo {
+      // width: 150px;
+      // margin: 0 auto;
+  }
+  .partners-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    img {
+      width: 150px;
+      margin: 0 auto;
+    }
+  }
 }
 //--------------- media queries ------------------
 @media(max-width:767px) {
