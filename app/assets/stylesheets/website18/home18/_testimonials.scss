@@ -1,16 +1,19 @@
 #testimonials{
   color: $text-grey;
-  margin-top: 7%;
+  margin-top: 30px;
   margin-bottom: -4em;
 
   .testimonial{
       display: flex;
-      min-height: 325px;
       flex-wrap: wrap;
       justify-content: center;
+      margin-top: 30px;
       img {
-        min-width: 400px;
         margin: 3%;
+        width: 40%;
+        height: 30%;
+        min-width: 500px;
+        box-shadow: 0 0 2em lightgray;
       }
   }
   .carousel-indicators {
@@ -56,38 +59,9 @@
 //--------------- media queries ------------------
 @media(max-width:767px) {
 	#testimonials{
-		padding: 0 1em;
-		h2{
-			font-size: 2em;
-			margin-top: 7em;
-		}
-		.testimonial-title {
-			font-size: 1.7em;
-			text-align: center;
-		}	
-		.testimonial-title_ {
-			padding: 0 1em;
-			text-align: center;
-		}	
-		.testimonial-quote {
-			font-size: 1em;
-			text-align: justify;
-			// padding-right: 0;
-			padding: 0 1.4em;
-		}
-		.testimonial-author{
-			font-size: 1.25em;
-			text-align: right;
-			padding-right: 0;
-		}
-		.testimonial-position{
-			font-size: 1.125em;
-			text-align: right;
-			padding-right: 0;
-		}
-		.testimonial-text-inner-wrapper{
-			min-height: 250px;
-		}
+      .carousel-inner {
+        margin-top: 50px !important;
+      }
 	}
 	.carousel-indicators {
 		display:none
