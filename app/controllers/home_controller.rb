@@ -12,8 +12,13 @@ class HomeController < ApplicationController
 
   def home_18
     @navbar_type = "white_orange"
-    @horizontal_menu_links = ["About us", "Why join Beeleev", "Events",
-                              "Partners", "Media"]
+    @horizontal_menu_links = [
+      {text: "About us", href: team_path},
+      {text: "Why join Beeleev", href: "#"}, # no page currently
+      {text: "Events", href: events_path},
+      {text: "Partners", href: partners_path},
+      {text: "Media", href: "http://www.beeleev-media.com/", external: true},
+    ]
     active_users = User.active
 
     @beeleevers    = active_users.size.round(-2) + 100
