@@ -1,39 +1,33 @@
 //------------original footer.scss commented-------------
-
 .footer {
-  @include gradient-vertical($bleu, $bleu-fonce);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  // align-items: center;
   padding: 0 25px;
-  height: 60px;
-  .footer-right{
-    text-align: right;
+  // height: 60px;
+  color: white;
+  background-color: $dark-blue;
+
+  div {
+    margin-top: 30px;
+    width: 400px;
+    text-align: center;
   }
-  .footer-right{
-  ul {
-    display: flex;
-    align-items: center;
-    align-items: center;
-    height: 100%;   
-    padding: 0;
-    margin: 0;
-    li {
-      list-style: none;
-      color: $bleu-fonce;
-      font-weight: 300;
-      a {
-        font-weight: 300;
-        line-height: 2em;
-        color: $bleu-footer;
-        font-size: 0.7em;
-        &:hover {
-          color: $orange;
-        }
-      }
+  h3, a {
+    color: white;
+  }
+  a[target="_blank"]:hover  {
+    text-decoration: none;
+  }
+  p {
+    margin: 50px 0;
+    .fab {
+      font-size: 2em;
+      margin: 0 10px;
     }
   }
-  }
+
 }
 
 @media (min-width: 366px) {

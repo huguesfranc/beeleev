@@ -1,0 +1,33 @@
+<div id="news">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="carousel-news" class="carousel slide">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-news" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-news" data-slide-to="1"></li>
+          </ol>
+
+          <div class="carousel-inner">
+            <%= render partial: "home/home18/news/news_1.html.erb" %>
+            <%= render partial: "home/home18/news/news_2.html.erb" %>
+          </div>
+
+          <a class="left carousel-control"
+             href="#carousel-news"
+             role="button"
+             data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+
+          <a class="right carousel-control"
+             href="#carousel-news"
+             role="button"
+             data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

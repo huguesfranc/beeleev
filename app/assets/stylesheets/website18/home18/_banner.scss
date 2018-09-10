@@ -3,8 +3,8 @@
   position: relative;
 
   .img_banner {
-    margin-top: 3%;
     width: 98%;
+    min-height: 400px;
   }
 
   .corner-triangle {
@@ -60,6 +60,49 @@
     }
   }
 }
+
+@media(max-width: 1475px) {
+  #home_banner {
+    margin-bottom: -150px; // weird margin hack
+    .img_banner {
+      width: 100% !important;
+      min-width: 100% !important;
+      min-height: 400px;
+      margin-bottom: 0 !important;
+    }
+
+    .corner-triangle {
+      display: none;
+    }
+
+    .triangle-text-wrapper {
+      position: relative;
+      bottom: 385px;
+      float: none;
+      right: auto;
+      left: auto;
+      p:not(.orange-bloc){
+        color: white;
+      }
+    }
+  }
+}
+
+@media(max-width: 370px) {
+  #home_banner {
+    .triangle-text-wrapper {
+      p {
+        &:first-child {
+          font-size: 2.4em; // 265% ?
+        }
+        &.orange-bloc {
+          font-size: 2.1em;
+        }
+      }
+    }
+  }
+}
+
 //--------------- media queries ------------------
 @media(max-width:767px) {
 	#home_banner{
