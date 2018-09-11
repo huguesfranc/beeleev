@@ -57,7 +57,7 @@
     justify-content: center;
     ul {
       display: flex;
-      width: 90%;
+      width: 100%;
       list-style-type: none;
     }
     li {
@@ -69,4 +69,36 @@
     }
   }
 
+}
+
+@media(max-width: 700px) {
+  #white-orange-menu {
+    .no-mobile {
+      display: none;
+    }
+    .only-mobile {
+      display: initial;
+    }
+    .horizontal-menu {
+      justify-content: left;
+      ul li {
+        margin-top: 12px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+@media(max-width: 550px) {
+  #white-orange-menu {
+    .horizontal-menu {
+      ul {
+        position: relative;
+        right: 10px;
+        li {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
 }
