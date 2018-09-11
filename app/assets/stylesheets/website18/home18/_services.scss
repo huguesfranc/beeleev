@@ -7,7 +7,7 @@
     justify-content: center;
   }
   .service {
-    margin: 1%;
+    margin: 20px;
     flex: 1 1 350px;
     // border: 1px solid black;
 
@@ -17,7 +17,8 @@
       margin-top: 0;
     }
     p {
-      padding: 50px 0;
+      padding-top: 50px;
+      padding-bottom: 35px;
       font-size: 1.7em;
     }
     a {
