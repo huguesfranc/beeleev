@@ -76,6 +76,7 @@
     }
 
     .triangle-text-wrapper {
+      text-align: center;
       position: relative;
       bottom: 385px;
       float: none;
@@ -83,6 +84,12 @@
       left: auto;
       p:not(.orange-bloc){
         color: white;
+      }
+      p.orange-bloc {
+        right: 0;
+      }
+      a {
+        left: 0;
       }
     }
   }
