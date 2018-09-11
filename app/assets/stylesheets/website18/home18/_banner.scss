@@ -63,7 +63,7 @@
 
 @media(max-width: 1475px) {
   #home_banner {
-    margin-bottom: -150px; // weird margin hack
+    margin-bottom: -295px; // weird margin hack
     .img_banner {
       width: 100% !important;
       min-width: 100% !important;
@@ -76,6 +76,7 @@
     }
 
     .triangle-text-wrapper {
+      text-align: center;
       position: relative;
       bottom: 385px;
       float: none;
@@ -83,6 +84,12 @@
       left: auto;
       p:not(.orange-bloc){
         color: white;
+      }
+      p.orange-bloc {
+        right: 0;
+      }
+      a {
+        left: 0;
       }
     }
   }

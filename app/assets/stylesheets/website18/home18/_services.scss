@@ -1,15 +1,19 @@
 #services {
   position: relative;
-  bottom: 50px;
+  bottom: 20px;
   .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    & > div {
+      text-align: center;
+      min-width: 300px;
+    }
   }
   .service {
-    margin: 1%;
-    flex: 1 1 435px;
-    // border: 1px solid black;
+    // margin: 20px;
+    display: inline-block;
+    // flex: 1 1 175px;
 
     h2 {
       font-size: 2em;
@@ -17,7 +21,8 @@
       margin-top: 0;
     }
     p {
-      padding: 50px 0;
+      padding-top: 50px;
+      padding-bottom: 35px;
       font-size: 1.7em;
     }
     a {
@@ -31,6 +36,7 @@
       width: 45%;
       text-align: center;
       border-radius: 7%;
+      margin-bottom: 30px;
     }
   }
 }
