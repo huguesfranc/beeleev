@@ -12,4 +12,10 @@ class Ad < ActiveRecord::Base
   updated_at: datetime,
 =end
   belongs_to :user
+
+  validates :title, presence: true
+  validates :ad_type, presence: true
+  validates :ad_content, presence: true
+  validates :ad_link, presence: true
+  # validates :illustration, presence: true
 end
