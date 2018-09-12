@@ -17,6 +17,11 @@ class AdsController < ApplicationController
     end
   end
 
+  def show
+    # Ads listing
+    @ads = Ad.all
+  end
+
   private
   def ad_params
     params.require(:ad).permit(:user_id, :title, :ad_type, :ad_content, :ad_link)
