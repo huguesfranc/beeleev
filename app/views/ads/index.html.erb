@@ -1,1 +1,21 @@
-ads
+<div class="container">
+  <div class="row" id="news">
+
+    <div class="col-xs-12">
+      <h1>
+        LATEST ADS
+      </h1>
+      <h2 class="text-center">
+        All the recruitment / fundings ad from the community
+      </h2>
+    </div>
+    <% @ads.each do |ad| %>
+      <%= render partial: "ads/ad_row", locals: { ad: ad } %>
+    <% end %>
+
+  </div>
+</div>
+
+
+<% content_for :meta_title, "Community Ads" %>
+<% content_for :meta_description, "All the recruitment / fundings ad from the community" %>
