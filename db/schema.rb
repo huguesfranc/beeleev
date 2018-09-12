@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180912102447) do
+ActiveRecord::Schema.define(version: 20180912114858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,12 +53,13 @@ ActiveRecord::Schema.define(version: 20180912102447) do
   create_table "ads", force: true do |t|
     t.string   "ad_type"
     t.integer  "user_id"
-    t.text     "content"
+    t.text     "ad_content"
     t.string   "illustration"
-    t.string   "link"
+    t.string   "ad_link"
     t.integer  "click"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   add_index "ads", ["user_id"], name: "index_ads_on_user_id", using: :btree

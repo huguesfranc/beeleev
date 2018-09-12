@@ -1,4 +1,4 @@
-<%= form_for @ad, url: onboarding_first_update_path, method: :post do |f|%>
+<%= form_for @ad, url: '/ads/new', method: :post do |f|%>
   <div id="onboarding1">
     <div class="flex-wrapper">
       <h1>YOUR AD</h1>
@@ -13,7 +13,7 @@
               <span>AD <br> PICTURE</span>
             </label>
           </div>
-          <%= f.file_field :avatar %>
+          <%= f.file_field :illustration %>
         </div>
 
         <div>
