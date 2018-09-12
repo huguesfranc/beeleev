@@ -20,15 +20,18 @@ class AdsController < ApplicationController
   def index
     # Ads listing
     @ads = Ad.all
+    @ad_type = "all"
   end
 
   def recruitment_ads
     @ads = Ad.where(ad_type: "Recruitment")
+    @ad_type = "recruitment"
     render 'ads/index'
   end
 
   def funding_ads
     @ads = Ad.where(ad_type: "Funding")
+    @ad_type = "funding"
     render 'ads/index'
   end
 
