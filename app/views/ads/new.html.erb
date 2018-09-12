@@ -1,0 +1,56 @@
+<%= form_for @ad, url: onboarding_first_update_path, method: :post do |f|%>
+  <div id="onboarding1">
+    <div class="flex-wrapper">
+      <h1>YOUR AD</h1>
+      <div class="body-wrapper">
+        <div>
+          <div class="text-center">
+          </div>
+          <div class="avatar-wrapper text-center">
+            <label for="user_avatar">
+              <i class="fa fa-picture-o fa-4x" aria-hidden="true"></i>
+              <br>
+              <span>AD <br> PICTURE</span>
+            </label>
+          </div>
+          <%= f.file_field :avatar %>
+        </div>
+
+        <div>
+          <div class="form-inputs">
+            <%= f.text_field :title,
+                             class: "form-control",
+                             placeholder: :title.to_s.humanize,
+                             required: true,
+                             autofocus: true,
+                             label: false %>
+          </div>
+          <div class="form-inputs">
+            <label for="ad_type_select">TYPE: </label>
+            <%= f.select :ad_type, ["Recruitment", "Fundings"],
+                         class: "form-control",
+                         required: true %>
+          </div>
+          <div class="form-inputs">
+            <%= f.text_area :ad_content,
+                             class: "form-control",
+                             placeholder: :ad_content.to_s.humanize,
+                             required: true %>
+          </div>
+          <div class="form-inputs">
+            <%= f.text_field :ad_link,
+                            class: "form-control",
+                            placeholder: "link",
+                            required: true %>
+          </div>
+        </div>
+      </div>
+      <div class="buttons-wrapper">
+        <div></div>
+        <div class="form-actions">
+          <%= f.submit "SUBMIT", class: "btn btn-orange18-orange" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
