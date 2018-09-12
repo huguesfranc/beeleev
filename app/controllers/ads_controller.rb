@@ -17,7 +17,7 @@ class AdsController < ApplicationController
     end
   end
 
-  def show
+  def index
     # Ads listing
     @ads = Ad.all
   end

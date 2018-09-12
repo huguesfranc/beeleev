@@ -92,7 +92,7 @@ Rails.application.routes.draw do
 
   get 'ads/new', to: 'ads#new'
   post 'ads/new', to: 'ads#create'
-  get 'ads/show', to: 'ads#show'
+  get 'ads', to: 'ads#index'
 
   match "/404", :to => "errors#not_found", :via => :all
   match "/422", :to => "errors#unacceptable", :via => :all
