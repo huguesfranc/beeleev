@@ -22,6 +22,16 @@ class AdsController < ApplicationController
     @ads = Ad.all
   end
 
+  def recruitment_ads
+    @ads = Ad.where(ad_type: "Recruitment")
+    render 'ads/index'
+  end
+
+  def funding_ads
+    @ads = Ad.where(ad_type: "Funding")
+    render 'ads/index'
+  end
+
   private
   def ad_params
     params.require(:ad).permit(:user_id, :title, :ad_type, :ad_content, :ad_link)
