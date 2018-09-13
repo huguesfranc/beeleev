@@ -21,5 +21,4 @@ class Ad < ActiveRecord::Base
   validates :ad_type, presence: true
   validates :ad_content, presence: true
   validates :ad_link, presence: true
-  # validates :illustration, presence: true
 end
