@@ -95,6 +95,7 @@ Rails.application.routes.draw do
   get 'ads', to: 'ads#index', as: :ad
   get 'ads/recruitment', to: 'ads#recruitment_ads'
   get 'ads/funding', to: 'ads#funding_ads'
+  get 'ads/mine', to: 'ads#mine', as: :my_ads
 
   match "/404", :to => "errors#not_found", :via => :all
   match "/422", :to => "errors#unacceptable", :via => :all

@@ -8,7 +8,7 @@
       <h2 class="text-center">
         All the recruitment / fundings ad from the community
       </h2>
-      <ul id="ad_type_menu">
+      <ul id="ad_type_menu" <%= "class=hidden" unless @ad_type %>>
         <li <%= "class=active" if @ad_type == "all" %>>
           <%= link_to "All", "/ads" %>
         </li>

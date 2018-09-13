@@ -34,6 +34,12 @@ class AdsController < ApplicationController
     render 'ads/index'
   end
 
+  def mine
+    @ads = current_user.ads
+    @ad_type = false
+    render 'ads/index'
+  end
+
   private
   def ad_params
     params.require(:ad).permit(:user_id, :title, :ad_type,
