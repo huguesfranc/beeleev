@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180516165146) do
+ActiveRecord::Schema.define(version: 20180912114858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,20 @@ ActiveRecord::Schema.define(version: 20180516165146) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "ads", force: true do |t|
+    t.string   "ad_type"
+    t.integer  "user_id"
+    t.text     "ad_content"
+    t.string   "illustration"
+    t.string   "ad_link"
+    t.integer  "click"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+  end
+
+  add_index "ads", ["user_id"], name: "index_ads_on_user_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.string   "body"
@@ -232,7 +246,7 @@ ActiveRecord::Schema.define(version: 20180516165146) do
     t.text     "body"
     t.string   "illustration"
     t.boolean  "published",          default: false
-    t.date     "publication_date",   default: '2018-06-06'
+    t.date     "publication_date",   default: '2018-09-04'
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "detailed_body"

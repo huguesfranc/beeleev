@@ -303,6 +303,8 @@ class User < ActiveRecord::Base
 
   has_one :pack, dependent: :destroy
 
+  has_many :ads, dependent: :destroy
+
   include Shop
 
   # Enumerators
