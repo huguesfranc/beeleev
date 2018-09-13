@@ -2,6 +2,7 @@ class AdsController < ApplicationController
   def new
     # Need to be logged
     @ad = Ad.new
+    redirect_to action: "index" unless current_user
   end
 
   def create
