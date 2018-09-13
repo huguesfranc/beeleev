@@ -15,12 +15,12 @@
 
     <div class="col-xs-12 col-sm-4 col-md-3 img_side">
       <!-- update image tag with real image and use cl_image_tag -->
-      <%= image_tag "foo.png",
-                       fetch_format: :auto,
-                       width: 555,
-                       crop: :fill,
-                       quality: 80,
-                       class: 'img-responsive' %>
+      <%= cl_image_tag ad.illustration.full_public_id,
+        fetch_format: :auto,
+        width: 555,
+        crop: :fill,
+        quality: 80,
+        class: 'img-responsive' %>
     </div>
 
     <div class="col-xs-12 col-sm-8 col-md-9 text-side">

@@ -10,7 +10,11 @@
 # created_at: datetime,
 # updated_at: datetime,
 #
+#
 class Ad < ActiveRecord::Base
+
+  mount_uploader :illustration, AdIllustrationUploader
+
   belongs_to :user
 
   validates :title, presence: true
