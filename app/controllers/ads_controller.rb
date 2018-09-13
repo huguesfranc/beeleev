@@ -1,8 +1,8 @@
 class AdsController < ApplicationController
+  before_action :check_user_is_logged
   def new
     # Need to be logged
     @ad = Ad.new
-    redirect_to action: "index" unless current_user
   end
 
   def create
@@ -38,5 +38,9 @@ class AdsController < ApplicationController
   def ad_params
     params.require(:ad).permit(:user_id, :title, :ad_type,
                                :ad_content, :ad_link, :illustration)
+  end
+
+  def check_user_is_logged
+    redirect_to root_path unless user_signed_in?
   end
 end
