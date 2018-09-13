@@ -19,18 +19,18 @@ class AdsController < ApplicationController
 
   def index
     # Ads listing
-    @ads = Ad.all
+    @ads = Ad.order(created_at: :desc)
     @ad_type = "all"
   end
 
   def recruitment_ads
-    @ads = Ad.where(ad_type: "Recruitment")
+    @ads = Ad.where(ad_type: "Recruitment").order(created_at: :desc)
     @ad_type = "recruitment"
     render 'ads/index'
   end
 
   def funding_ads
-    @ads = Ad.where(ad_type: "Funding")
+    @ads = Ad.where(ad_type: "Funding").order(created_at: :desc)
     @ad_type = "funding"
     render 'ads/index'
   end
