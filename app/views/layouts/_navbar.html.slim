@@ -42,6 +42,8 @@ nav#lemenu.lemenu.lemenu18_white.nav.navbar.navbar-default.navbar-fixed-top role
                 li= link_to 'My Account', account_path
                 li= link_to t("my_profile"), current_user
                 li= link_to 'Ads', ad_path
+                li= link_to 'New ad', '/ads/new'
+                li= link_to 'My ads', '#'
                 li.divider
                 li
                   = link_to(t("log_out"), destroy_user_session_path)

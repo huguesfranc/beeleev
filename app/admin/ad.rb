@@ -13,7 +13,7 @@ ActiveAdmin.register Ad do
   #  permitted
   # end
   config.sort_order = 'created_at_desc'
-  
+
   filter :title
   filter :ad_content
   filter :ad_link
