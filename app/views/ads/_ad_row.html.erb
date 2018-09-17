@@ -34,10 +34,9 @@
       </p>
       <% if current_user == ad.user %>
         <div class="ad-actions">
-          <%= link_to '<i class="fa fa-edit"></i>'.html_safe, "/ads/edit/#{ad.id}" %>
-          <%= button_to 'Delete'.html_safe,
-                        "/ads/delete/#{ad.id}", method: :delete, class: "btn btn-orange18-orange"
-          %>
+          <%= button_to 'Delete', "/ads/delete/#{ad.id}", method: :delete,
+                        class: "btn btn-orange18-orange" %>
+          <%= link_to "Edit", "/ads/edit/#{ad.id}", class: "btn btn-orange18-orange" %>
         </div>
       <% end %>
     </div>
