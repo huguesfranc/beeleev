@@ -1,7 +1,6 @@
 class AdsController < ApplicationController
   before_action :check_user_is_logged
   def new
-    # Need to be logged
     @ad = Ad.new
   end
 
@@ -35,6 +34,7 @@ class AdsController < ApplicationController
   end
 
   def mine
+    @header_text = "MY ADS"
     @ads = current_user.ads
     @ad_type = false
     render 'ads/index'
