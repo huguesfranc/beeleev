@@ -14,7 +14,6 @@
     </div>
 
     <div class="col-xs-12 col-sm-4 col-md-3 img_side">
-      <!-- update image tag with real image and use cl_image_tag -->
       <%= cl_image_tag ad.illustration.full_public_id,
         fetch_format: :auto,
         width: 555,
@@ -33,6 +32,13 @@
       <p>
         <%= ad.ad_content %>
       </p>
+      <% if current_user == ad.user %>
+        <div class="ad-actions">
+          <%= button_to 'Delete', "/ads/delete/#{ad.id}", method: :delete,
+                        class: "btn btn-orange18-orange" %>
+          <%= link_to "Edit", "/ads/edit/#{ad.id}", class: "btn btn-orange18-orange" %>
+        </div>
+      <% end %>
     </div>
 
   </div>

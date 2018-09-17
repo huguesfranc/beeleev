@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
   before_action :check_user_is_logged
+  before_action :check_owner, only: [:edit, :update, :delete]
   def new
-    # Need to be logged
     @ad = Ad.new
   end
 
@@ -22,6 +22,32 @@ class AdsController < ApplicationController
     @ad_type = "all"
   end
 
+  def edit
+    id = params[:id]
+    @action_url = "/ads/update/#{id}"
+    @ad = Ad.find(id)
+    render 'new'
+  end
+
+  def update
+    id = params[:id]
+    @ad = Ad.find(id)
+    if @ad.update(ad_params)
+      redirect_to action: "mine"
+    else
+      flash.now[:alert] = @ad.errors.full_messages.join('<br>').html_safe
+      @action_url = "/ads/update/#{id}"
+      @ad = Ad.find(id)
+      render "new"
+    end
+  end
+
+  def delete
+    @ad = Ad.find(params[:id])
+    @ad.delete
+    redirect_to action: "index"
+  end
+
   def recruitment_ads
     @ads = Ad.where(ad_type: "Recruitment").order(created_at: :desc)
     @ad_type = "recruitment"
@@ -35,6 +61,7 @@ class AdsController < ApplicationController
   end
 
   def mine
+    @header_text = "MY ADS"
     @ads = current_user.ads
     @ad_type = false
     render 'ads/index'
@@ -48,5 +75,9 @@ class AdsController < ApplicationController
 
   def check_user_is_logged
     redirect_to root_path unless user_signed_in?
+  end
+
+  def check_owner
+    redirect_to action: "index" unless current_user == Ad.find(params[:id]).user
   end
 end
