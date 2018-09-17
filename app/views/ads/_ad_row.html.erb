@@ -34,7 +34,7 @@
       </p>
       <% if current_user == ad.user %>
         <div class="ad-actions">
-          <%= link_to '<i class="fa fa-edit"></i>'.html_safe, "#" %>
+          <%= link_to '<i class="fa fa-edit"></i>'.html_safe, "/ads/edit/#{ad.id}" %>
           <%= link_to '<i class="fa fa-remove"></i>'.html_safe, "#" %>
         </div>
       <% end %>

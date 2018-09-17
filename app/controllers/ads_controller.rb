@@ -21,6 +21,11 @@ class AdsController < ApplicationController
     @ad_type = "all"
   end
 
+  def edit
+    @ad = Ad.find(params[:ad_id])
+    render 'new'
+  end
+
   def recruitment_ads
     @ads = Ad.where(ad_type: "Recruitment").order(created_at: :desc)
     @ad_type = "recruitment"
