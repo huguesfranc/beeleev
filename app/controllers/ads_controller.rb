@@ -1,5 +1,6 @@
 class AdsController < ApplicationController
   before_action :check_user_is_logged
+  before_action :check_owner, only: [:edit, :update]
   def new
     @ad = Ad.new
   end
@@ -22,8 +23,23 @@ class AdsController < ApplicationController
   end
 
   def edit
-    @ad = Ad.find(params[:ad_id])
+    id = params[:id]
+    @action_url = "/ads/update/#{id}"
+    @ad = Ad.find(id)
     render 'new'
+  end
+
+  def update
+    id = params[:id]
+    @ad = Ad.find(id)
+    if @ad.update(ad_params)
+      redirect_to action: "mine"
+    else
+      flash.now[:alert] = @ad.errors.full_messages.join('<br>').html_safe
+      @action_url = "/ads/update/#{id}"
+      @ad = Ad.find(id)
+      render "new"
+    end
   end
 
   def recruitment_ads
@@ -53,5 +69,9 @@ class AdsController < ApplicationController
 
   def check_user_is_logged
     redirect_to root_path unless user_signed_in?
+  end
+
+  def check_owner
+    redirect_to action: "index" unless current_user == Ad.find(params[:id]).user
   end
 end

@@ -96,7 +96,8 @@ Rails.application.routes.draw do
   get 'ads/recruitment', to: 'ads#recruitment_ads'
   get 'ads/funding', to: 'ads#funding_ads'
   get 'ads/mine', to: 'ads#mine', as: :my_ads
-  get 'ads/edit/:ad_id', to: 'ads#edit', as: :ad_edit
+  get 'ads/edit/:id', to: 'ads#edit', as: :ad_edit
+  post 'ads/update/:id', to: 'ads#update', as: :ad_update
 
   match "/404", :to => "errors#not_found", :via => :all
   match "/422", :to => "errors#unacceptable", :via => :all
