@@ -98,6 +98,7 @@ Rails.application.routes.draw do
   get 'ads/mine', to: 'ads#mine', as: :my_ads
   get 'ads/edit/:id', to: 'ads#edit', as: :ad_edit
   post 'ads/update/:id', to: 'ads#update', as: :ad_update
+  delete 'ads/delete/:id', to: 'ads#delete'
 
   match "/404", :to => "errors#not_found", :via => :all
   match "/422", :to => "errors#unacceptable", :via => :all

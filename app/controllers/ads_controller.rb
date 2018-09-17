@@ -1,6 +1,6 @@
 class AdsController < ApplicationController
   before_action :check_user_is_logged
-  before_action :check_owner, only: [:edit, :update]
+  before_action :check_owner, only: [:edit, :update, :delete]
   def new
     @ad = Ad.new
   end
@@ -40,6 +40,12 @@ class AdsController < ApplicationController
       @ad = Ad.find(id)
       render "new"
     end
+  end
+
+  def delete
+    @ad = Ad.find(params[:id])
+    @ad.delete
+    redirect_to action: "index"
   end
 
   def recruitment_ads
