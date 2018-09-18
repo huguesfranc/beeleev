@@ -32,6 +32,17 @@
       <p>
         <%= ad.ad_content %>
       </p>
+      <div class="profile-avatar avatar-ad">
+        <% if ad.user.avatar? %>
+          <%= cl_image_tag ad.user.avatar, transformation: [
+              {width: 400, height: 400, gravity: :face, radius: :max, crop: :fill},
+              {width: 200, crop: :scale}] %>
+        <% else %>
+          <%= image_tag ad.user.avatar_url, class: "img-responsive" %>
+        <% end %>
+        <br/>
+        <%= link_to "#{ad.user.first_name} #{ad.user.last_name}", user_path(id: ad.user.id), class: "btn btn-orange18-orange" %>
+      </div>
       <% if current_user == ad.user %>
         <div class="ad-actions">
           <%= button_to 'Delete', ad_delete_path(id: ad.id), method: :delete,
