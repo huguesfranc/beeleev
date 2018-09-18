@@ -45,7 +45,7 @@ class AdsController < ApplicationController
   def delete
     @ad = Ad.find(params[:id])
     @ad.delete
-    redirect_to action: "index"
+    redirect_to ad_path
   end
 
   def recruitment_ads
@@ -78,6 +78,6 @@ class AdsController < ApplicationController
   end
 
   def check_owner
-    redirect_to action: "index" unless current_user == Ad.find(params[:id]).user
+    redirect_to ad_path unless current_user == Ad.find(params[:id]).user
   end
 end
