@@ -34,9 +34,10 @@
       </p>
       <% if current_user == ad.user %>
         <div class="ad-actions">
-          <%= button_to 'Delete', "/ads/delete/#{ad.id}", method: :delete,
+          <%= button_to 'Delete', ad_delete_path(id: ad.id), method: :delete,
                         class: "btn btn-orange18-orange" %>
-          <%= link_to "Edit", "/ads/edit/#{ad.id}", class: "btn btn-orange18-orange" %>
+          <%= link_to "Edit", ad_edit_path(id: ad.id),
+                      class: "btn btn-orange18-orange" %>
         </div>
       <% end %>
     </div>
