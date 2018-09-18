@@ -1,37 +1,13 @@
 <!-- class="below-nav" -->
 <%= render partial: "home/home18/banner" %>
 <div class="placeholder1"></div>
-<center>
-  <div class="custom-header">
-    <h2>
-      Your success is our success
-    </h2>
-  </div>
-</center>
+<%= render partial: "home/home18/custom_header", locals: {text: "Your success is our success"} %>
 <%= render partial: "home/home18/testimonials" %>
-<center>
-  <div class="custom-header">
-    <h2>
-      How we can help you
-    </h2>
-  </div>
-</center>
+<%= render partial: "home/home18/custom_header", locals: {text: "How we can help you"} %>
 <%= render partial: "home/home18/services" %>
-<center>
-  <div class="custom-header">
-    <h2>
-      Last news
-    </h2>
-  </div>
-</center>
+<%= render partial: "home/home18/custom_header", locals: {text: "Last news"} %>
 <%= render partial: "home/home18/news" %>
-<center>
-  <div class="custom-header">
-    <h2>
-      Our partners
-    </h2>
-  </div>
-</center>
+<%= render partial: "home/home18/custom_header", locals: {text: "Our partners"} %>
 <%= render partial: "home/home18/partners" %>
 <%= render partial: "home/home18/mailchimp_form" %>
 <!-- <div class="placeholder2"></div> -->
