@@ -9,7 +9,7 @@ class AdsController < ApplicationController
     @ad = current_user.ads.build(ad_params)
     if @ad.save
       flash.now[:success] = "Ad successfully created"
-      redirect_to action: "index"
+      redirect_to ad_path
     else
       flash.now[:alert] = @ad.errors.full_messages.join('<br>').html_safe
       render 'ads/new'
