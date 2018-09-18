@@ -33,7 +33,7 @@ class AdsController < ApplicationController
     id = params[:id]
     @ad = Ad.find(id)
     if @ad.update(ad_params)
-      redirect_to action: "mine"
+      redirect_to my_ads_path
     else
       flash.now[:alert] = @ad.errors.full_messages.join('<br>').html_safe
       @action_url = ad_update_path(id: id)
