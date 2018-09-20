@@ -43,7 +43,6 @@
       }
     }
 
-
     a {
       text-transform: uppercase;
       color: white;
@@ -61,7 +60,24 @@
   }
 }
 
-@media(max-width: 1475px) {
+//--------------- media queries ------------------
+@media(max-width: 1680px) {
+  #home_banner {
+    .triangle-text-wrapper {
+      right: 0%;
+    }
+  }
+}
+
+@media(max-width: 1580px) {
+  #home_banner {
+    .corner-triangle {
+      border-left: 48vw solid transparent;
+    }
+  }
+}
+
+@media(max-width: 1400px) {
   #home_banner {
     margin-bottom: -295px; // weird margin hack
     .img_banner {
@@ -110,7 +126,6 @@
   }
 }
 
-//--------------- media queries ------------------
 @media(max-width:767px) {
 	#home_banner{
 		.slideshow_inner_wrapper{
