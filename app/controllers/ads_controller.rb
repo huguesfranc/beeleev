@@ -1,6 +1,7 @@
 class AdsController < ApplicationController
   before_action :check_user_is_logged
   before_action :check_owner, only: [:edit, :update, :delete]
+  skip_before_action :verify_authenticity_token, only: [:click]
   def new
     @ad = Ad.new
   end
@@ -67,7 +68,22 @@ class AdsController < ApplicationController
     render 'ads/index'
   end
 
+  def click
+    @ad = Ad.find(params[:id])
+    if @ad.click.nil?
+      @ad.click = 1
+    else
+      @ad.click += 1
+    end
+    @ad.save
+    render json: {
+        id: @ad.id,
+        clicked: @ad.click
+    }
+  end
+
   private
+  # TODO: set_ad before_action
   def ad_params
     params.require(:ad).permit(:user_id, :title, :ad_type,
                                :ad_content, :ad_link, :illustration)
