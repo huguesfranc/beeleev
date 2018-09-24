@@ -27,7 +27,10 @@
         <%= "[#{ad.ad_type}]: #{ad.title}" %>
       </h3>
       <h3 class="subtitle">
-        <%= link_to ad.ad_link, ad.ad_link, target: "_blank" %>
+        <%= link_to ad.ad_link, ad.ad_link,
+                    target: "_blank",
+                    "onclick": "handleClick(#{ad.id})"
+        %>
       </h3>
       <p>
         <%= ad.ad_content %>
@@ -55,3 +58,9 @@
 
   </div>
 </div>
+
+<script>
+function handleClick(id){
+	$.post("/ads/click", {id: id}, function(){});
+}
+</script>
