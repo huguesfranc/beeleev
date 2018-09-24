@@ -2,6 +2,13 @@
   display: flex;
   list-style-type: none;
   text-align: center;
+  margin-top:5%;
+  font-weight:bold;
+  font-size:17px;
+  a:hover{
+  text-decoration:none;
+  color:$orange;
+  }
   li {
     flex: 1 1 100px;
     margin-top: 1%;

@@ -7,12 +7,14 @@
     justify-content: center;
     & > div {
       text-align: center;
-      min-width: 300px;
+      min-width: 400px;
     }
   }
   .service {
     // margin: 20px;
     display: inline-block;
+    min-width: 200px;
+    padding-right:20px;
     // flex: 1 1 175px;
 
     h2 {
@@ -21,8 +23,8 @@
       margin-top: 0;
     }
     p {
-      padding-top: 50px;
-      padding-bottom: 35px;
+      padding-top: 40px;
+      padding-bottom: 60px;
       font-size: 1.7em;
     }
     a {
@@ -31,12 +33,18 @@
       background-color: $new-light-blue;
       font-size: 1.3em;
       font-weight: bold;
-      padding: 2% 0;
+      padding: 3% 0;
       display: inline-block;
-      width: 45%;
+      width: 150px;
       text-align: center;
       border-radius: 7%;
       margin-bottom: 30px;
+      text-decoration:none;
+    }
+    a:hover{
+      color: $new-light-blue;
+      background-color: white;
+      border: 1px solid $new-light-blue;
     }
   }
 }

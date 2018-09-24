@@ -6,17 +6,17 @@
         <%= @header_text || "LATEST ADS" %>
       </h1>
       <h2 class="text-center">
-        All the recruitment / fundings ad from the community
+        All the Recruitments / Fundings postings from the Community<br/>
       </h2>
       <ul id="ad_type_menu" <%= "class=hidden" unless @ad_type %>>
         <li <%= "class=active" if @ad_type == "all" %>>
-          <%= link_to "All", "/ads" %>
+          <%= link_to "All Posts", "/ads" %>
         </li>
         <li <%= "class=active" if @ad_type == "recruitment" %>>
-          <%= link_to "Recruitments", "/ads/recruitment" %>
+          <%= link_to "Recruitment Postings", "/ads/recruitment" %>
         </li>
         <li <%= "class=active" if @ad_type == "funding" %>>
-          <%= link_to "Fundings", "/ads/funding" %>
+          <%= link_to "Funding Postings", "/ads/funding" %>
         </li>
       </ul>
     </div>

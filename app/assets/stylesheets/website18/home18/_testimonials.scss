@@ -1,13 +1,14 @@
 #testimonials{
   color: $text-grey;
   margin-top: 30px;
-  margin-bottom: -4em;
+  margin-bottom: -6em;
 
   .testimonial{
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 80px;
+      margin-bottom:40px;
       img {
         margin: 3%;
         width: 40%;

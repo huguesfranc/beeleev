@@ -30,6 +30,7 @@ html
     = render "layouts/no_credits_modal"
     = render "layouts/ajax_modal"
     = render "layouts/ajax_small_modal"
+    = render "layouts/ajax_large_modal"
     = render "layouts/navbar"
     = render "layouts/mailchimp_connect"
     = render "layouts/facebook_pixel"
@@ -40,6 +41,5 @@ html
         = render "layouts/flash"
       = yield
 
-    = render "layouts/footer_18"
-
+    = render "home/partials/footer"
     = render partial: "users/shared/professional_status_selector_modal" unless user_signed_in?

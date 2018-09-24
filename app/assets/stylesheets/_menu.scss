@@ -51,6 +51,7 @@
 
   .horizontal-menu {
     background-color: lighten(#dadada, 9%);
+    text-align:center;
     height: 50px;
     color: $text-color;
     display: flex;
@@ -64,7 +65,13 @@
       flex: 1 1 100%;
       margin-top: 16px; // TODO: improve :|
       a {
-        color: black;
+        color: #4a4a4a;
+        font-size:18px;
+        font-weight:bold;
+        text-decoration:none;
+      }
+      a:hover {
+      color:$new-orange;
       }
     }
   }

@@ -56,6 +56,12 @@
       width: 60%;
       text-align: center;
       border-radius: 7%;
+      text-decoration:none;
+    }
+    a:hover{
+    color: $new-light-blue;
+    background-color: white;
+    border: 1px solid $new-light-blue;
     }
   }
 }

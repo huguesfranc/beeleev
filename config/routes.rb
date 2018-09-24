@@ -89,6 +89,7 @@ Rails.application.routes.draw do
   # get 'home_18', to: 'home#home_18'
 
   get 'components', to: 'home#components'
+  get 'services', to: 'home#services'
 
   get 'ads/new', to: 'ads#new'
   post 'ads/new', to: 'ads#create', as: :new_ad

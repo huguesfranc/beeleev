@@ -246,7 +246,7 @@ ActiveRecord::Schema.define(version: 20180912114858) do
     t.text     "body"
     t.string   "illustration"
     t.boolean  "published",          default: false
-    t.date     "publication_date",   default: '2018-09-04'
+    t.date     "publication_date",   default: '2018-06-06'
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "detailed_body"

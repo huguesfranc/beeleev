@@ -13,13 +13,17 @@ class HomeController < ApplicationController
   def home_18
     @navbar_type = "white_orange"
     @horizontal_menu_links = [
-      {text: "About us", href: team_path},
       {text: "<span class='no-mobile'>Why join Beeleev</span>
             <span class='only-mobile'>Services</span>".html_safe,
-       href: "#"}, # no page currently
+       href: services_path},
+      {text: "About us", href: team_path},
       {text: "Events", href: events_path},
-      {text: "Partners", href: partners_path},
-      {text: "Media", href: "http://www.beeleev-media.com/", external: true},
+      {text: "<span class='no-mobile'>Our Partners</span>
+            <span class='only-mobile'>Partners</span>".html_safe, 
+        href: partners_path},
+      {text: "<span class='no-mobile'>Online Media</span>
+            <span class='only-mobile'>Media</span>".html_safe, 
+        href: "http://www.beeleev-media.com/", external: true},
     ]
     active_users = User.active
 
