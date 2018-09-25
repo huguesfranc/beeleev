@@ -18,4 +18,24 @@ ActiveAdmin.register Ad do
   filter :ad_content
   filter :ad_link
   filter :ad_type, as: :select, collection: ["Recruitment", "Funding"]
+
+  controller do
+    def create
+      create! do |format|
+        redirect_to(admin_ads_path, notice: "Ad created") and return
+      end
+    end
+
+    def destroy
+      super do |format|
+        redirect_to(admin_ads_path, notice: "Ad deleted") and return
+      end
+    end
+
+    def update
+      super do |format|
+        redirect_to(admin_ad_path(resource), notice: "Ad updated") and return if resource.valid?
+      end
+    end
+  end
 end
