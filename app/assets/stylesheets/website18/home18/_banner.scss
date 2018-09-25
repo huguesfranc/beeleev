@@ -89,6 +89,7 @@
   #home_banner {
     margin-bottom: -295px; // weird margin hack
     .img_banner {
+      filter: brightness(50%);
       width: 100% !important;
       min-width: 100% !important;
       min-height: 400px;
@@ -122,12 +123,13 @@
 @media(max-width: 370px) {
   #home_banner {
     .triangle-text-wrapper {
+      bottom: 300px;
       p {
         &:first-child {
           font-size: 2.4em; // 265% ?
         }
         &.orange-bloc {
-          font-size: 2.1em;
+          font-size: 2.0em;
         }
       }
     }
