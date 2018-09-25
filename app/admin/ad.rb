@@ -13,6 +13,7 @@ ActiveAdmin.register Ad do
   #  permitted
   # end
   config.sort_order = 'created_at_desc'
+  menu label: 'Posts'
 
   filter :title
   filter :ad_content
