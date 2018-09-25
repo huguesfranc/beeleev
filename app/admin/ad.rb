@@ -38,4 +38,21 @@ ActiveAdmin.register Ad do
       end
     end
   end
+
+  form do |f|
+    f.inputs do
+      f.input :user
+      f.input :title
+      f.input(
+          :ad_type,
+          label: "Type",
+          as: :select, collection: ["Recruitment", "Funding"]
+      )
+      f.input :ad_content, as: :text
+      f.input :illustration
+      f.input :ad_link, label: "Link"
+    end
+
+    f.actions
+  end
 end
