@@ -35,7 +35,7 @@ class Pack < ActiveRecord::Base
     plus: {
       value: 3,
       name: 'Business',
-      price_in_cents: 99900,
+      price_in_cents: 149900,
       deleted_price_in_cents: 53900,
       duration: 1.year,
       connection_credits: 4,

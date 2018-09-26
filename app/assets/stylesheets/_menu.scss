@@ -9,6 +9,9 @@
 
   .navbar-collapse {
     padding: 10px 30px;
+    //width:200px;
+    //margin:auto;
+    //text-align:center;
   }
 
   .btn-menu {
@@ -80,6 +83,12 @@
 
 @media(max-width: 700px) {
   #white-orange-menu {
+    .navbar-collapse {
+      padding: 10px 30px;
+      width:200px;
+      margin:auto;
+      text-align:center;
+  }
     .no-mobile {
       display: none;
     }
@@ -98,6 +107,12 @@
 
 @media(max-width: 550px) {
   #white-orange-menu {
+  .navbar-collapse {
+      padding: 10px 30px;
+      width:200px;
+      margin:auto;
+      text-align:center;
+  }
     .horizontal-menu {
       ul {
         position: relative;

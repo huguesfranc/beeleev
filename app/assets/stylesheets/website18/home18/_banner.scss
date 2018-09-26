@@ -3,7 +3,7 @@
   position: relative;
 
   .img_banner {
-    width: 98%;
+    width: 100%;
     min-height: 400px;
   }
 
@@ -11,19 +11,20 @@
     display: inline-block;
     height: 0;
     width: 0;
-    border-bottom : 35vw solid white;
+    border-bottom : 40vw solid white;
     border-left : 40vw solid transparent;
 
     float: right;
     position: absolute;
-    right: 2%;
-    top: 27%;
+    right: 0%;
+    top: 20%;
     z-index: 2;
   }
 
 
   .triangle-text-wrapper {
     float: right;
+    text-align:center;
     top: 54%;
     right: 1%;
     position: absolute;
@@ -33,11 +34,11 @@
     p {
       text-align: center;
       &:first-child {
-        font-size: 2.7em; // 265% ?
+        font-size: 2.4em; // 265% ?
       }
 
       &.orange-bloc {
-        font-size: 2.4em;
+        font-size: 2.0em;
         color: $new-orange;
         position: relative;
         right: 16px;
@@ -48,13 +49,13 @@
       text-transform: uppercase;
       color: white;
       background-color: $new-light-blue;
-      position: relative;
-      left: 16%;
+      //position: relative;
+      //left: 16%;
       top: 5px;
       font-size: 1.3em;
       padding: 2% 0;
       display: inline-block;
-      width: 60%;
+      width: 150px;
       text-align: center;
       border-radius: 7%;
       text-decoration:none;
@@ -79,7 +80,7 @@
 @media(max-width: 1580px) {
   #home_banner {
     .corner-triangle {
-      border-left: 48vw solid transparent;
+      border-left: 40vw solid transparent;
     }
   }
 }
@@ -88,10 +89,11 @@
   #home_banner {
     margin-bottom: -295px; // weird margin hack
     .img_banner {
+      filter: brightness(50%);
       width: 100% !important;
       min-width: 100% !important;
       min-height: 400px;
-      margin-bottom: 0 !important;
+      margin-bottom: 50px !important;
     }
 
     .corner-triangle {
@@ -101,7 +103,7 @@
     .triangle-text-wrapper {
       text-align: center;
       position: relative;
-      bottom: 385px;
+      bottom: 420px;
       float: none;
       right: auto;
       left: auto;
@@ -121,12 +123,13 @@
 @media(max-width: 370px) {
   #home_banner {
     .triangle-text-wrapper {
+      bottom: 350px;
       p {
         &:first-child {
           font-size: 2.4em; // 265% ?
         }
         &.orange-bloc {
-          font-size: 2.1em;
+          font-size: 2.0em;
         }
       }
     }

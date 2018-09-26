@@ -72,6 +72,16 @@ margin-bottom: 30px}
 <!--<span style="text-align:center">
 	<h2 style="color:#FFA500; font-family:lato,helvetica neue,helvetica,arial,sans-serif">A DIGITAL COMMUNITY OF 3, 500 ENTREPRENEURS</h2>
 </span>-->
+<h1>Join the Community and benefit fom all these services !</h1>
+<div class="end_services"></div>
+<div class="service_sub">
+	<% if user_signed_in? && current_user.status != 'activation_pending' %>
+          <%= link_to "TO COMMUNITY", network_path, class: "btn btn-orange18-orange" %>
+        <% elsif user_signed_in? %>
+        <% else %>
+          <%= link_to "APPLY NOW", '#', class: "btn btn-orange18-orange", data: { toggle: :modal, target: '#professional-status-selector-modal' } %>
+        <% end %>
+</div>
 <div class="service_divider"></div>
 <h2 class="service_title">
 	<span>A DIGITAL COMMUNITY OF 5,000 ENTREPRENEURS</span></h2>
@@ -87,9 +97,9 @@ margin-bottom: 30px}
 	</div>
 </div>
 <div class="end_services"></div>
-<div class="service_sub">
+<!--<div class="service_sub">
 <a data-target="#professional-status-selector-modal" data-toggle="modal" href="">SUBSCRIBE</a>
-</div>
+</div>-->
 
 
 
@@ -109,10 +119,10 @@ margin-bottom: 30px}
 		<%= image_tag "services/Icon4.png" %>
 	</div>
 </div>
-<div class="end_services"></div>
+<!--<div class="end_services"></div>
 <div class="service_sub">
 <a data-target="#professional-status-selector-modal" data-toggle="modal" href="">SUBSCRIBE</a>
-</div>
+</div>-->
 <!--<div style="border-top:2px solid #f8a700 ; width: 75%; padding-bottom:30px; margin:auto"></div>-->
 
 
@@ -134,10 +144,10 @@ margin-bottom: 30px}
 		We offer a simple and intuitive platform to connect companies to employees locally but also in different countries.</p>
 	</div>
 </div>
-<div class="end_services"></div>
+<!--<div class="end_services"></div>
 <div class="service_sub">
 <a data-target="#professional-status-selector-modal" data-toggle="modal" href="">SUBSCRIBE</a>
-</div>
+</div>-->
 
 
 
@@ -158,10 +168,10 @@ margin-bottom: 30px}
 		<%= image_tag "services/Icon6.png" %>
 	</div>
 </div>
-<div class="end_services"></div>
+<!--<div class="end_services"></div>
 <div class="service_sub">
 <a data-target="#professional-status-selector-modal" data-toggle="modal" href="">SUBSCRIBE</a>
-</div>
+</div>-->
 
 
 
@@ -182,10 +192,10 @@ margin-bottom: 30px}
 		At least two conferences or breakfast-talks are set up every month, reaching a decision-maker audience always made of entrepreneurs and business leaders.</p>
 	</div>
 </div>
-<div class="end_services"></div>
+<!--<div class="end_services"></div>
 <div class="service_sub">
 <a data-target="#professional-status-selector-modal" data-toggle="modal" href="">SUBSCRIBE</a>
-</div>
+</div>-->
 
 
 
@@ -205,10 +215,10 @@ margin-bottom: 30px}
 		<%= image_tag "services/Icon5.png" %>
 	</div>
 </div>
-<div class="end_services"></div>
+<!--<div class="end_services"></div>
 <div class="service_sub">
 <a data-target="#professional-status-selector-modal" data-toggle="modal" href="">SUBSCRIBE</a>
-</div>
+</div>-->
 
 
 
@@ -228,10 +238,10 @@ margin-bottom: 30px}
 		We believe that transparency is important to build credibility and make a brand grow. That&#145;s why we shorten the way between your business and the media, offering the visibility that your idea deserves.</p>
 	</div>
 </div>
-<div class="end_services"></div>
+<!--<div class="end_services"></div>
 <div class="service_sub">
 <a data-target="#professional-status-selector-modal" data-toggle="modal" href="">SUBSCRIBE</a>
-</div>
+</div>-->
 
 
 

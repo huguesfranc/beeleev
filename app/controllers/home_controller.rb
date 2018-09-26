@@ -16,7 +16,9 @@ class HomeController < ApplicationController
       {text: "<span class='no-mobile'>Why join Beeleev</span>
             <span class='only-mobile'>Services</span>".html_safe,
        href: services_path},
-      {text: "About us", href: team_path},
+      {text: "<span class='no-mobile'>About us</span>
+            <span class='only-mobile'>Team</span>".html_safe,
+       href: team_path},
       {text: "Events", href: events_path},
       {text: "<span class='no-mobile'>Our Partners</span>
             <span class='only-mobile'>Partners</span>".html_safe, 
