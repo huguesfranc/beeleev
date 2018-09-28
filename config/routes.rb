@@ -90,6 +90,7 @@ Rails.application.routes.draw do
 
   get 'components', to: 'home#components'
   get 'services', to: 'home#services'
+  get 'raise_money', to: 'home#raise_money'
 
   get 'ads/new', to: 'ads#new'
   post 'ads/new', to: 'ads#create', as: :new_ad

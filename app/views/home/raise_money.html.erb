@@ -1,0 +1,166 @@
+<style>
+
+.service_divider{
+min-height:40px;
+}
+
+.service_title {
+color:#FFA500; 
+font-family:lato,helvetica neue,helvetica,arial,sans-serif; 
+margin:0; 
+padding:0; 
+text-align:center; 
+position:relative;
+box-shadow:0 16px 0 0 #fff inset, 0 18px 0 0 #f8a700 inset}
+
+.service_title span {
+background-color:#fff; 
+padding:0 10px}
+
+.service_subtitle {
+	text-align:center;
+	font-family:lato,helvetica neue,helvetica,arial,sans-serif;
+	color:#808080;
+}
+
+.service_container {
+width:100%; 
+padding:10px; 
+text-align:center}
+
+.service_img {
+padding:10px; 
+margin:0 10px;
+max-width:160px; 
+display:inline-block; 
+vertical-align:middle; 
+text-align:justify} 
+
+
+.service_desc {
+text-align: center; 
+color:#808080; 
+font-family:lato,helvetica neue,helvetica,arial,sans-serif; 
+font-size:16px; 
+line-height:30px; 
+padding:10px;
+margin:0 10px; 
+max-width:800px; 
+display:inline-block; 
+vertical-align:middle}
+
+.service_desc_left {
+font-family:lato,helvetica neue,helvetica,arial,sans-serif;
+color:#808080;
+font-size:16px;  
+line-height:30px; 
+padding:10px; 
+margin:0 10px; 
+max-width:500px; 
+display:inline-block;
+text-align:center;} 
+
+.service_desc_right {
+text-align: center; 
+color:#808080; 
+font-family:lato,helvetica neue,helvetica,arial,sans-serif; 
+font-size:16px; 
+line-height:30px; 
+padding:10px;
+margin:0 10px; 
+max-width:500px; 
+display:inline-block;}
+
+.end_services {
+clear:both}
+
+.service_sub {
+text-align:center}
+
+.service_sub a {
+font-family:lato,helvetica neue,helvetica,arial,sans-serif;
+text-decoration: none; 
+color: white; 
+background-color: #0074ff; 
+font-size: 16px; 
+font-weight: bold; 
+padding: 1% 1%; 
+display: inline-block; 
+max-width: 300px; 
+text-align: center; 
+border-radius: 3px; 
+margin-bottom: 30px}
+
+.divider{
+border-top:2px solid #f8a700 ;
+width: 75%; 
+padding-bottom:30px;
+margin:auto}
+
+.divider_inline{
+width: 50px;
+display:inline-block;
+margin:auto}
+
+p{
+	font-size:17px;
+}
+
+</style>
+
+<div class="service_divider"></div>
+<h2 class="service_title">
+	<span>TAKE THE OPPORTUNITY TO RAISE MONEY OR INVEST ON PROJECTS</span></h2>
+<h3 class="service_subtitle">Mobilize our network to spread the word of mouth about your fundraising campaign<br/>and gauge one more step towards your company growth.</h3>
+<h3 class="service_subtitle">How does it work?</h3>
+<div class="service_container">
+	<div class="service_desc">
+		<p>
+		1 - Fill out an online form detailing the fundraising goal and your investment needs<br/>
+		2 - We will verify your profile and documents and connect you to the investors more compatible with you<br/>
+		3 - To any need along the way (legal, communicational, managerial or administrative) our partners and experts can be connected to you</p>
+	</div>
+</div>
+	<!--<div class="service_img">
+		<img src="edited_icons/Icon1.png" alt="community" width="160px"; height="160px">
+	</div>-->
+<div class="end_services"></div>
+<!--<div class="service_sub">
+<a data-target="#professional-status-selector-modal" data-toggle="modal" href="">SUBMIT YOUR PROJECT</a>
+</div>-->
+<div class="service_sub">
+<!--<a data-target="#professional-status-selector-modal" data-toggle="modal" href="">SEE ALL THE PROJECTS TO INVEST</a>
+</div>-->
+<div class="service_sub">
+	<% if user_signed_in? && current_user.status != 'activation_pending' %>
+          <%= link_to "TO COMMUNITY", network_path, class: "btn btn-orange18-orange" %>
+        <% elsif user_signed_in? %>
+        <% else %>
+          <%= link_to "SUBMIT YOUR PROJECT", '#', class: "btn btn-orange18-orange", data: { toggle: :modal, target: '#professional-status-selector-modal' } %>
+        <% end %>
+</div>
+<div class="divider"></div>
+<div class="service_container">
+	<div class="service_desc_left">
+		<h3 class="service_subtitle">Present your Project to other<br/>Beeleevers and Find Investors</h3>
+		<%= image_tag "services/raise.png" %>
+		<p>Build a profile and share it with investors <br/>and the community to get funding</p>
+	</div>
+	<div class="divider_inline">
+	</div>
+	<div class="service_desc_right">
+		<h3 class="service_subtitle">Find Beeleever's Projects<br/>which need Investments</h3>
+		<%= image_tag "services/invest.png" %>
+		<p>Access profiles, consult documents and start discussions <br/>on a secure platform with verified profiles.</p>
+	</div>
+</div>
+<div class="end_services"></div>
+<div class="service_sub">
+	<% if user_signed_in? && current_user.status != 'activation_pending' %>
+          <%= link_to "TO COMMUNITY", network_path, class: "btn btn-orange18-orange" %>
+        <% elsif user_signed_in? %>
+        <% else %>
+          <%= link_to "JOIN THE COMMUNITY", '#', class: "btn btn-orange18-orange", data: { toggle: :modal, target: '#professional-status-selector-modal' } %>
+        <% end %>
+</div>
+
