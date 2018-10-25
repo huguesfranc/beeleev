@@ -21,7 +21,7 @@ class Pack < ActiveRecord::Base
       deleted_price_in_cents: 0,
       duration: 1.year,
       connection_credits: 0,
-      connection_demands_per_month: 3
+      connection_demands_per_month: Float::INFINITY
     },
     premium: {
       value: 2,
@@ -35,10 +35,10 @@ class Pack < ActiveRecord::Base
     plus: {
       value: 3,
       name: 'Business',
-      price_in_cents: 149900,
+      price_in_cents: 209900,
       deleted_price_in_cents: 53900,
       duration: 1.year,
-      connection_credits: 4,
+      connection_credits: 50,
       connection_demands_per_month: Float::INFINITY
     },
     expert: {
@@ -48,7 +48,7 @@ class Pack < ActiveRecord::Base
       deleted_price_in_cents: 82900,
       duration: 1.year,
       connection_credits: 0,
-      connection_demands_per_month: Float::INFINITY
+      connection_demands_per_month: 0
     }
   }
 
